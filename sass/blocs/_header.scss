@@ -5,6 +5,7 @@
     font-size: 1.4rem;
     text-transform: uppercase;
     color: $gris1;
+    overflow: hidden;
 }
 
 .logo{
@@ -138,7 +139,40 @@
         opacity: 1;
         width: auto;
         left: auto;
-    }
-    
-    
+    } 
 }
+
+.menu-right{
+    
+    align-items: center;
+    justify-content: flex-end;
+    
+    .lire-revue{
+        color: $gris1;
+        text-decoration: none;
+        position: relative;
+        padding-left: calc(84px + #{$small-value});
+        margin-right: $large-value;
+        
+        img{
+            position: absolute;
+            left: 0;
+            top: -20px;
+        }
+    }
+}
+
+.bt-search{
+    padding: 0;
+    border: 0;
+    background: none;
+    cursor: pointer;
+    
+    svg{
+        width: 20px;
+        fill: $gris1;
+        position: relative;
+        top: 3px;
+    }
+}
+

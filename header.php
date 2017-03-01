@@ -37,11 +37,12 @@
                         </a>
                     </div>
                     
-                    <div class="flex-container">
-                        <div>
+                    <div class="flex-container menu-right">
+                        <a class="lire-revue" href="">
+                            <img src="<?php echo get_template_directory_uri();?>/img/mag.png" alt="">
                             Lire la revue
-                        </div>
-                        <button>Rechercher</button>
+                        </a>
+                        <button aria-label="Accéder à la recherche" class="bt-search" title="Accéder à la recherche"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loupe"></use></svg></use></button>
                     </div>
 
                 </div>
