@@ -66,7 +66,7 @@ module.exports = function(grunt){
 		    },
 		    your_target: {
 		      files:{
-		      	'img/svg-prod/sprite/svgs.svg' : ['img/svg-dev/*.svg'],
+		      	'img/svg-prod/sprite/svgs.svg' : ['img/svg-prod/*.svg'],
 		      },
 		    },
 		},

@@ -1,8 +1,10 @@
-*{
-	box-sizing: border-box;
+.svg-wrapper{
+    display: none;
 }
 
-html{
-	font-size: 62.5%;
-	background-color: #fff;
+.wrapper{
+    max-width: $wrapper-size;
+    margin-left: auto;
+    margin-right: auto;
+    padding: $medium-value $small-value;
 }

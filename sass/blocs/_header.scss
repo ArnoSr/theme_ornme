@@ -1,0 +1,144 @@
+.header{
+    background-color: $color-fond;
+    font-family: $font-stack-headings;
+    font-weight: 100;
+    font-size: 1.4rem;
+    text-transform: uppercase;
+    color: $gris1;
+}
+
+.logo{
+    width: 215px;
+    
+    svg{
+        fill: #fff;
+    }
+}
+
+.menu{
+    
+    a{
+        text-decoration: none;
+        margin-top: auto;
+        margin-bottom: auto;
+        color: $gris1;
+        position: relative;
+        padding-left: calc(20px + #{$small-value});
+        
+        svg{
+            width: 20px;
+            position: absolute;
+            top:-3px;
+            left: 0;
+            fill: $gris1;
+        }
+        
+        &:not(:last-child){
+            margin-right: $large-value;
+        }
+    }
+    
+    .lien-vlog{
+        color: $vlog;
+        
+        svg{
+            fill: $vlog;
+        }
+    }
+}
+
+.bt-menu{
+    margin: auto $large-value auto 0;
+    
+    // Icone avant
+    
+    [id="checkboxMenu"]{
+        position: absolute;
+        left: -10000px;
+    }
+    
+    .text-menu{
+        transition: opacity ease .3s .1s;
+        opacity: 0;
+        position: absolute;
+        left: -10000px;
+    }
+    
+    .icon{
+        transition: all ease .3s;
+        display: inline-block;
+        height: 2px;
+        width: 30px;
+        margin-right: 10px;
+        background-color: #fff;
+        opacity: 1;
+        vertical-align: middle;
+        transform: translateY(-1px);
+        border-radius: 5px;
+        
+        &::after{
+            transition: all ease .3s;
+            content: '';
+            display: inline-block;
+            height: 2px;
+            width: 17px;
+            background-color: #fff;
+            position: absolute;
+            top: -9px;
+            border-radius: 5px;
+        }
+        
+        &::before{
+            transition: all ease .3s;
+            content: '';
+            display: inline-block;
+            height: 2px;
+            width: 30px;
+            background-color: #fff;
+            position: absolute;
+            top: 9px;
+            border-radius: 5px;
+        }
+    }
+    
+    //Icone avant quand survolé
+    
+    label:hover .icon{
+        &::after{
+            top: -12px;
+        }
+        
+        &::before{
+            top: 12px;
+        }
+    }
+    
+    // Icone avant quand ouvert
+    
+    [id="checkboxMenu"]:checked ~ label .icon{
+        height: 0;
+        transform: translateY(-2px);
+        background-color: $gris1;
+        &::after{
+            transform: rotate(-45deg);
+            top: 0;
+            background-color: $gris1;
+            width: 30px;
+        }
+        &::before{
+            transform: rotate(45deg);
+            top: 0;
+            background-color: $gris1;
+        }
+    }
+    
+    [id="checkboxMenu"]:checked ~ label .text-menu{
+        transition: opacity ease .3s 0;
+        display: inline-block;
+        opacity: 1;
+        width: auto;
+        left: auto;
+    }
+    
+    
+}
