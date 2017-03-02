@@ -8,3 +8,23 @@
     margin-right: auto;
     padding: $medium-value $small-value;
 }
+
+// couleur selon catégorie
+
+.name-category{
+    &.or-cadre a{
+        color: $or-cadre;
+    }
+    &.or-sujet a{
+        color: $or-sujet;
+    }
+    &.or-piste a{
+        color: $or-piste;
+    }
+    &.or-doeuvre a{
+        color: $or-doeuvre;
+    }
+    &.or-bord a{
+        color: $or-bord;
+    }
+}

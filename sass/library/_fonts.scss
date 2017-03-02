@@ -4,5 +4,40 @@
          url('fonts/geomanist-book-webfont.woff') format('woff');
     font-weight: 100;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'geomanist';
+    src: url('fonts/geomanist-medium-webfont.woff2') format('woff2'),
+         url('fonts/geomanist-medium-webfont.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+}
+
+
+@font-face {
+    font-family: 'calendas plus';
+    src: url('fonts/calendas_plus_bold-webfont.woff2') format('woff2'),
+         url('fonts/calendas_plus_bold-webfont.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'calendas plus';
+    src: url('fonts/calendas_plus_italic-webfont.woff2') format('woff2'),
+         url('fonts/calendas_plus_italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
+
+}
+
+@font-face {
+    font-family: 'calendas plus';
+    src: url('fonts/calendas_plus-webfont.woff2') format('woff2'),
+         url('fonts/calendas_plus-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
 
 }

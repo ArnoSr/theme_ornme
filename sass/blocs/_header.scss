@@ -51,6 +51,10 @@
 .bt-menu{
     margin: auto $large-value auto 0;
     
+    label{
+        padding: $small-value 0;
+    }
+    
     // Icone avant
     
     [id="checkboxMenu"]{
