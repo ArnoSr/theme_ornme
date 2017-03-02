@@ -1,0 +1,49 @@
+.single-article{
+    margin-top: 50px;
+    
+    
+}
+
+.wrapper-single-article{
+    
+    p{
+        line-height: 1.7em;
+        
+        a{
+            transition: all ease .25s;
+            text-decoration: none;
+            border-bottom: 2px solid $base-background;
+            
+            &:hover{
+                color: $or-cadre;
+                border-bottom: 2px solid transparent;
+            }
+        }
+    }
+    
+    
+    //Couleurs en fonction de la catégorie
+    
+    $cats: ("or-cadre": $or-cadre, "or-sujet": $or-sujet, "or-piste": $or-piste, "or-doeuvre": $or-doeuvre, "or-bord": $or-bord);
+    @each $cat,
+    $couleur in $cats {
+        &.#{$cat} {
+            
+            a{
+                border-bottom-color: $couleur;
+            }
+            
+            h2,h3, h4, h5, h6,
+            a:hover,
+            blockquote{
+                color: $couleur;
+                
+                &::before{
+                    color: inherit;
+                }
+            }
+
+        }
+    }
+    
+}
