@@ -5,7 +5,7 @@
 .wrapper-single-article{
     
     .wp-caption{
-        width: 100%;
+        width: 100% !important;
         height: auto;
         margin: 2em 0;
         
@@ -84,8 +84,18 @@
 }
 
 .wrapper-article{
-    p, h2, h3, h4, h5, blockquote, ul, ol{
+    p, h2, h3, h4, h5, blockquote, ul, ol, .wp-caption-text{
         margin-left: $large-value;
         margin-right: $large-value;
+    }
+    
+    blockquote p{
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .size-medium{
+        padding-left: $large-value;
+        padding-right: $large-value;
     }
 }
