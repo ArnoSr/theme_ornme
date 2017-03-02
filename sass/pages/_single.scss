@@ -1,10 +1,24 @@
 .single-article{
     margin-top: 50px;
-    
-    
 }
 
 .wrapper-single-article{
+    
+    .wp-caption{
+        width: 100%;
+        height: auto;
+        margin: 2em 0;
+        
+        img{
+            width: 100%;
+        }
+        
+        .wp-caption-text{
+            font-size: 1.4rem;
+            color: $gris1;
+            text-align: center;
+        }
+    }
     
     p{
         line-height: 1.7em;
@@ -19,6 +33,28 @@
                 border-bottom: 2px solid transparent;
             }
         }
+    }
+    
+    h2{
+        font-size: $h3-size;
+    }
+    
+    h3{
+        font-size: $h4-size;
+    }
+    
+    blockquote{
+        font-size: 3rem;
+        margin: 2.5em auto;
+        
+        p{
+            line-height: 1.35em;
+            font-style: italic;
+        }
+    }
+    
+    .twitter-tweet{
+        margin: $medium-value auto !important;
     }
     
     
@@ -42,8 +78,14 @@
                     color: inherit;
                 }
             }
-
         }
     }
     
+}
+
+.wrapper-article{
+    p, h2, h3, h4, h5, blockquote, ul, ol{
+        margin-left: $large-value;
+        margin-right: $large-value;
+    }
 }

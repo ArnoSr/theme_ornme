@@ -28,15 +28,15 @@
     
     
     <div class="wrapper grid has-gutter-xl single-article">
-        <div class="wrapper-article">
+        <div class="wrapper-article two-thirds">
             <?php the_content(); ?>
         </div>
-        <div class="sidebar-article">
-            coucou
+        <div class="sidebar-article one-third">
+            pub
         </div>
     </div>
     
-    
+    <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); ?>
 
 
 
@@ -45,7 +45,7 @@
 
 			
 
-			<?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); // Separated by commas with a line break at the end ?>
+			
 
 
 
