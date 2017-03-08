@@ -102,6 +102,45 @@
     }
 }
 
+.article-author-top{
+    display: flex;
+    align-items: flex-start;
+    color: #fff;
+    margin-top: 1em;
+    
+    .author-text{
+        flex: 1;
+        margin-left: $medium-value;
+    }
+    
+    .author-name{
+        font-family: $font-stack-headings;
+        font-weight: 500;
+        line-height: 1em;
+        
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
+    
+    .author-title{
+        font-family: $font-stack-headings;
+        display: block;
+    }
+    
+    .meta{
+        color: #cdcdce;
+        font-size: 1.4rem;
+        font-weight: normal;
+        margin-top: .5em;
+        
+        span:not(:last-child)::after{
+            background-color: #cdcdce;
+        }
+    }
+}
+
 .author-footer{
     padding-top: $medium-plus-value;
     margin-top: $medium-value;
