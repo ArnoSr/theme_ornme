@@ -12,22 +12,16 @@
 // couleur selon catégorie
 
 .name-category{
-    &.or-cadre a{
-        color: $or-cadre;
-    }
-    &.or-sujet a{
-        color: $or-sujet;
-    }
-    &.or-piste a{
-        color: $or-piste;
-    }
-    &.or-doeuvre a{
-        color: $or-doeuvre;
-    }
-    &.or-bord a{
-        color: $or-bord;
+    @each $cat, $couleur in $cats {
+        &.#{$cat} {
+            a{
+                color: $couleur;
+            }
+        }
     }
 }
+
+
 
 .image-circle{
     display: inline-block;
@@ -85,5 +79,11 @@
 
     .featured-author a{
         color: inherit;
+    }
+    
+    svg{
+        height: 15px;
+        position: relative;
+        top: 2px;
     }
 }
