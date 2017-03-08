@@ -54,6 +54,7 @@
             <div class="author-text">
                 <span class="author-name"><?php the_author_posts_link(); ?></span>
                 <span class="author-title"><?php the_author_meta('titre_poste'); ?></span>
+                <p><?php the_author_meta('description'); ?></p>
             </div>
         </div>
     </div>
