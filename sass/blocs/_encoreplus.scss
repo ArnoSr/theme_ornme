@@ -1,0 +1,47 @@
+.more-article{
+    background-color: $gris2;
+    padding-top: $medium-plus-value;
+    padding-bottom: $medium-plus-value;
+    margin-top: $medium-plus-value;
+    
+    .meta{
+        margin-top: $small-plus-value;
+        color: $gris1;
+        
+        a{
+            font-weight: 500;
+        }
+        
+        span:not(:last-child)::after{
+            background-color: $gris1;
+        }
+        
+        svg{
+            fill: $gris1;
+            height: 15px;
+            position: relative;
+            top: 2px;
+        }
+
+    }
+}
+
+.more-title{
+    text-align: center;
+    font-family: $font-stack-headings;
+    font-weight: 900;
+    font-size: 8rem;
+    text-transform: uppercase;
+    line-height: 1em !important;
+    margin-bottom: -.35em;
+}
+
+@each $cat, $couleur in $cats {
+    .#{$cat} {
+        .more-title{
+            color: $couleur;
+        }
+        
+        
+    }
+}

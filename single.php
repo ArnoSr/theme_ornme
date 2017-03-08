@@ -17,15 +17,13 @@
                 <div class="author-text">
                     <span class="author-name"><?php the_author_posts_link(); ?></span>
                     <span class="author-title">Chef du monde</span>
-                    <div class="meta"><?php the_time('j F Y');?></div>
+                    <div class="meta"><span><?php the_time('j F Y');?></span> <span><?php or_temps_lecture(get_the_content()); ?> de lecture</span></div>
                     
                 </div>
             </div>
 
        </div>
     </div>
-    
-    
     
     <div class="wrapper grid has-gutter-xl single-article">
         <div class="wrapper-article two-thirds">
@@ -36,33 +34,73 @@
         </div>
     </div>
     
-    <?php the_tags( __( 'Tags: ', 'html5blank' ), ', ', '<br>'); ?>
-
-
-
-
-
-
-			
-
-			
-
-
+    <div class="wrapper">
+        <div class="list-tag three-quarters center">
+            <?php
+                $posttags = get_the_tags();
+                if ($posttags) {
+                    echo '<ul>';
+                    foreach($posttags as $tag) {
+                        echo '<li><a href="'.get_tag_link($tag->term_id).'">#'.$tag->name.'</a></li>'; 
+                    }
+                    echo '</ul>';
+                }
+            ?>
+        </div>
+        <div class="three-quarters center author-footer">
+            <div class="image-circle">
+                <?php echo get_avatar(get_the_author_meta('user_email')); ?>
+            </div>
+            <div class="author-text">
+                <span class="author-name"><?php the_author_posts_link(); ?></span>
+                <span class="author-title">Chef du monde</span>
+            </div>
+        </div>
+    </div>
 
 	<?php endwhile; ?>
-
-	<?php else: ?>
-
-		<!-- article -->
-		<article>
-
-			<h1><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h1>
-
-		</article>
-		<!-- /article -->
-
-	<?php endif; ?>
 	
-	</article>
+	
+    <?php
+
+    $argFeaturedPost = array(
+        'post_type'		=> 'post',
+        'posts_per_page' => 2,
+        'cat' => $cat[0]->slug,
+        'post__not_in' => array($post->ID)
+    ); 
+
+    $featuredPost = new WP_Query( $argFeaturedPost );
+
+    ?>
+
+    <?php if( $featuredPost->have_posts() ): ?>
+    
+	<div class="more-article">
+	    <div class="wrapper">
+	        <p class="more-title">Encore + <?php echo $cat[0]->name;?></p>
+	        <div class="grid has-gutter-xl">
+	        <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
+	        <div class="format-third one-third">
+                <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+	            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+	            <div class="excerpt">
+	                <?php the_excerpt();?>
+	            </div>
+	           <div class="meta">
+                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span><?php the_time('j F Y');?></span></div>
+                <div><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="featured-category name-category <?php echo $cat[0]->slug; ?>"><?php the_category(' ');?></span></div>
+               </div>
+	        </div>
+	        <?php endwhile;?>
+	        </div>
+	    </div>
+	</div>
+    
+    <?php endif;?>
+   
+   </article>
+    
+    <?php endif; ?>
 
 <?php get_footer(); ?>

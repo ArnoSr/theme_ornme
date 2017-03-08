@@ -60,9 +60,7 @@
     
     //Couleurs en fonction de la catégorie
     
-    $cats: ("or-cadre": $or-cadre, "or-sujet": $or-sujet, "or-piste": $or-piste, "or-doeuvre": $or-doeuvre, "or-bord": $or-bord);
-    @each $cat,
-    $couleur in $cats {
+    @each $cat, $couleur in $cats {
         &.#{$cat} {
             
             a{
@@ -77,6 +75,10 @@
                 &::before{
                     color: inherit;
                 }
+            }
+            
+            .author-footer{
+                border-top-color: $couleur;
             }
         }
     }
@@ -98,4 +100,10 @@
         padding-left: $large-value;
         padding-right: $large-value;
     }
+}
+
+.author-footer{
+    padding-top: $medium-plus-value;
+    margin-top: $medium-value;
+    border-top: 3px solid red;
 }

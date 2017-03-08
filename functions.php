@@ -413,4 +413,15 @@ function html5_shortcode_demo_2($atts, $content = null) // Demo Heading H2 short
     return '<h2>' . $content . '</h2>';
 }
 
+// Temps de lecture
+
+function or_temps_lecture($contenu){    
+    $nb_mots = str_word_count($contenu);
+    $vitesse_lecture = 200; //mots par minute
+    $temps_lecture = $nb_mots / $vitesse_lecture;
+    $temps_lecture_arrondi = round($temps_lecture);
+    
+    print '<span>'.$temps_lecture_arrondi.' min</span>';
+}
+
 ?>

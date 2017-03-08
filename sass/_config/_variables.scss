@@ -24,6 +24,7 @@ $color5    : #6FA939 !default;
 
 $color-fond : #1d2021;
 $gris1 : #8b8b8b;
+$gris2 : #f1f2f2;
 
 // Themes
 
@@ -34,6 +35,7 @@ $or-doeuvre : #8dcc51;
 $or-bord : #0e55e5;
 $vlog : #f83938;
 
+$cats: ("or-cadre": $or-cadre, "or-sujet": $or-sujet, "or-piste": $or-piste, "or-doeuvre": $or-doeuvre, "or-bord": $or-bord);
 
 
 // colors used in project
