@@ -5,6 +5,13 @@
     $argFeaturedPost = array(
         'post_type'		=> 'post',
         'posts_per_page' => 1,
+        'meta_query' => array(
+            array(
+                'key' => 'mise_en_avant_principale',
+                'compare' => '==',
+                'value' => '1'
+            )
+        )
     ); 
 
     $featuredPost = new WP_Query( $argFeaturedPost );
