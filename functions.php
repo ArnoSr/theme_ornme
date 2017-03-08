@@ -424,4 +424,16 @@ function or_temps_lecture($contenu){
     print '<span>'.$temps_lecture_arrondi.' min</span>';
 }
 
+//Extra field sur page profil
+
+function modify_contact_methods($profile_fields) {
+
+	// Add new fields
+	$profile_fields['titre_poste'] = 'Nom du poste';
+
+	return $profile_fields;
+}
+
+add_filter('user_contactmethods', 'modify_contact_methods');
+
 ?>

@@ -16,7 +16,7 @@
                 </div>
                 <div class="author-text">
                     <span class="author-name"><?php the_author_posts_link(); ?></span>
-                    <span class="author-title">Chef du monde</span>
+                    <span class="author-title"><?php the_author_meta('titre_poste'); ?></span>
                     <div class="meta"><span><?php the_time('j F Y');?></span> <span><?php or_temps_lecture(get_the_content()); ?> de lecture</span></div>
                     
                 </div>
@@ -53,7 +53,7 @@
             </div>
             <div class="author-text">
                 <span class="author-name"><?php the_author_posts_link(); ?></span>
-                <span class="author-title">Chef du monde</span>
+                <span class="author-title"><?php the_author_meta('titre_poste'); ?></span>
             </div>
         </div>
     </div>
