@@ -10,3 +10,69 @@
         }
     }
 }
+
+.wrapper-articles{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.format{
+    margin-right: $medium-value;
+    margin-bottom: $medium-value;
+    
+    h2{
+        font-size: 2rem;
+        
+        a{
+            text-decoration: none;
+        }
+    }
+    
+    .meta{
+        margin-top: $small-value;
+        color: $gris1;
+            
+        span:not(:last-child)::after{
+            background-color: $gris1;;
+        }
+        
+        svg{
+            fill: $gris1;
+        }
+    }
+    
+    .meta-cat{
+        text-transform: uppercase;
+    }
+    
+    @each $cat, $couleur in $cats {
+    &.#{$cat} {
+        .color-line{
+            color: $couleur;
+            font-weight: 500;
+            
+            a{
+                color: inherit;
+            }
+            
+            span:not(:last-child)::after{
+                background-color: $couleur;
+            }
+        }
+        
+        
+    }
+}
+}
+
+.format-normal{
+    width: calc(25% - #{$medium-value});
+}
+
+.format-largeurdouble{
+    width: calc(50% - #{$medium-value});
+}
+
+.format-hauteurdouble{
+    
+}

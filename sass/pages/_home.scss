@@ -62,12 +62,15 @@
     background: linear-gradient(to bottom, #e1e2e2 0%, #fff 75%);
 
     .wrapper{
-        background-color: #fff;
-        margin-top: -10vh;
-        position: relative;
-        z-index: 2;        
+        background-color: #fff;      
         max-width: calc(#{$wrapper-size} + #{$medium-value}*2);
         padding: calc(#{$medium-value} + #{$small-value});
+    }
+    
+    .big-featured{
+        position: relative;
+        z-index: 2;
+        margin-top: -10vh;
     }
 }
 
@@ -121,5 +124,14 @@
             text-transform: uppercase;
         }
     
+    }
+}
+
+.home-latests-articles{
+    
+    padding-right: $small-value !important;
+    
+    .excerpt{
+        font-size: 1.4rem;
     }
 }

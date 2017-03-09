@@ -9,6 +9,14 @@
     padding: $medium-value $small-value;
 }
 
+.title-discret{
+    font-family: $font-stack-headings;
+    display: inline-block;
+    font-size: 2rem;
+    color: $gris1;
+    margin-bottom: 1em;
+}
+
 // couleur selon catégorie
 
 .name-category{
@@ -83,6 +91,8 @@
     
     svg{
         height: 15px;
+        width: 15px;
+        margin-right: .3em;
         position: relative;
         top: 2px;
     }

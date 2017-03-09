@@ -4,7 +4,7 @@
 
     $featured_posts = array();
 
-    $argFeaturedPost = array(
+    $argFeaturedPostTop = array(
         'post_type'		=> 'post',
         'posts_per_page' => 1,
         'meta_query' => array(
@@ -16,12 +16,12 @@
         )
     ); 
 
-    $featuredPost = new WP_Query( $argFeaturedPost );
+    $featuredPostTop = new WP_Query( $argFeaturedPostTop );
 
     ?>
 
-    <?php if( $featuredPost->have_posts() ): ?>
-    <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
+    <?php if( $featuredPostTop->have_posts() ): ?>
+    <?php while( $featuredPostTop->have_posts() ) : $featuredPostTop->the_post(); ?>
     
     <?php array_push($featured_posts, get_the_ID()); ?>
     
@@ -48,7 +48,11 @@
     
     <?php wp_reset_query();?>
     
+    <div class="wrapper-article-home">
+    
     <?php
+
+    // Featured posts
 
     $argFeaturedPost = array(
         'post_type'		=> 'post',
@@ -68,13 +72,13 @@
     ?>
 
     <?php if( $featuredPost->have_posts() ): ?>
-    <div class="wrapper-article-home">
-        <div class="wrapper wrapper-plus grid has-gutter-xl">
+    
+        <div class="wrapper wrapper-plus grid has-gutter-xl big-featured">
         <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
             
             <?php array_push($featured_posts, get_the_ID()); ?>
 
-            <div class="format-third one-third featured-home <?php echo(get_the_category()[0]->slug);?>">
+            <div class="format-third one-third  featured-home <?php echo(get_the_category()[0]->slug);?>">
 
                 <div class="bg-category"><?php echo(get_the_category()[0]->name);?></div>
                 <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
@@ -94,12 +98,56 @@
                 <div class="bg-category">Annonce</div>
             </div>
         </div>
-    </div>
-    <?php endif;?>
     
+    <?php endif;?>    
+    <?php wp_reset_query();?>
+
+   
+    <?php
+        
+    // Derniers articles
+
+    $argLastPosts = array(
+        'post_type'		=> 'post',
+        'posts_per_page' => 10,
+        'post__not_in' => $featured_posts,
+    ); 
+
+    $LastPosts = new WP_Query( $argLastPosts );
+
+    ?>
+
+    <?php if( $LastPosts->have_posts() ): ?>
+    
+    <div class="wrapper wrapper-plus home-latests-articles">
+        
+        <span class="title-discret">Articles les plus récents</span>
+
+        <div class="wrapper-articles">
+
+        <?php while( $LastPosts->have_posts() ) : $LastPosts->the_post(); ?>
+
+            <div class="<?php echo(get_the_category()[0]->slug);?> format format-<?php the_field('format_souhaite');?>">
+
+                <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                <div class="excerpt">
+                    <?php the_excerpt();?>
+                </div>
+                <div class="meta">
+                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
+                 <div class="color-line"><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="meta-cat"><?php the_category(' ');?></span></div>
+                </div>
+            </div>
+
+        <?php endwhile; ?>
+
+        </div>
+    
+    </div>
+    <?php endif;?>    
     <?php wp_reset_query();?>
     
-    <?php var_dump($featured_posts); ?>    
+    </div> 
     
-
 <?php get_footer(); ?>
