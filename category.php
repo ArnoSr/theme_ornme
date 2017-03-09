@@ -32,10 +32,12 @@
         <?php endwhile; ?>
 
         </div>
+        
+        <?php get_template_part('pagination'); ?>
     
     </div>
     <?php endif;?>    
-            <?php get_template_part('pagination'); ?>
+            
         </div>
         
     </div>

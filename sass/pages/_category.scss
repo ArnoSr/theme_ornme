@@ -1,9 +1,17 @@
 .cat-background{
     padding-top: 75px;
+    padding-bottom: 75px;
     
     @each $cat, $couleur in $cats {
         &.#{$cat} {
             background: linear-gradient(adjust-hue($couleur, 5), adjust-hue($couleur, -5));
+            
+            .pagination{
+                .current{
+                    color: $couleur;
+                    background-color: #fff;
+                }
+            }
         }
     }
     
@@ -37,7 +45,40 @@
                 fill: #fff;
             }
         }
+    }
+    
+    .pagination{
+        font-family: $font-stack-headings;
+        text-align: center;
+        margin-top: $large-value;
+        color: #fff;
         
+        p{
+            display: inline-block;
+            margin-right: $medium-value;
+            text-transform: uppercase;
+            color: rgba(#fff, .9);
+            
+            span{
+                font-weight: bold;
+                color: #fff;
+            }
+        }
+        
+        .page-numbers{
+            display: inline-block;
+            height: 50px;
+            width: 50px;
+            line-height: 55px;
+            border-radius: 100%;
+            font-size: 2rem;
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        .current{
+            font-weight: bold;
+        }
     }
 }
 
