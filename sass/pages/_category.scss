@@ -1,0 +1,75 @@
+.cat-background{
+    padding-top: 75px;
+    
+    @each $cat, $couleur in $cats {
+        &.#{$cat} {
+            background: linear-gradient(adjust-hue($couleur, 5), adjust-hue($couleur, -5));
+        }
+    }
+    
+    .wrapper-articles{
+        position: relative;
+        z-index: 2;
+        margin-top: 20px;
+    }
+    
+    .format{
+        color: #fff;
+        
+        h2{
+            a{
+                color: #fff;
+            }
+        }
+        
+        .excerpt{
+            opacity: .8;
+        }
+        
+        .meta{
+            color: #fff;
+
+            span:not(:last-child)::after{
+                background-color: #fff;
+            }
+
+            svg{
+                fill: #fff;
+            }
+        }
+        
+    }
+}
+
+.hgroup-cat{
+    text-align: center;
+    position: relative;
+    
+    h1{
+        text-transform: uppercase;
+        font-weight: 900;
+        font-size: 15rem;
+        position: absolute;
+        z-index: 0;
+        left: 50%;
+        top: 70%;
+        transform: translate(-50%, -50%);
+        width: 100%;
+        color: #fff;
+        text-shadow: 20px 20px 20px rgba(#000, .5);
+        opacity: .2;
+    }
+    
+    p{
+        color: #fff;
+        font-style: italic;
+        font-size: 3rem;
+        position: relative;
+        z-index: 2;
+    }
+}
+
+.thumb-shadow{
+    display: inline-block;
+    box-shadow: 11px 11px 20px rgba(#000, .25);
+}
