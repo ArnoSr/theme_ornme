@@ -97,3 +97,15 @@
         top: 2px;
     }
 }
+
+.bt{
+    display: inline-block;
+    font-family: $font-stack-headings;
+    border:2px solid rgba(#fff, .9);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 500;
+    color: rgba(#fff, .9);
+    padding: .8em 2em .55em;
+    border-radius: 100em;
+}
