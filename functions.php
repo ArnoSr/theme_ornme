@@ -344,23 +344,20 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
-    register_taxonomy_for_object_type('category', 'html5-blank'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
-    register_post_type('html5-blank', // Register Custom Post Type
+    register_taxonomy_for_object_type('category', 'vlog'); // Register Taxonomies for Category
+    register_taxonomy_for_object_type('post_tag', 'vlog');
+    register_post_type('vlog', // Register Custom Post Type
         array(
         'labels' => array(
-            'name' => __('HTML5 Blank Custom Post', 'html5blank'), // Rename these to suit
-            'singular_name' => __('HTML5 Blank Custom Post', 'html5blank'),
-            'add_new' => __('Add New', 'html5blank'),
-            'add_new_item' => __('Add New HTML5 Blank Custom Post', 'html5blank'),
-            'edit' => __('Edit', 'html5blank'),
-            'edit_item' => __('Edit HTML5 Blank Custom Post', 'html5blank'),
-            'new_item' => __('New HTML5 Blank Custom Post', 'html5blank'),
-            'view' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'view_item' => __('View HTML5 Blank Custom Post', 'html5blank'),
-            'search_items' => __('Search HTML5 Blank Custom Post', 'html5blank'),
-            'not_found' => __('No HTML5 Blank Custom Posts found', 'html5blank'),
-            'not_found_in_trash' => __('No HTML5 Blank Custom Posts found in Trash', 'html5blank')
+            'name' => 'Vlog',
+            'singular_name' => 'Vlog',
+            'add_new' => 'Ajouter',
+            'add_new_item' => 'Ajouter une vidéo',
+            'edit' => 'Modifier',
+            'edit_item' => 'Modifier une vidéo',
+            'new_item' => 'Nouvelle vidéo',
+            'view' => 'Voir la vidéo',
+            'all_items' => 'Toutes les vidéos'
         ),
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
@@ -375,7 +372,9 @@ function create_post_type_html5()
         'taxonomies' => array(
             'post_tag',
             'category'
-        ) // Add Category and Post Tags support
+        ),
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-video-alt3',
     ));
 }
 
@@ -417,5 +416,65 @@ function modify_contact_methods($profile_fields) {
 }
 
 add_filter('user_contactmethods', 'modify_contact_methods');
+
+// Durée de la vidéo quand on poste dans vlog
+
+add_action('wp_insert_post', 'or_duree_video');
+
+function or_duree_video($post_ID){
+    
+   
+    
+    // get iframe HTML
+    $iframe = get_field('video');
+
+    preg_match('/src="(.+?)"/', $iframe, $matches);        
+    $id_video = str_replace(array('?feature=oembed', "https://www.youtube.com/embed/", "http://www.youtube.com/embed/"),"", $matches[1]);
+
+    $json_video = file_get_contents('https://www.googleapis.com/youtube/v3/videos?id='.$id_video.'&key=AIzaSyD-ND_D6yCz0skEPZjkFvzNcWklukqwpfw%20&part=snippet,contentDetails,statistics,status');
+        
+    $json = json_decode($json_video, true);
+    $duration = $json['items'][0]['contentDetails']['duration'];
+    
+    function covtime($youtube_time) {
+    preg_match_all('/(\d+)/',$youtube_time,$parts);
+
+    // Put in zeros if we have less than 3 numbers.
+    if (count($parts[0]) == 1) {
+        array_unshift($parts[0], "0", "0");
+    } elseif (count($parts[0]) == 2) {
+        array_unshift($parts[0], "0");
+    }
+
+    $sec_init = $parts[0][2];
+    $seconds = $sec_init%60;
+    $seconds_overflow = floor($sec_init/60);
+
+    $min_init = $parts[0][1] + $seconds_overflow;
+    $minutes = ($min_init)%60;
+    $minutes_overflow = floor(($min_init)/60);
+
+    $hours = $parts[0][0] + $minutes_overflow;
+        
+    if($hours < 10) $hours = '0'.$hours;
+    if($minutes < 10) $minutes = '0'.$minutes;
+    if($seconds < 10) $seconds = '0'.$seconds;@
+
+    if($hours != 0)
+        return $hours.':'.$minutes.':'.$seconds;
+    else
+        return $minutes.':'.$seconds;
+}
+    
+    
+    $duration = covtime($duration);
+
+    
+    update_field('duree_video', $duration, $post_ID);
+    
+   
+}
+
+
 
 ?>
