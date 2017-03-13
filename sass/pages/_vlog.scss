@@ -11,4 +11,52 @@
             color: $vlog;
         }
     }
+    
+    .wrapper-vlog{
+        position: relative;
+        z-index: 2;
+    }
+    
+    .single-vlog{
+        width: 33%;
+    }
+    
+    .thumb-vlog{
+        display: inline-block;
+    }
+    
+    .meta-vlog{
+        display: flex;
+        margin-top: $small-value;
+        
+        h2{
+            order:3;
+            font-size: 2rem;
+            font-weight: normal;
+            
+            a{
+                color: $gris4;
+                text-decoration: none;
+            }
+        }
+    }
+    
+    .temps-vlog{
+        color: $gris1;
+        font-family: $font-stack-headings;
+        font-size: 1.4rem;
+        margin-right: $small-value;
+        text-align: center;
+        position: relative;
+        top: -30px;
+        
+        svg{
+            circle{
+                fill: $vlog;
+            }
+            path{
+                fill: #fff;
+            }
+        }
+    }  
 }

@@ -419,11 +419,11 @@ add_filter('user_contactmethods', 'modify_contact_methods');
 
 // Durée de la vidéo quand on poste dans vlog
 
-add_action('wp_insert_post', 'or_duree_video');
+add_action('save_post', 'or_duree_video');
 
 function or_duree_video($post_ID){
     
-   
+   if ( 'vlog' == get_post_type() ):
     
     // get iframe HTML
     $iframe = get_field('video');
@@ -458,7 +458,7 @@ function or_duree_video($post_ID){
         
     if($hours < 10) $hours = '0'.$hours;
     if($minutes < 10) $minutes = '0'.$minutes;
-    if($seconds < 10) $seconds = '0'.$seconds;@
+    if($seconds < 10) $seconds = '0'.$seconds;
 
     if($hours != 0)
         return $hours.':'.$minutes.':'.$seconds;
@@ -469,9 +469,9 @@ function or_duree_video($post_ID){
     
     $duration = covtime($duration);
 
-    
     update_field('duree_video', $duration, $post_ID);
     
+    endif;
    
 }
 

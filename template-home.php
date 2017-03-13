@@ -169,7 +169,7 @@
 
     <?php if($vlog->have_posts() ): ?>
     
-    <div class="wrapper wrapper-plus home-latests-articles">
+    <div class="wrapper">
         
         <div class="hgroup-cat">
             <h1>Vlog</h1>
@@ -177,20 +177,18 @@
         </div>
         
 
-        <div class="wrapper-articles">
+        <div class="grid has-gutter-xl wrapper-vlog">
 
         <?php while($vlog->have_posts() ) : $vlog->the_post(); ?>
 
-            <div class="format format-<?php the_field('format_souhaite');?>">
-
-                <a class="thumb-shadow" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                <div class="excerpt">
-                    <?php the_excerpt();?>
-                </div>
-                <div class="meta">
-                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
-                 <div><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="meta-cat"><?php the_category(' ');?></span></div>
+            <div class="single-vlog">
+                <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                <div class="meta-vlog">
+                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                    <div class="temps-vlog">
+                        <a href="<?php the_permalink();?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-btn_play"></use></svg></a>
+                        <span><?php the_field('duree_video');?></span>
+                    </div>
                 </div>
             </div>
 
