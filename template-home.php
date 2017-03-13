@@ -175,7 +175,7 @@
             <h1>Vlog</h1>
             <p>Nos photos & vidéos</p>
         </div>
-        
+
 
         <div class="grid has-gutter-xl wrapper-vlog">
 
@@ -197,7 +197,7 @@
         </div>
         
         <div class="wrap-bt">
-            <a href="<?php echo get_category_link($cat->term_id); ?>" class="bt">Voir toutes les vidéos</a>
+            <a href="vlog" class="bt">Voir toutes les vidéos</a>
         </div>
     
     </div>

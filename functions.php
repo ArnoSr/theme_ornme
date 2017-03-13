@@ -344,8 +344,6 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
-    register_taxonomy_for_object_type('category', 'vlog'); // Register Taxonomies for Category
-    register_taxonomy_for_object_type('post_tag', 'vlog');
     register_post_type('vlog', // Register Custom Post Type
         array(
         'labels' => array(
@@ -369,10 +367,6 @@ function create_post_type_html5()
             'thumbnail'
         ), // Go to Dashboard Custom HTML5 Blank post for supports
         'can_export' => true, // Allows export in Tools > Export
-        'taxonomies' => array(
-            'post_tag',
-            'category'
-        ),
         'menu_position' => 5,
         'menu_icon' => 'dashicons-video-alt3',
     ));

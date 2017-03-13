@@ -15,6 +15,7 @@
     .wrapper-vlog{
         position: relative;
         z-index: 2;
+        margin-top: 20px;
     }
     
     .single-vlog{
@@ -51,6 +52,9 @@
         top: -30px;
         
         svg{
+            width: 40px;
+            height: 40px;
+            
             circle{
                 fill: $vlog;
             }
