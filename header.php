@@ -54,7 +54,7 @@
                   <div class="menu-cat-wrapper">
                     <ul>
                     <?php foreach(get_categories() as $cat): ?>
-                        <li class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
+                        <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
                     <?php endforeach; ?>
                         <li><a href="">Vlog</a></li>
                         <li><a href="">Contact</a></li>
@@ -80,7 +80,7 @@
 
                 <?php if($singleCat->have_posts() ): ?>
     
-    <div class="cat-<?php echo $cat->slug; ?>">
+    <div class="cat-menu cat-<?php echo $cat->slug; ?>">
         
         <p class="description-title"><?php echo $cat->description; ?></p>
 
