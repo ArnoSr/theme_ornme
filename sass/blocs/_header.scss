@@ -48,18 +48,49 @@
     }
 }
 
-.bt-menu{
-    margin: auto $large-value auto 0;
-    
-    label{
-        padding: $small-value 0;
-    }
-    
     // Icone avant
     
     [id="checkboxMenu"]{
         position: absolute;
         left: -10000px;
+    }
+
+    // Icone avant quand ouvert
+    
+    [id="checkboxMenu"]:checked + div label .icon{
+        height: 0;
+        transform: translateY(-2px);
+        background-color: $gris1;
+        &::after{
+            transform: rotate(-45deg);
+            top: 0;
+            background-color: $gris1;
+            width: 30px;
+        }
+        &::before{
+            transform: rotate(45deg);
+            top: 0;
+            background-color: $gris1;
+        }
+    }
+    
+    [id="checkboxMenu"]:checked + div label .text-menu{
+        transition: opacity ease .3s 0;
+        display: inline-block;
+        opacity: 1;
+        width: auto;
+        left: auto;
+    } 
+
+[id="checkboxMenu"]:checked ~ .wrapper-menu{
+    display: block;
+}
+
+.bt-menu{
+    margin: auto $large-value auto 0;
+    
+    label{
+        padding: $small-value 0;
     }
     
     .text-menu{
@@ -117,33 +148,6 @@
             top: 12px;
         }
     }
-    
-    // Icone avant quand ouvert
-    
-    [id="checkboxMenu"]:checked ~ label .icon{
-        height: 0;
-        transform: translateY(-2px);
-        background-color: $gris1;
-        &::after{
-            transform: rotate(-45deg);
-            top: 0;
-            background-color: $gris1;
-            width: 30px;
-        }
-        &::before{
-            transform: rotate(45deg);
-            top: 0;
-            background-color: $gris1;
-        }
-    }
-    
-    [id="checkboxMenu"]:checked ~ label .text-menu{
-        transition: opacity ease .3s 0;
-        display: inline-block;
-        opacity: 1;
-        width: auto;
-        left: auto;
-    } 
 }
 
 .menu-right{
@@ -185,6 +189,7 @@
 
 .wrapper-menu{
     background-color: $gris5;
+    display: none;
     
     > div{
         display: flex;
