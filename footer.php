@@ -1,4 +1,7 @@
-        <!-- footer -->
+
+        <?php include('lien-mobile.php'); ?>
+
+                        <!-- footer -->
         <footer class="footer" role="contentinfo">
 
             <!-- copyright -->

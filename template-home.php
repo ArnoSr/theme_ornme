@@ -221,8 +221,6 @@
     </div>
     
     <?php endforeach; ?>
-    
-    <?php include('lien-mobile.php'); ?>
 
     
 <?php get_footer(); ?>
