@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="20" height="40" viewBox="0 0 20 40">
+<defs>
+    <style>
+      .icofacebook {
+        fill: #3b5999;
+        fill-rule: evenodd;
+      }
+    </style>
+  </defs>
+  <path id="icon_facebook" class="icofacebook" d="M20.014,7.6v-7.6H13.165C7.633,0.008,4.8,2.735,4.8,7.67v6.039H-0.007v8.246H4.8V40.006h8.364V21.955h6.191l0.659-8.246H13.165V11.046c0-1.753.329-3.441,3.161-3.441h3.688Z"/>
+</svg>
