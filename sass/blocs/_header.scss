@@ -9,7 +9,12 @@
 }
 
 .logo{
-    width: 215px;
+    text-align: center;
+    
+    a{
+        display: inline-block;
+        width: 215px;
+    }
     
     svg{
         fill: #fff;
