@@ -1,5 +1,6 @@
 
         <?php include('lien-mobile.php'); ?>
+        <?php include('newsletter.php'); ?>
 
                         <!-- footer -->
         <footer class="footer" role="contentinfo">

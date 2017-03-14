@@ -1,0 +1,48 @@
+.cross-newsletter{
+    padding-top: 75px;
+    padding-bottom: 75px;
+    text-align: center;
+    
+    .wrapper{
+        align-items: center;
+    }
+    
+    h2{
+        line-height: 1.2em;
+        margin-bottom: .35em;
+        
+        span{
+            color: #515253;
+        }
+    }
+    
+    p{
+        font-family: $font-stack-headings;
+    }
+    
+    form{
+        margin-top: 65px;
+        font-family: $font-stack-headings;
+    }
+    
+    [type='email']{
+        border: 0;
+        border-bottom: 1px solid $gris4;
+        width: 350px;
+        padding: .2em 1em;
+    }
+    
+    [type="submit"]{
+        background-color: #6091ff;
+        font-size: 1.8rem;
+        border: 0;
+        text-transform: uppercase;
+        color: #fff;
+        font-weight: 400;
+        padding: .7em 2em .5em;
+        margin-left: 1em;
+        border-radius: 100em;
+        cursor: pointer;
+    }
+    
+}
