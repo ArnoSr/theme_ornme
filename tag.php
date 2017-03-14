@@ -1,19 +1,46 @@
 <?php get_header(); ?>
+    
+    <div class="tag-background">  
 
-	<main role="main">
-		<!-- section -->
-		<section>
+    <?php if(have_posts() ): ?>
+    
+    <div class="wrapper wrapper-plus home-latests-articles">
+        
+        <div class="hgroup-cat">
+            <h1>Tags</h1>
+            <p>#<?php single_cat_title(); ?></p>
+        </div>
+        
 
-			<h1><?php _e( 'Tag Archive: ', 'html5blank' ); echo single_tag_title('', false); ?></h1>
+        <div class="wrapper-articles">
 
-			<?php get_template_part('loop'); ?>
+        <?php while(have_posts() ) : the_post(); ?>
 
-			<?php get_template_part('pagination'); ?>
+            <div class="<?php echo(get_the_category()[0]->slug);?> format format-<?php the_field('format_souhaite');?>">
 
-		</section>
-		<!-- /section -->
-	</main>
+                <a class="thumb-shadow" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                <div class="excerpt">
+                    <?php the_excerpt();?>
+                </div>
+                <div class="meta">
+                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
+                 <div class="color-line"><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="meta-cat"><?php the_category(' ');?></span></div>
+                </div>
+            </div>
 
-<?php get_sidebar(); ?>
+        <?php endwhile; ?>
+
+        </div>
+        
+        <?php get_template_part('pagination'); ?>
+    
+    </div>
+    <?php endif;?> 
+    
+</div>   
+
+    
+    <?php include('vlog.php');?>
 
 <?php get_footer(); ?>

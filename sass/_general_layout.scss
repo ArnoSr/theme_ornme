@@ -109,3 +109,45 @@
     padding: .8em 2em .55em;
     border-radius: 100em;
 }
+
+// PAgination
+
+.pagination{
+    font-family: $font-stack-headings;
+    text-align: center;
+    margin-top: $large-value;
+    color: $gris5;
+
+    p{
+        display: inline-block;
+        margin-right: $medium-value;
+        text-transform: uppercase;
+        color: rgba($gris5, .9);
+
+        span{
+            font-weight: bold;
+            color: $gris5;
+        }
+    }
+    
+    .current{
+
+    }
+
+    .page-numbers{
+        display: inline-block;
+        height: 50px;
+        width: 50px;
+        line-height: 55px;
+        border-radius: 100%;
+        font-size: 2rem;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    .current{
+        font-weight: bold;
+                color: #fff;
+        background-color: $gris5;
+    }
+}
