@@ -33,6 +33,7 @@
     }
     
     [type="submit"]{
+        transition: background-color ease .25s;
         background-color: #6091ff;
         font-size: 1.8rem;
         border: 0;
@@ -43,6 +44,10 @@
         margin-left: 1em;
         border-radius: 100em;
         cursor: pointer;
+        
+        &:hover{
+            background-color: darken(#6091ff, 10%);
+        }
     }
     
 }
