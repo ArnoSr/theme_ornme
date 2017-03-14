@@ -29,7 +29,7 @@
                             
                             <label for="checkboxMenu" aria-label="Menu"><span class="icon"></span><span class="text-menu">Fermer</span></label>
                         </div>
-                        <a href="#" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
+                        <a href="<?php echo get_site_url();?>/vlog" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
                         <a href="#"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
                     </div>
 
@@ -56,7 +56,7 @@
                     <?php foreach(get_categories() as $cat): ?>
                         <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
                     <?php endforeach; ?>
-                        <li><a href="">Vlog</a></li>
+                        <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
                         <li><a href="">Contact</a></li>
                     </ul>
                   </div>

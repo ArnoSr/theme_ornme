@@ -43,7 +43,16 @@
         color: $vlog;
         
         svg{
+            transition: left ease .3s;
             fill: $vlog;
+            position: absolute;
+            left: 0;
+        }
+        
+        &:hover{
+            svg{
+                left: 5px;
+            }
         }
     }
 }
