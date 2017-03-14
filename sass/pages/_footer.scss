@@ -42,5 +42,18 @@
 }
 
 .footer{
+    font-family: $font-stack-headings;
+    font-size: 1.4rem;
     background-color: $gris5;
+    text-align: center;
+    color: #8b8b8b;
+    
+    a{
+        color: #8b8b8b;
+    }
+    
+    .wrapper{
+        padding-top: .7em;
+        padding-bottom: .7em;
+    }
 }
