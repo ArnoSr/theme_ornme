@@ -39,5 +39,7 @@
     <?php endif;?>    
             
     </div>
+    
+    <?php include('vlog.php');?>
 
 <?php get_footer(); ?>

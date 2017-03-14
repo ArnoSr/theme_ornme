@@ -103,5 +103,7 @@
    </article>
     
     <?php endif; ?>
+    
+    <?php include('vlog.php');?>
 
 <?php get_footer(); ?>
