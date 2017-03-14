@@ -303,3 +303,58 @@
     }
 
 }
+
+// Liste catégories
+
+.wrapper-tags{
+    transition: opacity ease .3s;
+    font-family: $font-stack-headings;
+    text-transform: none;
+    font-size: 1.8rem;
+    background-color: $gris5;
+    font-weight: normal;
+    position: absolute;
+    width: 100%;
+    z-index: -10;
+    box-shadow: 0 40px 40px rgba(#000, .2);
+    opacity: 0;
+    
+    .wrapper{
+        padding-bottom: calc(#{$medium-value} - #{$small-value});
+    }
+    
+    ul{
+        padding-left: 0;
+        list-style-type: none;
+    }
+    
+    li{
+        display: inline-block;
+        margin-right: $small-value;
+        margin-bottom: $small-value;
+    }
+    
+    a{
+        transition: all ease .25s;
+        display: block;
+        color: $gris4;
+        text-decoration: none;
+        border: 1px solid #515253;
+        padding: .5em 1.2em .4em;
+        border-radius: 100em;
+        
+        &::before{
+            content: '#';
+        }
+        
+        &:hover{
+            color: #fff;
+            border-color: #fff;
+        }
+    }
+
+    &.tagOpen{
+        opacity: 1;
+        z-index: 100;
+    }
+}

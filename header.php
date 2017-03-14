@@ -30,7 +30,7 @@
                             <label for="checkboxMenu" aria-label="Menu"><span class="icon"></span><span class="text-menu">Fermer</span></label>
                         </div>
                         <a href="<?php echo get_site_url();?>/vlog" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
-                        <a href="#"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
+                        <a href="#" id="link_tags"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
                     </div>
 
                     <div class="logo">
@@ -49,67 +49,72 @@
 
                 </div>
                 
-                <div class="wrapper-menu">
-                 <div class="wrapper">
-                  <div class="menu-cat-wrapper">
-                    <ul>
-                    <?php foreach(get_categories() as $cat): ?>
-                        <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
-                    <?php endforeach; ?>
-                        <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
-                        <li><a href="">Contact</a></li>
-                    </ul>
-                  </div>
-                  <div class="menu-cat-content">
-                     
-                     <div class="menu-articles">
-                         
-                     
-                      
-                <?php foreach(get_categories() as $cat):
-        
-                    $argCat = array(
-                        'post_type'		=> 'post',
-                        'posts_per_page' => 4,
-                        'category_name' => $cat->slug
-                    ); 
-
-                    $singleCat = new WP_Query( $argCat );
-
-                ?>
-
-                <?php if($singleCat->have_posts() ): ?>
-    
-    <div class="cat-menu cat-<?php echo $cat->slug; ?>">
-        
-        <p class="description-title"><?php echo $cat->description; ?></p>
-
-        <div class="wrapper-articles-menu">
-
-        <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
-
-            <div class="">
-                <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-            </div>
-
-        <?php endwhile; ?>
-
-        </div>
-    
-    </div>
-    <?php endif;?>    
-    <?php endforeach; ?>
-    
-    </div>
-    
-                <div class="menu-pub">
-                pub
-            </div>
-  
-                </div>
-</div>
-            </div>
+                <?php // Le Menu ?>
                 
+                <div class="wrapper-menu">
+                    <div class="wrapper">
+                        <div class="menu-cat-wrapper">
+                            <ul>
+                            <?php foreach(get_categories() as $cat): ?>
+                            <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
+                            <?php endforeach; ?>
+                            <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
+                            <li><a href="">Contact</a></li>
+                            </ul>
+                        </div>
+                        <div class="menu-cat-content">
+
+                            <div class="menu-articles">
+                            
+                            <?php foreach(get_categories() as $cat):
+
+                            $argCat = array(
+                                'post_type'		=> 'post',
+                                'posts_per_page' => 4,
+                                'category_name' => $cat->slug
+                            ); 
+
+                            $singleCat = new WP_Query( $argCat ); ?>
+
+                            <?php if($singleCat->have_posts() ): ?>
+
+                                <div class="cat-menu cat-<?php echo $cat->slug; ?>">
+
+                                    <p class="description-title"><?php echo $cat->description; ?></p>
+
+                                    <div class="wrapper-articles-menu">
+
+                                    <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+
+                                        <div class="">
+                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                        </div>
+
+                                    <?php endwhile; ?>
+
+                                    </div>
+
+                                </div>
+                            <?php endif;?>    
+                            <?php endforeach; ?>
+                            </div>
+
+                            <div class="menu-pub">
+                            pub
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <?php // Le menu des tags ?>
+                
+                <div class="wrapper-tags">
+                    <div class="wrapper">
+                        <?php if(get_the_tag_list()) {
+                            echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
+                        } ?>
+                    </div>
+                </div>  
         </header>
         <!-- /header -->
