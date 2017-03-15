@@ -47,11 +47,8 @@
         states : {
             "default-state": {
                 gradients: [
-                    ['#0f59f0', '#0a3ea9'],
-                    ['#016cb2', '#014c7e'],
-                    ['#01757f', '#01535b'],
+                    ['#f1f2f2', '#f1f2f2'],
                 ],
-                transitionSpeed: 3000
             },
             "or-piste": {
                 gradients: [
