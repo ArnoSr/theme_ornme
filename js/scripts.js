@@ -3,6 +3,9 @@
 	$(function () {
 		
 		'use strict';
+        
+        $('.menu-cat-wrapper li:first-child').addClass('actif');
+        $('.cat-menu:first-child').show();
 		
         //Sous-menu
         $('.menu-cat-wrapper li').mouseover(function(){
