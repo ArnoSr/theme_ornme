@@ -1,5 +1,8 @@
+.main{
+}
+
 .header{
-    background-color: $color-fond;
+    transition: all ease .25s;
     font-family: $font-stack-headings;
     font-weight: 100;
     font-size: 1.4rem;
@@ -8,10 +11,50 @@
     overflow: hidden;
 }
 
+.menu-top-wrapper{
+    transition: all ease .25s;
+    position: fixed;
+    z-index: 100;
+    background-color: $color-fond;
+    width: 100%;
+    overflow: hidden;
+    height: 137px;
+    font-size: 1.4rem;
+    
+    *{
+        transition: all ease .25s;
+    }
+    
+    &.smaller{
+        height: 76px;
+        
+        .wrapper{
+            padding: 10px 15px;
+        }
+        
+        svg #baseline{
+            opacity: 0;
+        }
+        
+        .logo a{
+            width: 150px;
+            position: relative;
+            top: 10px;
+        }
+        
+        .lire-revue img{
+            width: 60px;
+            height: auto;
+        }
+    }
+}
+
+
 .logo{
     text-align: center;
     
     a{
+        transition: height ease .25s;
         display: inline-block;
         width: 215px;
     }

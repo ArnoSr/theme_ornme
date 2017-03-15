@@ -22,7 +22,9 @@
                
                <input type="checkbox" id="checkboxMenu">
                 
-                <div class="wrapper grid-3">
+                <div class="menu-top-wrapper">
+                   
+                   <div class="wrapper grid-3">
                     
                     <div class="menu flex-container" role="navigation">
                         <div class="bt-menu">
@@ -45,6 +47,8 @@
                             Lire la revue
                         </a>
                         <button aria-label="Accéder à la recherche" class="bt-search" title="Accéder à la recherche"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loupe"></use></svg></use></button>
+                    </div>
+                    
                     </div>
 
                 </div>
@@ -118,3 +122,5 @@
                 </div>  
         </header>
         <!-- /header -->
+        
+       <div class="main">

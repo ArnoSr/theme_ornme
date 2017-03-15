@@ -52,7 +52,10 @@ function html5blank_nav()
 function html5blank_header_scripts()
 {
     if ($GLOBALS['pagenow'] != 'wp-login.php' && !is_admin()) {
-        wp_register_script('myscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0'); // Custom scripts
+        wp_register_script('waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('waypoints');
+        
+        wp_register_script('myscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('myscripts'); // Enqueue it!
     }
 }

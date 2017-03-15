@@ -2,6 +2,8 @@
         <?php include('lien-mobile.php'); ?>
         <?php include('newsletter.php'); ?>
         
+        </div><!--main-->
+        
         <div class="links-footer">
             <div class="wrapper">
                 <div class="logo">

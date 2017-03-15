@@ -17,7 +17,27 @@
         $('#link_tags').click(function(){
            $('.wrapper-tags').toggleClass('tagOpen');
         });
-		
+        
+        //Menu
+        //Padding sur le main selong hauteur du menu
+        $('.main').css('padding-top', $('.menu-top-wrapper').height());
+        
+        //Mini menu
+        
+        var waypoints = $('.main').waypoint(function(direction) {
+          $('.menu-top-wrapper').toggleClass('smaller');
+        
+        },{ offset: '-500px'
+        })
+    
+
+
+
+
+
+
+
+
 	});
 	
 })(jQuery, this);
