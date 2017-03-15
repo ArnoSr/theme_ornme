@@ -91,61 +91,51 @@
         var category = new Array('op-piste','or-cadre','or-doeuvre','or-bord','or-sujet');
     
         var waypoints = $('.cat-gradient.or-cadre').waypoint(function(direction) {
-            console.log('or-cadre');
           granimInstance.changeState('or-cadre');
         },{ offset: 'bottom-in-view'
         })
         
         var waypoints = $('.cat-gradient.or-bord').waypoint(function(direction) {
-            console.log('or-bord');
           granimInstance.changeState('or-bord');
         },{ offset: 'bottom-in-view'
         })
                 
         var waypoints = $('.cat-gradient.or-doeuvre').waypoint(function(direction) {
-            console.log('or-doeuvre');
           granimInstance.changeState('or-doeuvre');
         },{ offset: 'bottom-in-view'
         })
         
         var waypoints = $('.cat-gradient.or-piste').waypoint(function(direction) {
-            console.log('or-piste');
           granimInstance.changeState('or-piste');
         },{ offset: 'bottom-in-view'
         })
                 
         var waypoints = $('.cat-gradient.or-sujet').waypoint(function(direction) {
-            console.log('or-sujet');
           granimInstance.changeState('or-sujet');
         },{ offset: 'bottom-in-view'
         })
                 
         var waypoints = $('.cat-gradient.or-bord').waypoint(function(direction) {
-            console.log('or-cadre');
           granimInstance.changeState('or-bord');
         },{ offset: '50%'
         })
         
         var waypoints = $('.cat-gradient.or-cadre').waypoint(function(direction) {
-            console.log('or-cadre');
           granimInstance.changeState('or-cadre');
         },{ offset: '50%'
         })
         
         var waypoints = $('.cat-gradient.or-doeuvre').waypoint(function(direction) {
-            console.log('or-doeuvre');
           granimInstance.changeState('or-doeuvre');
         },{ offset: '50%'
         })
         
         var waypoints = $('.cat-gradient.or-piste').waypoint(function(direction) {
-            console.log('or-piste');
           granimInstance.changeState('or-piste');
         },{ offset: '50%'
         })
         
         var waypoints = $('.cat-gradient.or-sujet').waypoint(function(direction) {
-            console.log('or-sujet');
           granimInstance.changeState('or-sujet');
         },{ offset: '50%'
         })
