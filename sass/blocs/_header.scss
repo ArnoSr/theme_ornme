@@ -9,16 +9,15 @@
     text-transform: uppercase;
     color: $gris1;
     overflow: hidden;
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 }
 
 .menu-top-wrapper{
     transition: all ease .25s;
-    position: fixed;
-    z-index: 100;
     background-color: $color-fond;
-    width: 100%;
     overflow: hidden;
-    height: 137px;
     font-size: 1.4rem;
     
     *{
@@ -26,7 +25,6 @@
     }
     
     &.smaller{
-        height: 76px;
         
         .wrapper{
             padding: 10px 15px;
@@ -251,6 +249,9 @@
 
 .wrapper-menu{
     background-color: $gris5;
+    width: 100%;
+    //position: fixed;
+    //z-index: 5;
     display: none;
     
     > div{
@@ -361,7 +362,7 @@
     font-size: 1.8rem;
     background-color: $gris5;
     font-weight: normal;
-    position: absolute;
+    position: fixed;
     width: 100%;
     z-index: -10;
     box-shadow: 0 40px 40px rgba(#000, .2);
