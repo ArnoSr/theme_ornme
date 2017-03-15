@@ -29,14 +29,6 @@
           $('.menu-top-wrapper').toggleClass('smaller');
         },{ offset: '-500px'
         })
-    
-
-
-
-
-
-
-
 
 	});
 	
