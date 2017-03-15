@@ -68,8 +68,6 @@
             "or-bord": {
                 gradients: [
                     ['#0f59f0', '#0a3ea9'],
-                    ['#016cb2', '#014c7e'],
-                    ['#01757f', '#01535b'],
                 ],
                 transitionSpeed: 3000
             },
