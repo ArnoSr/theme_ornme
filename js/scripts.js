@@ -115,7 +115,7 @@
                 
         var waypoints = $('.cat-gradient.or-bord').waypoint(function(direction) {
           granimInstance.changeState('or-bord');
-        },{ offset: '50%'
+        },{ offset: '100%'
         })
         
         var waypoints = $('.cat-gradient.or-cadre').waypoint(function(direction) {
