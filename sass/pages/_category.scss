@@ -33,6 +33,15 @@
                     background-color: #fff;
                 }
             }
+            
+            .bt{
+                transition: all ease .25s;
+                
+                &:hover{
+                    color: darken($couleur, 30%);
+                    border-color: darken($couleur, 30%);
+                }
+            }
         }
     }
     
