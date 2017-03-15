@@ -55,6 +55,9 @@ function html5blank_header_scripts()
         wp_register_script('waypoints', get_template_directory_uri() . '/js/lib/jquery.waypoints.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('waypoints');
         
+        wp_register_script('granim', get_template_directory_uri() . '/js/lib/granim.min.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('granim');
+        
         wp_register_script('myscripts', get_template_directory_uri() . '/js/scripts.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('myscripts'); // Enqueue it!
     }

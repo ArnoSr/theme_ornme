@@ -156,11 +156,16 @@
     <?php include('vlog.php');?>
     
     
+    <div class="wrapper-cat">
+    
+    <canvas id="canvas"></canvas> 
+    
     <?php
         
     // Liste des catégories
         
     //var_dump(get_categories());
+
         
     foreach(get_categories() as $cat):
         
@@ -176,7 +181,7 @@
     ?>
     
     
-    <div class="cat-background <?php echo($cat->slug);?>">        
+    <div class="cat-background cat-gradient <?php echo($cat->slug);?>">        
 
     <?php if($singleCat->have_posts() ): ?>
     
@@ -221,6 +226,8 @@
     </div>
     
     <?php endforeach; ?>
+    
+    </div>
 
     
 <?php get_footer(); ?>

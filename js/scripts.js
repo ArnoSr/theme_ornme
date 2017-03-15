@@ -32,6 +32,128 @@
           $('.menu-top-wrapper').toggleClass('smaller');
         },{ offset: '-500px'
         })
+        
+        //Prout
+        
+
+
+    var granimInstance = new Granim({
+        element: '#canvas',
+        name: 'basic-gradient',
+        direction: 'top-bottom',
+        opacity: [1, 1],
+        stateTransitionSpeed: 1500,
+        isPausedWhenNotInView: true,
+        states : {
+            "default-state": {
+                gradients: [
+                    ['#0f59f0', '#0a3ea9'],
+                    ['#016cb2', '#014c7e'],
+                    ['#01757f', '#01535b'],
+                ],
+                transitionSpeed: 3000
+            },
+            "or-piste": {
+                gradients: [
+                    ['#fd8100', '#fa4e00'],
+                ]
+            },
+            "or-cadre": {
+                gradients: [
+                    ['#ff9068', '#ff4b1f'],
+                ]
+            },
+            "or-doeuvre": {
+                gradients: [
+                    ['#9bd053', '#45b649'],
+                ]
+            },
+            "or-bord": {
+                gradients: [
+                    ['#0f59f0', '#0a3ea9'],
+                    ['#016cb2', '#014c7e'],
+                    ['#01757f', '#01535b'],
+                ],
+                transitionSpeed: 3000
+            },
+            "or-sujet": {
+                gradients: [
+                    ['#dc281e', '#f00000'],
+                ]
+            },
+        }
+    });
+        
+        // With jQuery
+        $('#default-state-cta').on('click', function(event) {
+            event.preventDefault();
+            granimInstance.changeState('default-state');
+            setClass('#default-state-cta')
+        });
+        
+        var category = new Array('op-piste','or-cadre','or-doeuvre','or-bord','or-sujet');
+    
+        var waypoints = $('.cat-gradient.or-cadre').waypoint(function(direction) {
+            console.log('or-cadre');
+          granimInstance.changeState('or-cadre');
+        },{ offset: 'bottom-in-view'
+        })
+        
+        var waypoints = $('.cat-gradient.or-bord').waypoint(function(direction) {
+            console.log('or-bord');
+          granimInstance.changeState('or-bord');
+        },{ offset: 'bottom-in-view'
+        })
+                
+        var waypoints = $('.cat-gradient.or-doeuvre').waypoint(function(direction) {
+            console.log('or-doeuvre');
+          granimInstance.changeState('or-doeuvre');
+        },{ offset: 'bottom-in-view'
+        })
+        
+        var waypoints = $('.cat-gradient.or-piste').waypoint(function(direction) {
+            console.log('or-piste');
+          granimInstance.changeState('or-piste');
+        },{ offset: 'bottom-in-view'
+        })
+                
+        var waypoints = $('.cat-gradient.or-sujet').waypoint(function(direction) {
+            console.log('or-sujet');
+          granimInstance.changeState('or-sujet');
+        },{ offset: 'bottom-in-view'
+        })
+                
+        var waypoints = $('.cat-gradient.or-bord').waypoint(function(direction) {
+            console.log('or-cadre');
+          granimInstance.changeState('or-bord');
+        },{ offset: '50%'
+        })
+        
+        var waypoints = $('.cat-gradient.or-cadre').waypoint(function(direction) {
+            console.log('or-cadre');
+          granimInstance.changeState('or-cadre');
+        },{ offset: '50%'
+        })
+        
+        var waypoints = $('.cat-gradient.or-doeuvre').waypoint(function(direction) {
+            console.log('or-doeuvre');
+          granimInstance.changeState('or-doeuvre');
+        },{ offset: '50%'
+        })
+        
+        var waypoints = $('.cat-gradient.or-piste').waypoint(function(direction) {
+            console.log('or-piste');
+          granimInstance.changeState('or-piste');
+        },{ offset: '50%'
+        })
+        
+        var waypoints = $('.cat-gradient.or-sujet').waypoint(function(direction) {
+            console.log('or-sujet');
+          granimInstance.changeState('or-sujet');
+        },{ offset: '50%'
+        })
+
+
 
 	});
 	

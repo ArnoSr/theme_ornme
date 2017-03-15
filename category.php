@@ -1,6 +1,16 @@
 <?php get_header(); ?>
+       <div class="wrapper-cat">
     
-    <div class="cat-background <?php echo(get_the_category()[0]->slug);?>">        
+    <canvas id="canvas"></canvas>
+    
+    <?php
+if(is_category()) {
+	$category = get_query_var('cat');
+	$current_cat = get_category($cat);
+}
+?>
+    
+    <div class="cat-background cat-gradient <?php echo $current_cat->slug;?>">        
 
     <?php if(have_posts() ): ?>
     
@@ -41,7 +51,7 @@
     <?php endif;?>    
             
     </div>
-    
+</div>
     <?php include('vlog.php');?>
 
 <?php get_footer(); ?>
