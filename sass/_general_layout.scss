@@ -99,6 +99,7 @@
 }
 
 .bt{
+    transition: all ease .25s;
     display: inline-block;
     font-family: $font-stack-headings;
     border:2px solid rgba(#fff, .9);

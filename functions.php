@@ -77,6 +77,13 @@ function html5blank_conditional_scripts()
         wp_register_script('scripts_granim', get_template_directory_uri() . '/js/scripts_granim.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('scripts_granim'); // Enqueue it!
     }
+    
+    if (is_single()) {        
+        wp_register_script('scripts_single', get_template_directory_uri() . '/js/scripts_single.js', array('jquery'), '1.0.0', true); // Custom scripts
+        wp_enqueue_script('scripts_single'); // Enqueue it!
+    }
+    
+    
 }
 
 // Load HTML5 Blank styles

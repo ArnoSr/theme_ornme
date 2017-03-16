@@ -3,6 +3,13 @@
 .cat-vlog{
     background-color: $gris5;
     
+    .bt{
+        &:hover{
+            color: $vlog;
+            border-color: $vlog;
+        } 
+    }
+    
     .hgroup-cat{
         h1{
             opacity: .075;
