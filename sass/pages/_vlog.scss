@@ -26,17 +26,11 @@
     }
     
     .meta-vlog{
-        display: flex;
-        margin-top: $small-value;
         
         h2{
-            order:3;
-            font-size: 2rem;
-            font-weight: normal;
             
             a{
                 color: $gris4;
-                text-decoration: none;
             }
         }
     }
@@ -64,6 +58,44 @@
         }
     }  
 }
+
+.meta-vlog{
+    display: flex;
+    margin-top: $small-value;
+
+    h2{
+        order:3;
+        font-size: 2rem;
+        font-weight: normal;
+
+        a{
+            text-decoration: none;
+        }
+    }
+}
+
+.temps-vlog{
+    color: $gris1;
+    font-family: $font-stack-headings;
+    font-size: 1.4rem;
+    margin-right: $small-value;
+    text-align: center;
+    position: relative;
+    top: -45px;
+    width: 60px;
+
+    svg{
+        width: 40px;
+        height: 40px;
+
+        circle{
+            fill: $vlog;
+        }
+        path{
+            fill: #fff;
+        }
+    }
+} 
 
 .slick-slider{
     position: static;
@@ -184,4 +216,155 @@
             fill: #fff;
         }
     }
+}
+
+// Single Vlog
+
+.single-vlog-entretiens{
+    background-color: $gris2;
+    padding: $large-value 0;
+    
+    .hgroup-cat{
+        .h1-like{
+            font-size: 12rem;
+            color: #fff;
+            opacity: .4;
+        }
+        
+        p{
+            color: $vlog;
+        }
+    }
+}
+
+.content-single-vlog{
+    display: flex;
+    
+    aside{
+        width: 33%;
+        margin-left: $large-value;
+        
+        .aside-titre{
+            font-family: $font-stack-headings;
+            text-transform: uppercase;
+            color: $gris4;
+        }
+        
+    }
+    
+    article{
+        
+        font-family: $font-stack-headings;
+        h1{
+            color: $vlog;
+            font-size: 4rem;
+            margin-bottom: 0;
+            margin-top: 1em;
+        }
+        
+        .author-vlog{
+            margin-top: 0;
+            margin-bottom: 1em;
+            
+            font-size: 1.8rem;
+            
+            a{
+                transition: color ease .25s;
+                color: inherit;
+                text-decoration: none;
+                
+                &:hover{
+                    color: $vlog;
+                }
+            }
+        }
+        
+        .list-tag{
+            margin-top: $medium-value;
+            
+            a{
+                transition: all ease .25s;
+                background-color: transparent;
+                border: 2px solid $gris1;
+                
+                &:hover{
+                    border-color: $vlog;
+                    color: $vlog;
+                }
+            }
+        }
+    }
+}
+
+.single-vlog-cross{
+    background-color: #fff;
+}
+
+.wrapper-single-vlog{
+    background-color: $gris5;
+    padding: $large-value 0;
+    color: #fff;
+    
+    .wrapper{
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+}
+
+.video{
+    position: relative; 
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    max-width: 100%;
+    height: auto;
+    
+    iframe,
+	object,
+	embed { 
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+} 
+
+.article-vlog{
+    margin-top: $large-value;
+    padding-top: $medium-value;
+    border-top: 4px solid #525253;
+    display: inline-block;
+    
+    .format{
+        display: flex;
+        width: 75%;
+        align-items: center;
+    }
+    
+    h2 a{
+        color: #fff;
+    }
+    
+    .thumb{
+        margin-right: $medium-value;
+    }
+    
+    .wrap-content-article{
+        margin-top: 0;
+    }
+    
+    .excerpt{
+        font-size: 1.4rem;
+    }
+}
+
+.title-article-vlog{
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: $vlog;
+    font-weight: bold;
+    margin-bottom: -13px;
+    line-height: 1em;
 }

@@ -354,6 +354,8 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 	Custom Post Types
 \*------------------------------------*/
 
+    register_taxonomy_for_object_type('post_tag', 'html5-blank');
+
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
 {
@@ -382,6 +384,9 @@ function create_post_type_html5()
         'can_export' => true, // Allows export in Tools > Export
         'menu_position' => 5,
         'menu_icon' => 'dashicons-video-alt3',
+        'taxonomies' => array(
+            'post_tag'
+        ) // Add Category and Post Tags support
     ));
 }
 

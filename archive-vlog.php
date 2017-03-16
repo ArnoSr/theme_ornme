@@ -28,7 +28,6 @@
 
     <?php while( $entretiens->have_posts() ) : $entretiens->the_post(); ?>
         <a class="vlog-avant" href="<?php the_permalink();?>" style="background-image: url('<?php the_post_thumbnail_url();?>');">
-            <p class="title-avant">Toutes les vidéos OR Norme</p>
             <h2><?php the_title();?></h2>
             <div class="icon-vlog">
                 <svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>
