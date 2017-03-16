@@ -170,9 +170,18 @@
            
     <p class="txtcenter">PUB</p> 
            
-               <?php 
+            <?php
+       $argvlog = array(
+        'post_type'		=> 'vlog',
+        'meta_key'			=> 'nombre_vue',
+        'orderby'			=> 'meta_value',
+        'order'				=> 'ASC'
+    ); 
+
+    $populaires = new WP_Query( $argvlog );
+        
         // Dernières vidéos
-        if($recentes->have_posts() ): ?>
+        if($populaires->have_posts() ): ?>
     
     <div class="vlog-latest">
         
@@ -182,7 +191,7 @@
         <div class="slider-position">
             <div class="vlog-slider-4 wrapper-vlog wrapper">
 
-            <?php while($recentes->have_posts() ) : $recentes->the_post(); ?>
+            <?php while($populaires->have_posts() ) : $populaires->the_post(); ?>
 
                 <div class="single-vlog">
                     <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
@@ -206,5 +215,17 @@
     <?php wp_reset_query(); ?>
         
     </div>
+    
+    <?php 
+        //Incrémenter compteur vue
+
+        $nb_vue = get_field('nombre_vue');
+        if($nb_vue == ''){
+            $nb_vue = 0;
+        }
+        $nb_vue++;
+        update_field('nombre_vue', $nb_vue, $post->ID);
+        
+    ?>
 
 <?php get_footer(); ?>
