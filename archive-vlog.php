@@ -1,52 +1,166 @@
 <?php get_header(); ?>
+    
+    <div class="archive-vlog cat-vlog">
+    
+    <?php
+        
+    // Vlog featured
+        
+    $argvlog = array(
+        'post_type'		=> 'vlog',
+        'posts_per_page' => 1,
+        'meta_query' => array(
+            array(
+                'key' => 'video_en_avant',
+                'compare' => '==',
+                'value' => '1'
+            )
+        )
+    ); 
 
-	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
+    $entretiens = new WP_Query( $argvlog );
+        
+    ?>
+    
+    <?php if( $entretiens->have_posts() ): ?>
 
-	<!-- article -->
-	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+    <div class="wrapper">
 
-		<!-- post thumbnail -->
-		<?php if ( has_post_thumbnail()) : // Check if thumbnail exists ?>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
-				<?php the_post_thumbnail(array(120,120)); // Declare pixel size you need inside the array ?>
-			</a>
-		<?php endif; ?>
-		<!-- /post thumbnail -->
+    <?php while( $entretiens->have_posts() ) : $entretiens->the_post(); ?>
+        <a class="vlog-avant" href="<?php the_permalink();?>" style="background-image: url('<?php the_post_thumbnail_url();?>');">
+            <p class="title-avant">Toutes les vidéos OR Norme</p>
+            <h2><?php the_title();?></h2>
+            <div class="icon-vlog">
+                <svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>
+            </div>
+        </a>
 
-		<!-- post title -->
-		<h2>
-			<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>"><?php the_title(); ?></a>
-		</h2>
-		<!-- /post title -->
+    <?php endwhile; ?>
+    </div>
+    
+    <?php endif;?>
+    
+    <?php wp_reset_query(); ?>
+    
+    <?php
+        
+    // Vlog
+        
+    $argvlog = array(
+        'post_type'		=> 'vlog',
+        'meta_query' => array(
+            array(
+                'key' => 'entretiens',
+                'compare' => '==',
+                'value' => '1'
+            )
+        )
+        
+    ); 
 
-		<!-- post details -->
-		<span class="date"><?php the_time('F j, Y'); ?> <?php the_time('g:i a'); ?></span>
-		<span class="author"><?php _e( 'Published by', 'html5blank' ); ?> <?php the_author_posts_link(); ?></span>
-		<span class="comments"><?php if (comments_open( get_the_ID() ) ) comments_popup_link( __( 'Leave your thoughts', 'html5blank' ), __( '1 Comment', 'html5blank' ), __( '% Comments', 'html5blank' )); ?></span>
-		<!-- /post details -->
+    $entretiens = new WP_Query( $argvlog );
+        
+    ?>
+    
+    <?php if( $entretiens->have_posts() ): ?>
+  
+    <div class="hgroup-cat wrapper">
+        <h2 class="h1-like">Entretiens</h2>
+        <p>On vous donne la parole</p>
+    </div>
 
-		<?php html5wp_excerpt('html5wp_index'); // Build your custom callback length in functions.php ?>
+    <div class="slider-position">
+        <div class="wrapper-vlog wrapper vlog-slider-3">
 
-		<?php edit_post_link(); ?>
+        <?php while( $entretiens->have_posts() ) : $entretiens->the_post(); ?>
 
-	</article>
-	<!-- /article -->
+            <div class="single-vlog">
+                <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                <div class="meta-vlog">
+                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                    <div class="temps-vlog">
+                        <a href="<?php the_permalink();?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-btn_play"></use></svg></a>
+                        <span><?php the_field('duree_video');?></span>
+                    </div>
+                </div>
+            </div>
 
-<?php endwhile; ?>
+        <?php endwhile; ?>
+        </div>
+    </div>
 
-<?php else: ?>
+    
+    <?php endif;?>
+    
+    <?php wp_reset_query(); ?>
 
-	<!-- article -->
-	<article>
-		<h2><?php _e( 'Sorry, nothing to display.', 'html5blank' ); ?></h2>
-	</article>
-	<!-- /article -->
+    
+    <?php 
+        // Dernières vidéos
+        if(have_posts() ): ?>
+    
+    <div class="vlog-latest">
+        
+        <div class="hgroup-cat-vlog wrapper">
+            <h2>Vidéos récentes</h2>
+        </div>
+        <div class="slider-position">
+            <div class="vlog-slider-4 wrapper-vlog wrapper">
 
-<?php endif; ?>
+            <?php while(have_posts() ) : the_post(); ?>
 
+                <div class="single-vlog">
+                    <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                    <div class="meta-vlog">
+                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                        <div class="temps-vlog">
+                            <a href="<?php the_permalink();?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-btn_play"></use></svg></a>
+                            <span><?php the_field('duree_video');?></span>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+            </div>
+        </div>
+    
+    </div>
+    <?php endif;?>   
+           
+    <p class="txtcenter" style="color:#fff">PUB</p> 
+           
+               <?php 
+        // Dernières vidéos
+        if(have_posts() ): ?>
+    
+    <div class="vlog-latest">
+        
+        <div class="hgroup-cat-vlog wrapper">
+            <h2>Les plus populaires</h2>
+        </div>
+        <div class="slider-position">
+            <div class="vlog-slider-4 wrapper-vlog wrapper">
+
+            <?php while(have_posts() ) : the_post(); ?>
+
+                <div class="single-vlog">
+                    <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                    <div class="meta-vlog">
+                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                        <div class="temps-vlog">
+                            <a href="<?php the_permalink();?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-btn_play"></use></svg></a>
+                            <span><?php the_field('duree_video');?></span>
+                        </div>
+                    </div>
+                </div>
+
+            <?php endwhile; ?>
+            </div>
+        </div>
+    
+    </div>
+    <?php endif;?> 
+            
+    </div>
 
 <?php get_footer(); ?>
-
-
-
-

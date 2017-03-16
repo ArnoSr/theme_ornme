@@ -152,9 +152,7 @@
     
     </div> 
     
-    
     <?php include('vlog.php');?>
-    
     
     <div class="wrapper-cat">
     
