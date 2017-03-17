@@ -52,6 +52,10 @@
             prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
         });
         
+        //Ajouter class video au parent des videos embed
+        
+        $('.page-template-default').find('iframe').parent().addClass('video');
+        
         
 
 
