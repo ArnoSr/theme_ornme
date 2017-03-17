@@ -87,7 +87,7 @@
     position: relative;
     
     .thumb{
-        position: absolute;
+        position: absolute !important;
         top: 50%;
         transform: translateY(-50%);
         height: 100%;
@@ -166,3 +166,112 @@
         align-self: flex-end;
     }
 }
+
+// Hover
+
+.format-normal,
+.featured-home{
+    
+    .thumb{
+        transition: all ease .25s;
+        position: relative;
+        box-shadow: 0 0 20px rgba(#000, 0);
+        
+        &::after{
+            transition: all ease .25s;
+            content:"";
+            height: calc(100% - 30px);
+            width: calc(100% - 30px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            border: 2px solid transparent;
+            z-index: 11;
+        }
+     
+        
+        &::before{
+            transition: all ease .25s;
+            content:"";
+            height: 100%;
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(#000, 0);
+            z-index: 10;
+        }
+    }
+    
+    .thumb:hover{
+        box-shadow: 0 0 20px rgba(#000, .35);
+        
+        &::after{
+            transform: translate(-50%, -50%) rotate(-1.25deg);
+        }
+        
+        &::before{
+            background-color: rgba(#000, 0.1);
+        }
+    }
+    
+        @each $cat, $couleur in $cats {
+        &.#{$cat} {
+
+            .thumb:hover::after{
+                border-color: $couleur;
+            }        
+        }
+    }
+}
+
+        @each $cat, $couleur in $cats {
+        .#{$cat} {
+
+            .thumb:hover::after{
+                border-color: $couleur;
+            }        
+        }
+}
+
+.format-largeurdouble,
+.format-hauteurdouble{
+    
+    .thumb{
+        transition: all ease .25s;
+        position: relative;
+        box-shadow: 0 0 20px rgba(#000, 0);
+        
+        &::before{
+            transition: all ease .25s;
+            content:"";
+            height: calc(100% - 30px);
+            width: calc(100% - 30px);
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(0);
+            border: 2px solid transparent;
+        }
+    }
+    
+    .thumb:hover{
+        box-shadow: 0 0 20px rgba(#000, .35);
+        
+        &::before{
+            transform: translate(-50%, -50%) rotate(-1.25deg);
+        }
+    }
+    
+    @each $cat, $couleur in $cats {
+        &.#{$cat} {
+
+            .thumb:hover::before{
+                border-color: $couleur;
+            }        
+        }
+    }
+}
+
