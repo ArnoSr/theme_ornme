@@ -248,7 +248,8 @@
     display: flex;
     
     aside{
-        width: 33%;
+        width: 25%;
+        flex-shrink: 0;
         margin-left: $large-value;
         
         .aside-titre{
