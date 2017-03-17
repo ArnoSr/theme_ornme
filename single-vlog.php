@@ -2,6 +2,16 @@
    
    	<?php if (have_posts()): while (have_posts()) : the_post(); ?>
    	
+   	
+    <?php 
+        $array_tags = wp_get_post_tags($post->ID);
+        $tag_array = array();
+
+        foreach($array_tags as $tag){
+            array_push($tag_array, $tag->term_id);
+        }
+    ?>
+   	
    	<div class="wrapper-single-vlog">
     
         <div class="wrapper">
@@ -44,7 +54,7 @@
                            
                            <p class="title-article-vlog">Lire l'article</p>
                            
-                            <div class="<?php echo(get_the_category()[0]->slug);?> format format-<?php the_field('format_souhaite');?>">
+                            <div class="<?php echo(get_the_category()[0]->slug);?> format">
                                 <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
                                     <div class="wrap-content-article">
                                     <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
@@ -65,6 +75,47 @@
         
                 <aside>
                     <p class="aside-titre">À voir également</p>
+                    
+                    
+                    
+                    <?php
+                       $argvlog = array(
+                        'post_type'		=> 'vlog',
+                        'tag__in' => $tag_array,
+                        'meta_key'			=> 'nombre_vue',
+                        'orderby'			=> 'meta_value',
+                        'order'				=> 'ASC',
+                        'posts_per_page' => 3
+                    ); 
+
+                    $populaires = new WP_Query( $argvlog );
+
+                        // Dernières vidéos
+                        if($populaires->have_posts() ): ?>
+
+                    <div class="">
+
+                        <?php while($populaires->have_posts() ) : $populaires->the_post(); ?>
+
+                            <div class="single-vlog">
+                                <a class="thumb-vlog" href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                <div class="meta-vlog">
+                                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                    <div class="temps-vlog">
+                                        <a href="<?php the_permalink();?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-btn_play"></use></svg></a>
+                                        <span><?php the_field('duree_video');?></span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        <?php endwhile; ?>
+        
+                    </div>
+
+                    <?php endif;?>
+
+                    <?php wp_reset_query(); ?>
+                    
                 </aside>
             </div>
 
@@ -170,7 +221,7 @@
            
     <p class="txtcenter">PUB</p> 
            
-            <?php
+    <?php
        $argvlog = array(
         'post_type'		=> 'vlog',
         'meta_key'			=> 'nombre_vue',

@@ -255,7 +255,17 @@
             font-family: $font-stack-headings;
             text-transform: uppercase;
             color: $gris4;
+            margin-bottom: 1em;
         }
+        
+        .meta-vlog h2 a{
+            color: $gris4;
+        }
+        
+        .single-vlog:not(:last-child){
+            margin-bottom: 1.5em;
+        }
+        
         
     }
     
@@ -347,7 +357,6 @@
     .format{
         display: flex;
         width: 75%;
-        align-items: center;
     }
     
     h2 a{
