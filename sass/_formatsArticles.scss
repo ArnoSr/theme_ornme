@@ -81,7 +81,8 @@
     width: calc(25% - #{$medium-value});
 }
 
-.format-largeurdouble{
+.format-largeurdouble,
+.format-hauteurdouble{
     width: calc(50% - #{$medium-value});
     position: relative;
     
@@ -97,6 +98,7 @@
             min-width: 100%;
             height: auto;
             width: auto;
+            object-fit: cover;
         }
         
         &::after{
@@ -143,9 +145,24 @@
             }
         }
         
-    }
-    
+    } 
 }
 
 .format-hauteurdouble{
+    width: calc(25% - #{$medium-value});
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    
+    .wrap-content-article{
+        max-width: 100%;
+    }
+    
+    .excerpt{
+        display: none;
+    }
+    
+    .meta{
+        align-self: flex-end;
+    }
 }

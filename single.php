@@ -25,6 +25,7 @@
        </div>
     </div>
     
+    
     <div class="wrapper grid has-gutter-xl single-article">
         <div class="wrapper-article two-thirds">
             <?php the_content(); ?>

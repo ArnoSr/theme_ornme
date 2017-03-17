@@ -82,6 +82,7 @@
 
                 <div class="bg-category"><?php echo(get_the_category()[0]->name);?></div>
                 <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                <div class="count-social"></div>
                 <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                 <div class="excerpt">
                     <?php the_excerpt();?>
