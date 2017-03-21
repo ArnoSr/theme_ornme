@@ -25,16 +25,16 @@
         margin-top: auto;
         margin-bottom: $medium-value;
         position: relative;
-        z-index: 2;
-        
-        @include width-below(700px){
-            .w50{
-               width: 100%;
-            }
-        }
-        
-
+        z-index: 2;    
     }
+    
+    
+    @include width-above($mobile-size+1){
+        .content-featured-post{
+            width: 50%;
+        }
+    }
+    
     
     .featured-title{
         font-weight: $bold;

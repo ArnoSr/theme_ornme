@@ -29,7 +29,8 @@
       
        <div class="wrapper">
           
-          <div>
+          <div class="content-featured-post">
+           
             <p class="h2-like featured-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></p>
             <p class="featured-excerpt"><a href="<?php the_permalink();?>"><?php the_excerpt();?></a></p>
                
@@ -38,6 +39,7 @@
            <div class="meta">
                <p><span><?php or_temps_lecture(get_the_content());?></span><span class="featured-author">par <?php the_author_posts_link(); ?></span><span><?php the_time('j F Y');?></span><span class="featured-category name-category <?php echo $cat[0]->slug; ?>"><?php the_category(' ');?></span></p>
            </div>
+           
           </div>
 
        </div>
