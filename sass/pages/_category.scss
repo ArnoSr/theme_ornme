@@ -163,6 +163,11 @@
     padding-top: 75px;
     padding-bottom: 75px;
     
+    @include width-below(600px){
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
     .hgroup-cat{
         h1, p{
             color: $gris5;
