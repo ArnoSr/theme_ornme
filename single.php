@@ -26,17 +26,17 @@
     </div>
     
     
-    <div class="wrapper grid has-gutter-xl single-article">
-        <div class="wrapper-article two-thirds">
+    <div class="wrapper single-article">
+        <div class="wrapper-article">
             <?php the_content(); ?>
         </div>
-        <div class="sidebar-article one-third">
+        <aside class="sidebar-article">
             pub
-        </div>
+        </aside>
     </div>
     
     <div class="wrapper">
-        <div class="list-tag three-quarters center">
+        <div class="list-tag">
             <?php
                 $posttags = get_the_tags();
                 if ($posttags) {
@@ -48,14 +48,14 @@
                 }
             ?>
         </div>
-        <div class="three-quarters center author-footer">
+        <div class="author-footer">
             <div class="image-circle">
                 <?php echo get_avatar(get_the_author_meta('user_email')); ?>
             </div>
             <div class="author-text">
                 <span class="author-name"><?php the_author_posts_link(); ?></span>
                 <span class="author-title"><?php the_author_meta('titre_poste'); ?></span>
-                <p><?php the_author_meta('description'); ?></p>
+                <p class="author-description"><?php the_author_meta('description'); ?></p>
             </div>
         </div>
     </div>
@@ -81,7 +81,7 @@
 	<div class="more-article">
 	    <div class="wrapper">
 	        <p class="more-title">Encore + <?php echo $cat[0]->name;?></p>
-	        <div class="grid has-gutter-xl">
+	        <div class="more-wrapper">
 	        <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
 	            <?php include('snippets/format-article.php'); ?>
 	        <?php endwhile;?>

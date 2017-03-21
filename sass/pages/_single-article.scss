@@ -1,5 +1,6 @@
 .single-article{
     margin-top: 50px;
+    display: flex;
 }
 
 .wrapper-single-article{
@@ -33,14 +34,6 @@
                 border-bottom: 2px solid transparent;
             }
         }
-    }
-    
-    h2{
-        font-size: $h3-size;
-    }
-    
-    h3{
-        font-size: $h4-size;
     }
     
     blockquote{
@@ -87,6 +80,14 @@
 
 
 .wrapper-article{
+    
+    margin-right: $large-value;
+    width: calc(66% - #{$large-value});
+    
+    p, li, blockquote{
+        font-family: $font-stack-article;
+    }
+    
     p, h2, h3, h4, h5, blockquote, ul, ol, .wp-caption-text{
         margin-left: $large-value;
         margin-right: $large-value;
@@ -140,12 +141,26 @@
     }
 }
 
+.list-tag{
+    @include width-above($mobile-size + 1){
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
 .author-footer{
     padding-top: $medium-plus-value;
     margin-top: $medium-value;
     border-top: 3px solid $gris1;
     display: flex;
     align-items: flex-start;
+    
+    @include width-above($mobile-size + 1){
+        max-width: 75%;
+        margin-left: auto;
+        margin-right: auto;
+    }
     
     .author-text{
         flex: 1;
@@ -160,6 +175,10 @@
         a{
             text-decoration: none;
         }
+    }
+    
+    .author-description{
+        font-family: $font-stack-article;
     }
     
     .author-title{

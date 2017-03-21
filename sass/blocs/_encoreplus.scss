@@ -19,6 +19,22 @@
     }
 }
 
+.more-wrapper{
+    display: flex;
+    
+    @each $cat, $couleur in $cats {
+        .#{$cat} {
+            h2 a{
+                color: $couleur;
+            }    
+        }
+    }
+    
+    h2 a{
+        font-size: 3rem;
+    }
+}
+
 .more-title{
     text-align: center;
     font-weight: $black;
@@ -32,8 +48,6 @@
     .#{$cat} {
         .more-title{
             color: $couleur;
-        }
-        
-        
+        }    
     }
 }
