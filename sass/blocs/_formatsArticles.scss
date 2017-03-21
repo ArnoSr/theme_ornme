@@ -270,18 +270,22 @@
         }
     }
     
-    .thumb:hover{
-        box-shadow: 0 0 20px rgba(#000, .35);
+    &:hover{
         
-        &::before{
-            transform: translate(-50%, -50%) rotate(-1.25deg);
+        .thumb{
+            box-shadow: 0 0 20px rgba(#000, .35);
+
+            &::before{
+                transform: translate(-50%, -50%) rotate(-1.25deg);
+            }
         }
     }
+    
     
     @each $cat, $couleur in $cats {
         &.#{$cat} {
 
-            .thumb:hover::before{
+            &:hover .thumb::before{
                 border-color: $couleur;
             }        
         }
