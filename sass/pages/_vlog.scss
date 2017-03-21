@@ -262,12 +262,21 @@
 .single-vlog-entretiens{
     background-color: $gris2;
     padding: $large-value 0;
+    overflow: hidden;
     
     .hgroup-cat{
         .h1-like{
             font-size: 12rem;
             color: #fff;
             opacity: .4;
+            
+            @include width-below(800px){
+                font-size: 10rem;
+            }
+            
+            @include width-below(500px){
+                font-size: 8rem;
+            }
         }
         
         p{
@@ -298,6 +307,9 @@
             margin-bottom: 1.5em;
         }
         
+        @include width-below(900px){
+            display: none;
+        }
         
     }
     
