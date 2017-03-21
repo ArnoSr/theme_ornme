@@ -2,7 +2,7 @@
     font-family: 'geomanist';
     src: url('fonts/geomanist-book-webfont.woff2') format('woff2'),
          url('fonts/geomanist-book-webfont.woff') format('woff');
-    font-weight: 100;
+    font-weight: $book;
     font-style: normal;
 }
 
@@ -10,7 +10,7 @@
     font-family: 'geomanist';
     src: url('fonts/geomanist-medium-webfont.woff2') format('woff2'),
          url('fonts/geomanist-medium-webfont.woff') format('woff');
-    font-weight: 500;
+    font-weight: $medium;
     font-style: normal;
 }
 
@@ -18,7 +18,7 @@
     font-family: 'geomanist';
     src: url('fonts/geomanist-black-webfont.woff2') format('woff2'),
          url('fonts/geomanist-black-webfont.woff') format('woff');
-    font-weight: 900;
+    font-weight: $black;
     font-style: normal;
 }
 
@@ -27,7 +27,7 @@
     font-family: 'calendasplus';
     src: url('fonts/calendas_plus_bold-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus_bold-webfont.woff') format('woff');
-    font-weight: bold;
+    font-weight: $bold;
     font-style: normal;
 }
 
@@ -35,7 +35,7 @@
     font-family: 'calendasplus';
     src: url('fonts/calendas_plus_italic-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus_italic-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: $regular;
     font-style: italic;
 }
 
@@ -43,7 +43,7 @@
     font-family: 'calendasplus';
     src: url('fonts/calendas_plus-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: $regular;
     font-style: normal;
 }
 
@@ -51,6 +51,6 @@
     font-family: 'EloquentJFPro';
     src: url('fonts/eloquentjfpro-italic-webfont.woff2') format('woff2'),
          url('fonts/eloquentjfpro-italic-webfont.woff') format('woff');
-    font-weight: normal;
+    font-weight: $regular;
     font-style: italic;
 }

@@ -5,6 +5,15 @@
     
     .wrapper{
         align-items: center;
+        display: flex;
+        
+        > div{
+            width: 50%;
+            
+            &:not(:last-child){
+                margin-right: $medium-value;
+            }
+        }
     }
     
     h2{
@@ -15,10 +24,6 @@
             display: block;
             color: #515253;
         }
-    }
-    
-    p{
-        font-family: $font-stack-headings;
     }
     
     .list-mobile{

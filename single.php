@@ -83,17 +83,7 @@
 	        <p class="more-title">Encore + <?php echo $cat[0]->name;?></p>
 	        <div class="grid has-gutter-xl">
 	        <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
-	        <div class="format-third one-third">
-                <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-	            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-	            <div class="excerpt">
-	                <?php the_excerpt();?>
-	            </div>
-	           <div class="meta">
-                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span><?php the_time('j F Y');?></span></div>
-                <div><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="featured-category name-category <?php echo $cat[0]->slug; ?>"><?php the_category(' ');?></span></div>
-               </div>
-	        </div>
+	            <?php include('snippets/format-article.php'); ?>
 	        <?php endwhile;?>
 	        </div>
 	    </div>

@@ -494,10 +494,6 @@ function or_duree_video($post_ID){
    
 }
 
-
-
 //
-
-
 
 ?>

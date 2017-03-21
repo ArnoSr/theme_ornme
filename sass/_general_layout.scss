@@ -1,16 +1,4 @@
-.svg-wrapper{
-    display: none;
-}
-
-.wrapper{
-    max-width: $wrapper-size;
-    margin-left: auto;
-    margin-right: auto;
-    padding: $medium-value;
-}
-
 .title-discret{
-    font-family: $font-stack-headings;
     display: inline-block;
     font-size: 2rem;
     color: $gris1;
@@ -28,8 +16,6 @@
         }
     }
 }
-
-
 
 .image-circle{
     display: inline-block;
@@ -63,7 +49,6 @@
 }
 
 .meta{
-    font-family: $font-stack-headings;
     font-size: 1.4rem;
 
     a{
@@ -101,11 +86,10 @@
 .bt{
     transition: all ease .25s;
     display: inline-block;
-    font-family: $font-stack-headings;
     border:2px solid rgba(#fff, .9);
     text-transform: uppercase;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: $medium;
     color: rgba(#fff, .9);
     padding: .8em 2em .55em;
     border-radius: 100em;
@@ -114,7 +98,6 @@
 // PAgination
 
 .pagination{
-    font-family: $font-stack-headings;
     text-align: center;
     margin-top: $large-value;
     color: $gris5;
@@ -126,13 +109,9 @@
         color: rgba($gris5, .9);
 
         span{
-            font-weight: bold;
+            font-weight: $bold;
             color: $gris5;
         }
-    }
-    
-    .current{
-
     }
 
     .page-numbers{
@@ -147,8 +126,8 @@
     }
 
     .current{
-        font-weight: bold;
-                color: #fff;
+        font-weight: $bold;
+        color: #fff;
         background-color: $gris5;
     }
 }

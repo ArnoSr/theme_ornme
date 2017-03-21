@@ -17,13 +17,8 @@
         }
     }
     
-    p{
-        font-family: $font-stack-headings;
-    }
-    
     form{
         margin-top: 65px;
-        font-family: $font-stack-headings;
     }
     
     [type='email']{
@@ -45,7 +40,7 @@
         border: 0;
         text-transform: uppercase;
         color: #fff;
-        font-weight: 400;
+        font-weight: $regular;
         padding: .7em 2em .5em;
         margin-left: 1em;
         border-radius: 100em;
