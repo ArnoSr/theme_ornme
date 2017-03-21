@@ -8,8 +8,7 @@
 
 .header{
     transition: all ease .25s;
-    font-family: $font-stack-headings;
-    font-weight: 100;
+    font-weight: $book;
     font-size: 1.4rem;
     text-transform: uppercase;
     color: $gris1;
@@ -323,7 +322,7 @@
         padding-left: 0;
         text-transform: uppercase;
         font-size: 1.4rem;
-        font-weight: 400;
+        font-weight: regular;
         
         @each $cat, $couleur in $cats {
             .#{$cat} {
@@ -390,7 +389,7 @@
             a{
                 color: $gris4;
                 text-decoration: none;
-                font-weight: normal;
+                font-weight: $regular;
             }
         }
     }
@@ -411,11 +410,10 @@
 
 .wrapper-tags{
     transition: opacity ease .3s;
-    font-family: $font-stack-headings;
     text-transform: none;
     font-size: 1.8rem;
     background-color: $gris5;
-    font-weight: normal;
+    font-weight: $regular;
     position: fixed;
     width: 100%;
     z-index: -10;

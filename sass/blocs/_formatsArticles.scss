@@ -61,7 +61,7 @@
     &.#{$cat} {
         .color-line{
             color: $couleur;
-            font-weight: 500;
+            font-weight: $medium;
             
             a{
                 color: inherit;
@@ -286,8 +286,4 @@
             }        
         }
     }
-}
-
-.format-third{
-    font-family: $font-stack-headings;
 }

@@ -1,6 +1,6 @@
 
-        <?php include('lien-mobile.php'); ?>
-        <?php include('newsletter.php'); ?>
+        <?php include('snippets/lien-mobile.php'); ?>
+        <?php include('snippets/newsletter.php'); ?>
         
         </div><!--main-->
         

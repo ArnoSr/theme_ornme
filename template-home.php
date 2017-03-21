@@ -29,15 +29,15 @@
       
        <div class="wrapper">
           
-          <div class="w50">
+          <div>
             <p class="h2-like featured-title"><a href="<?php the_permalink();?>"><?php the_title();?></a></p>
-              <p class="featured-excerpt"><a href="<?php the_permalink();?>"><?php the_excerpt();?></a></p>
+            <p class="featured-excerpt"><a href="<?php the_permalink();?>"><?php the_excerpt();?></a></p>
                
-               <?php $cat = get_the_category(); ?>
+           <?php $cat = get_the_category(); ?>
 
-               <div class="meta">
-                   <p><span><?php or_temps_lecture(get_the_content());?></span><span class="featured-author">par <?php the_author_posts_link(); ?></span><span><?php the_time('j F Y');?></span><span class="featured-category name-category <?php echo $cat[0]->slug; ?>"><?php the_category(' ');?></span></p>
-               </div>
+           <div class="meta">
+               <p><span><?php or_temps_lecture(get_the_content());?></span><span class="featured-author">par <?php the_author_posts_link(); ?></span><span><?php the_time('j F Y');?></span><span class="featured-category name-category <?php echo $cat[0]->slug; ?>"><?php the_category(' ');?></span></p>
+           </div>
           </div>
 
        </div>
@@ -80,9 +80,8 @@
 
             <div class="format-third featured-home <?php echo(get_the_category()[0]->slug);?>">
 
-                <div class="bg-category"><?php echo(get_the_category()[0]->name);?></div>
+                <div class="bg-category-title"><?php echo(get_the_category()[0]->name);?></div>
                 <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
-                <div class="count-social"></div>
                 <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                 <div class="excerpt">
                     <?php the_excerpt();?>
@@ -96,7 +95,7 @@
         <?php endwhile; ?>
 
             <div class="featured-pub">
-                <div class="bg-category">Annonce</div>
+                <div class="bg-category-title">Annonce</div>
                 pub
             </div>
         </div>
@@ -128,21 +127,8 @@
         <div class="wrapper-articles">
 
         <?php while( $LastPosts->have_posts() ) : $LastPosts->the_post(); ?>
-
-            <div class="<?php echo(get_the_category()[0]->slug);?> format format-<?php the_field('format_souhaite');?>">
-
-                <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
-                    <div class="wrap-content-article">
-                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                    <div class="excerpt">
-                        <?php the_excerpt();?>
-                    </div>
-                    <div class="meta">
-                     <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
-                     <div class="color-line"><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="meta-cat"><?php the_category(' ');?></span></div>
-                    </div>
-                </div>
-            </div>
+            
+            <?php include('snippets/format-article.php'); ?>
 
         <?php endwhile; ?>
 
@@ -158,76 +144,60 @@
     
     <div class="wrapper-cat">
     
-    <canvas id="canvas"></canvas> 
-    
-    <?php
-        
-    // Liste des catégories
-        
-    //var_dump(get_categories());
+        <canvas id="canvas"></canvas> 
 
-        
-    foreach(get_categories() as $cat):
-        
-    $argCat = array(
-        'post_type'		=> 'post',
-        'posts_per_page' => 4,
-        'post__not_in' => $featured_posts,
-        'category_name' => $cat->slug
-    ); 
+        <?php
 
-    $singleCat = new WP_Query( $argCat );
-        
-    ?>
-    
-    
-    <div class="cat-background cat-gradient <?php echo($cat->slug);?>">        
+        // Liste des catégories
 
-    <?php if($singleCat->have_posts() ): ?>
-    
-    <div class="wrapper wrapper-plus home-latests-articles">
-        
-        <div class="hgroup-cat">
-            <h1><?php echo $cat->name; ?></h1>
-            <p><?php echo $cat->description; ?></p>
-        </div>
-        
+        //var_dump(get_categories());
 
-        <div class="wrapper-articles">
 
-        <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+        foreach(get_categories() as $cat):
 
-            <div class="format format-<?php the_field('format_souhaite');?>">
+        $argCat = array(
+            'post_type'		=> 'post',
+            'posts_per_page' => 4,
+            'post__not_in' => $featured_posts,
+            'category_name' => $cat->slug
+        ); 
 
-                <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
-                    <div class="wrap-content-article">
-                    <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                    <div class="excerpt">
-                        <?php the_excerpt();?>
-                    </div>
-                    <div class="meta">
-                     <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
-                     <div class="color-line"><span class="featured-author">par <?php the_author_posts_link(); ?></span> <span class="meta-cat"><?php the_category(' ');?></span></div>
-                    </div>
+        $singleCat = new WP_Query( $argCat );
+
+        ?>
+
+
+        <div class="cat-background cat-gradient <?php echo($cat->slug);?>">        
+
+            <?php if($singleCat->have_posts() ): ?>
+
+            <div class="wrapper wrapper-plus home-latests-articles">
+
+                <div class="hgroup-cat">
+                    <h1><?php echo $cat->name; ?></h1>
+                    <p><?php echo $cat->description; ?></p>
                 </div>
+
+
+                <div class="wrapper-articles">
+
+                <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+                    <?php include('snippets/format-article.php'); ?>
+                <?php endwhile; ?>
+
+                </div>
+
+                <div class="wrap-bt">
+                    <a href="<?php echo get_category_link($cat->term_id); ?>" class="bt">Voir tous les articles</a>
+                </div>
+
             </div>
-
-        <?php endwhile; ?>
+            <?php endif;?>    
 
         </div>
-        
-        <div class="wrap-bt">
-            <a href="<?php echo get_category_link($cat->term_id); ?>" class="bt">Voir tous les articles</a>
-        </div>
-    
-    </div>
-    <?php endif;?>    
-            
-    </div>
-    
-    <?php endforeach; ?>
-    
-    </div>
 
+        <?php endforeach; ?>
+    
+    </div>
     
 <?php get_footer(); ?>

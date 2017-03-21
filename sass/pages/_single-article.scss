@@ -56,8 +56,7 @@
     .twitter-tweet{
         margin: $medium-value auto !important;
     }
-    
-    
+        
     //Couleurs en fonction de la catégorie
     
     @each $cat, $couleur in $cats {
@@ -84,6 +83,8 @@
     }
     
 }
+
+
 
 .wrapper-article{
     p, h2, h3, h4, h5, blockquote, ul, ol, .wp-caption-text{
@@ -114,8 +115,7 @@
     }
     
     .author-name{
-        font-family: $font-stack-headings;
-        font-weight: 500;
+        font-weight: $medium;
         line-height: 1em;
         
         a{
@@ -125,14 +125,13 @@
     }
     
     .author-title{
-        font-family: $font-stack-headings;
         display: block;
     }
     
     .meta{
         color: #cdcdce;
         font-size: 1.4rem;
-        font-weight: normal;
+        font-weight: $regular;
         margin-top: .5em;
         
         span:not(:last-child)::after{
@@ -154,9 +153,8 @@
     }
     
     .author-name{
-        font-family: $font-stack-headings;
         font-size: 3rem;
-        font-weight: 500;
+        font-weight: $medium;
         line-height: 1em;
         
         a{
@@ -165,7 +163,6 @@
     }
     
     .author-title{
-        font-family: $font-stack-headings;
         display: block;
     }
 }

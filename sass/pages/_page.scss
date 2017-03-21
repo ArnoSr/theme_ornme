@@ -28,10 +28,6 @@
 
         }
         
-        p{
-            font-family: $font-stack-headings;
-        }
-        
         p + h2{
             clear: both;
         }
@@ -57,7 +53,7 @@
             color: $or-cadre;
             text-align: center;
             font-size: 3rem;
-            font-weight: 500;
+            font-weight: $medium;
             
             &::before,
             &::after{
