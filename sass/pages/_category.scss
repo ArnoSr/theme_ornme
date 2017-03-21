@@ -23,6 +23,11 @@
     padding-bottom: 75px;
     overflow: hidden;
     
+    @include width-below(600px){
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+    
     @each $cat, $couleur in $cats {
         &.#{$cat} {
             
@@ -96,7 +101,7 @@
         }
     }
     
-    .thumb{
+    .thumb img{
         box-shadow: 0 0 20px rgba(#000, .4);
     }
     
@@ -108,6 +113,10 @@
 .hgroup-cat{
     text-align: center;
     position: relative;
+    
+    @include width-below(500px){
+        margin-bottom: $medium-value;
+    }
     
     h1, .h1-like{
         text-transform: uppercase;

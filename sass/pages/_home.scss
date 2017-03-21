@@ -214,7 +214,7 @@
 }
 
 @include width-below(600px){
-    .wrapper-cat .wrapper-articles{
+    .home .wrapper-cat .wrapper-articles{
         display: none;
     }
 }
