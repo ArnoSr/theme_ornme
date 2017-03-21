@@ -20,12 +20,18 @@
     }
     
     .wrapper-vlog{
-        z-index: 2;
         margin-top: 20px;
+        display: flex;
+        z-index: 1;
+        position: relative;
     }
     
     .single-vlog{
         width: 33%;
+        
+        &:not(:last-child){
+            margin-right: $medium-value;
+        }
     }
     
     .thumb-vlog{

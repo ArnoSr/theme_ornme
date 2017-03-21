@@ -108,8 +108,6 @@
     </div>
     <?php endif;?>   
            
-    <p class="txtcenter" style="color:#fff">PUB</p> 
-           
     <?php
        $argvlog = array(
         'post_type'		=> 'vlog',

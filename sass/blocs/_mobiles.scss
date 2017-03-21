@@ -5,6 +5,15 @@
     
     .wrapper{
         align-items: center;
+        display: flex;
+        
+        > div{
+            width: 50%;
+            
+            &:not(:last-child){
+                margin-right: $medium-value;
+            }
+        }
     }
     
     h2{
