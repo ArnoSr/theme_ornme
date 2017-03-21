@@ -251,7 +251,6 @@
 
     @each $cat, $couleur in $cats {
         .#{$cat} {
-
             .thumb:hover::after{
                 border-color: $couleur;
             }        

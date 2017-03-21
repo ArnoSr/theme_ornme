@@ -24,14 +24,22 @@
         display: flex;
         z-index: 1;
         position: relative;
+        
+        @include width-below(700px){
+            flex-direction: column;
+        }
     }
     
-    .single-vlog{
-        width: 33%;
-        
-        &:not(:last-child){
-            margin-right: $medium-value;
+    @include width-above(701px){
+    
+        .single-vlog{
+            width: 33%;
+
+            &:not(:last-child){
+                margin-right: $medium-value;
+            }
         }
+        
     }
     
     .thumb-vlog{
@@ -384,4 +392,50 @@
     font-weight: $bold;
     margin-bottom: -13px;
     line-height: 1em;
+}
+
+//Responsive
+
+@include width-below(700px){
+    
+    .single-vlog{
+        width: 100%;
+        display: flex;
+        align-items: stretch;
+        margin-right: 0;
+        margin-bottom: $small-value;
+        
+        .thumb-vlog{
+            width: 40%;
+            margin-right: $small-value;
+            
+            img{
+                //object-fit: cover; //A associer avec un height100% quand la techno sera prete http://caniuse.com/#feat=requestidlecallback
+            }
+        }
+        
+        .wrap-content-article{
+            width: 60%;
+            margin-top: 0;
+        }
+        
+        h2{
+            margin-bottom: 0;
+        }
+        
+        .meta-vlog{
+            width: 60%;
+            margin-top: 0;
+            display: block;
+            
+            .temps-vlog{
+                position: static;
+                text-align: left;
+            }
+            
+            .temps-vlog a{
+                display: none;
+            }
+        }
+    }
 }
