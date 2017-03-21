@@ -17,133 +17,167 @@
         <?php echo file_get_contents(get_template_directory_uri().'/img/svg-prod/sprite/svgs.svg'); ?>
     </div>
 
-        <!-- header -->
-        <header class="header" role="banner">
-               
-               <input type="checkbox" id="checkboxMenu">
-                
-                <div class="menu-top-wrapper">
-                   
-                   <div class="wrapper wrapperMenu">
-                    
-                    <div class="menu" role="navigation">
-                        <div class="bt-menu">
-                            
-                            <label for="checkboxMenu" aria-label="Menu"><span class="icon"></span><span class="text-menu">Fermer</span></label>
-                        </div>
-                        <a href="<?php echo get_site_url();?>/vlog" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
-                        <a id="link_tags" class="link-tags"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
-                    </div>
+    <!-- header -->
+    <header class="header" role="banner">
 
-                    <div class="logo">
-                        <a href="<?php echo home_url(); ?>" aria-label="Or Norme, retour à l'accueil">
-                            <?php echo file_get_contents(get_template_directory_uri().'/img/logo-ornorme.svg'); ?>
-                        </a>
+           <input type="checkbox" id="checkboxMenu">
+
+            <div class="menu-top-wrapper">
+
+               <div class="wrapper wrapperMenu">
+
+                <div class="menu" role="navigation">
+                    <div class="bt-menu">
+                        <label for="checkboxMenu" aria-label="Menu"><span class="icon"></span><span class="text-menu">Fermer</span></label>
                     </div>
-                    
-                    <div class="menu-right">
-                        <a class="lire-revue" href="">
-                            <img src="<?php echo get_template_directory_uri();?>/img/mag.png" alt="">
-                            Lire la revue
-                        </a>
-                        <button aria-label="Accéder à la recherche" class="bt-search" title="Accéder à la recherche"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loupe"></use></svg></use></button>
-                    </div>
-                    
-                    </div>
+                    <a href="<?php echo get_site_url();?>/vlog" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
+                    <a id="link_tags" class="link-tags"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
+                </div>
+
+                <div class="logo">
+                    <a href="<?php echo home_url(); ?>" aria-label="Or Norme, retour à l'accueil">
+                        <?php echo file_get_contents(get_template_directory_uri().'/img/logo-ornorme.svg'); ?>
+                    </a>
+                </div>
+
+                <div class="menu-right">
+                    <a class="lire-revue" href="">
+                        <img src="<?php echo get_template_directory_uri();?>/img/mag.png" alt="">
+                        Lire la revue
+                    </a>
+                    <button aria-label="Accéder à la recherche" class="bt-search" title="Accéder à la recherche"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loupe"></use></svg></use></button>
+                </div>
 
                 </div>
-                
-                <?php // Le Menu desktop ?>
-                
-                <div class="wrapper-menu menu-desktop">
-                    <div class="wrapper">
-                        <div class="menu-cat-wrapper">
-                            <ul>
+
+            </div>
+
+            <?php // Le Menu desktop ?>
+
+            <div class="wrapper-menu menu-desktop">
+                <div class="wrapper">
+                    <div class="menu-cat-wrapper">
+                        <ul>
+                        <?php foreach(get_categories() as $cat): ?>
+                        <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
+                        <?php endforeach; ?>
+                        <li class="vlog"><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
+                        <li><a href="">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="menu-cat-content">
+
+                        <div class="menu-articles">
+
+                        <?php foreach(get_categories() as $cat):
+
+                        $argCat = array(
+                            'post_type'		=> 'post',
+                            'posts_per_page' => 4,
+                            'category_name' => $cat->slug
+                        ); 
+
+                        $singleCat = new WP_Query( $argCat ); ?>
+
+                        <?php if($singleCat->have_posts() ): ?>
+
+                            <div class="cat-menu cat-<?php echo $cat->slug; ?>">
+
+                                <p class="description-title"><?php echo $cat->description; ?></p>
+
+                                <div class="wrapper-articles-menu">
+
+                                <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+
+                                    <div class="">
+                                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                    </div>
+
+                                <?php endwhile; ?>
+
+                                </div>
+
+                            </div>
+                        <?php endif;?>    
+                        <?php endforeach; ?>
+
+                        <div class="vlog-menu">
+
+                        <?php
+                            $argvlog = array(
+                            'post_type'		=> 'vlog',
+                            'posts_per_page' => 4,
+                        ); 
+
+                        $singleVlog = new WP_Query( $argvlog ); ?>
+
+                        <?php if($singleVlog->have_posts() ): ?>
+
+                            <div class="">
+
+                                <p class="description-title">Vlog</p>
+
+                                <div class="wrapper-articles-menu">
+
+                                <?php while($singleVlog->have_posts() ) : $singleVlog->the_post(); ?>
+
+                                    <div class="">
+                                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                    </div>
+
+                                <?php endwhile; ?>
+
+                                </div>
+
+                            </div>
+                        <?php endif;?>    
+
+                        </div>
+
+                        </div>
+
+                        <div class="menu-pub">
+                        pub
+                        </div>
+                    </div>
+                </div>
+            </div> 
+
+            <?php // Le Menu responsive ?>
+
+            <div class="wrapper-menu menu-mobile">
+                <div class="wrapper">
+                    <div class="menu-cat-wrapper">
+                       <ul>
+                           <li><a href="">Rubriques</a>
+                           <ul>
                             <?php foreach(get_categories() as $cat): ?>
                             <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
                             <?php endforeach; ?>
+
+                        </ul>
+                           </li>
                             <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
+                            <li><a href="">Tags</a></li>
                             <li><a href="">Contact</a></li>
-                            </ul>
-                        </div>
-                        <div class="menu-cat-content">
+                       </ul>
 
-                            <div class="menu-articles">
-                            
-                            <?php foreach(get_categories() as $cat):
-
-                            $argCat = array(
-                                'post_type'		=> 'post',
-                                'posts_per_page' => 4,
-                                'category_name' => $cat->slug
-                            ); 
-
-                            $singleCat = new WP_Query( $argCat ); ?>
-
-                            <?php if($singleCat->have_posts() ): ?>
-
-                                <div class="cat-menu cat-<?php echo $cat->slug; ?>">
-
-                                    <p class="description-title"><?php echo $cat->description; ?></p>
-
-                                    <div class="wrapper-articles-menu">
-
-                                    <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
-
-                                        <div class="">
-                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-                                            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                                        </div>
-
-                                    <?php endwhile; ?>
-
-                                    </div>
-
-                                </div>
-                            <?php endif;?>    
-                            <?php endforeach; ?>
-                            </div>
-
-                            <div class="menu-pub">
-                            pub
-                            </div>
-                        </div>
                     </div>
-                </div> 
-                
-                <?php // Le Menu responsive ?>
-                
-                <div class="wrapper-menu menu-mobile">
-                    <div class="wrapper">
-                        <div class="menu-cat-wrapper">
-                           <ul>
-                               <li><a href="">Rubriques</a>
-                               <ul>
-                                <?php foreach(get_categories() as $cat): ?>
-                                <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
-                                <?php endforeach; ?>
+                </div>
+            </div> 
 
-                            </ul>
-                               </li>
-                                <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
-                                <li><a href="">Tags</a></li>
-                                <li><a href="">Contact</a></li>
-                           </ul>
-                            
-                        </div>
-                    </div>
-                </div> 
-                
-                <?php // Le menu des tags ?>
-                
-                <div class="wrapper-tags">
-                    <div class="wrapper">
-                        <?php if(get_the_tag_list()) {
-                            echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-                        } ?>
-                    </div>
-                </div>  
-        </header>
-        <!-- /header -->
-        
-       <div class="main">
+            <?php // Le menu des tags ?>
+
+            <div class="wrapper-tags">
+                <div class="wrapper">
+                    <?php if(get_the_tag_list()) {
+                        echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
+                    } ?>
+                </div>
+            </div>  
+    </header>
+    <!-- /header -->
+
+   <div class="main">

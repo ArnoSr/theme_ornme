@@ -32,6 +32,12 @@
             $(this).addClass('actif');
             $('.cat-menu').hide();
             $('.cat-menu.cat-'+$cat).show();
+            
+            if($('.vlog').hasClass('actif')){
+                $('.vlog-menu').show();
+            }else{
+                $('.vlog-menu').hide();
+            }
         });
         
         //Tags
