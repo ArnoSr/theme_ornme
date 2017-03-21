@@ -40,6 +40,10 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: $medium-value;
+    
+    @include width-below(500px){
+        padding: $medium-value $medium-value/2;
+    }
 }
 
 a {

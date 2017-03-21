@@ -78,9 +78,12 @@
     background: linear-gradient(to bottom, #e1e2e2 0%, #fff 75%);
 
     .wrapper{
-        background-color: #fff;      
-        max-width: calc(#{$wrapper-size} + #{$medium-value}*2);
-        padding: calc(#{$medium-value} + #{$small-value});
+        background-color: #fff;   
+        
+        @include width-above(501px){
+            max-width: calc(#{$wrapper-size} + #{$medium-value}*2);
+            padding: calc(#{$medium-value} + #{$small-value});
+        }
     }
 }
     
@@ -118,8 +121,8 @@
         .format-third{
             width: 100%;
 
-            &:not(:last-child){
-                margin-bottom: $large-value;
+            &:first-child{
+                margin-bottom: $medium-plus-value;
             }
         }
     }
@@ -199,6 +202,11 @@
     
     .excerpt{
         font-size: 1.4rem;
+    }
+    
+    //En mobile, laisser que 4 articles
+    .format:nth-child(n+5){
+        display: none;
     }
 }
 
