@@ -64,14 +64,48 @@
           slidesToScroll: 3,
             nextArrow: '<button type="button" class="slick-next"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
             prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
+            responsive: [
+              {
+                  breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2,
+                  }
+              },
+              {
+                  breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                  }
+              }
+          ]
         });
         
         $('.vlog-slider-4').slick({
           infinite: false,
           slidesToShow: 4,
           slidesToScroll: 4,
-            nextArrow: '<button type="button" class="slick-next"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
-            prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
+          nextArrow: '<button type="button" class="slick-next"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
+          prevArrow: '<button type="button" class="slick-prev"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-arrow"></use></svg></button>',
+          responsive: [
+              {
+                  breakpoint: 1200,
+                    settings: {
+                        slidesToShow: 3,
+                  }
+              },
+              {
+                  breakpoint: 800,
+                    settings: {
+                        slidesToShow: 2,
+                  }
+              },
+              {
+                  breakpoint: 500,
+                    settings: {
+                        slidesToShow: 1,
+                  }
+              }
+          ]
         });
         
         //Ajouter class video au parent des videos embed

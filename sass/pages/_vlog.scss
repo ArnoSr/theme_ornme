@@ -137,6 +137,11 @@
         top: 0;
         height: 150px;
         
+        @include width-below(700px){
+            padding: .5em;
+            height: 100px;
+        }
+        
         svg{
             fill: #fff;
             height: 20px;
@@ -176,6 +181,14 @@
         .h1-like{
             font-size: 12rem;
             color: rgba(#fff, .4);
+            
+            @include width-below(800px){
+                font-size: 8rem;
+            }
+            
+            @include width-below(500px){
+                font-size: 6rem;
+            }
         }
     }
 }
@@ -187,7 +200,8 @@
         margin: 0;
         color: $vlog;
         text-transform: uppercase;
-        margin-bottom: -40px;
+        margin-bottom: -20px;
+        line-height: 1em;
     }
 }
 
@@ -207,6 +221,13 @@
     flex-direction: column;
     justify-content: center;
     
+    @include width-below(800px){
+        padding: $large-value 50px;
+    }
+    
+    @include width-below(600px){
+        padding: $large-value 30px;
+    }    
     
     h2{
         color: #fff;
@@ -395,46 +416,48 @@
 }
 
 //Responsive
-
+div:not(.slick-slide){
 @include width-below(700px){
     
-    .single-vlog{
-        width: 100%;
-        display: flex;
-        align-items: stretch;
-        margin-right: 0;
-        margin-bottom: $small-value;
-        
-        .thumb-vlog{
-            width: 40%;
-            margin-right: $small-value;
-            
-            img{
-                //object-fit: cover; //A associer avec un height100% quand la techno sera prete http://caniuse.com/#feat=requestidlecallback
+    
+        &.single-vlog{
+            width: 100%;
+            display: flex;
+            align-items: stretch;
+            margin-right: 0;
+            margin-bottom: $small-value;
+
+            .thumb-vlog{
+                width: 40%;
+                margin-right: $small-value;
+
+                img{
+                    //object-fit: cover; //A associer avec un height100% quand la techno sera prete http://caniuse.com/#feat=requestidlecallback
+                }
             }
-        }
-        
-        .wrap-content-article{
-            width: 60%;
-            margin-top: 0;
-        }
-        
-        h2{
-            margin-bottom: 0;
-        }
-        
-        .meta-vlog{
-            width: 60%;
-            margin-top: 0;
-            display: block;
-            
-            .temps-vlog{
-                position: static;
-                text-align: left;
+
+            .wrap-content-article{
+                width: 60%;
+                margin-top: 0;
             }
-            
-            .temps-vlog a{
-                display: none;
+
+            h2{
+                margin-bottom: 0;
+            }
+
+            .meta-vlog{
+                width: 60%;
+                margin-top: 0;
+                display: block;
+
+                .temps-vlog{
+                    position: static;
+                    text-align: left;
+                }
+
+                .temps-vlog a{
+                    display: none;
+                }
             }
         }
     }
