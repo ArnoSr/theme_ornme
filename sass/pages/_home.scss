@@ -23,9 +23,12 @@
     
     .wrapper{
         margin-top: auto;
-        margin-bottom: $medium-value;
         position: relative;
-        z-index: 2;    
+        z-index: 2;   
+        
+        @include width-above(501px){
+            margin-bottom: $medium-value;
+        }
     }
     
     

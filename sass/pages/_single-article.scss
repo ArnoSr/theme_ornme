@@ -40,6 +40,10 @@
         font-size: 3rem;
         margin: 2.5em auto;
         
+        @include width-below(600px){
+            font-size: 2.5rem;
+        }
+        
         p{
             line-height: 1.35em;
             font-style: italic;
@@ -73,8 +77,7 @@
                 border-top-color: $couleur;
             }
         }
-    }
-    
+    }   
 }
 
 
@@ -91,6 +94,11 @@
     p, h2, h3, h4, h5, blockquote, ul, ol, .wp-caption-text{
         margin-left: $large-value;
         margin-right: $large-value;
+        
+        @include width-below(500px){
+            margin-left: $medium-value;
+            margin-right: $medium-value;
+        }
     }
     
     blockquote p{
@@ -162,9 +170,28 @@
         margin-right: auto;
     }
     
+    @include width-below(500px){
+        flex-direction: column;
+        
+        .image-circle{
+            margin-bottom: 1em;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .author-name,
+        .author-title{
+            display: block;
+            text-align: center;
+        }
+    }
+    
     .author-text{
         flex: 1;
-        margin-left: $medium-value;
+        
+        @include width-above(501px){
+           margin-left: $medium-value; 
+        }
     }
     
     .author-name{
@@ -183,5 +210,16 @@
     
     .author-title{
         display: block;
+    }
+}
+
+@include width-below(800px){
+    .sidebar-article{
+        display: none;
+    }
+    
+    .wrapper-article{
+        margin-right: 0;
+        width: 100%;
     }
 }

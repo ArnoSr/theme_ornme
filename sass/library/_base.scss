@@ -100,7 +100,11 @@ h1, .#{$kna-namespace}h1-like {
   font-size: $h1-size;
     
     @include width-below(900px){
-        font-size: calc(#{$h1-size}/1.5);
+        font-size: calc(#{$h1-size}/1.65);
+    }
+    
+    @include width-below(500px){
+        font-size: calc(#{$h1-size}/2);
     }
 }
 

@@ -30,8 +30,10 @@
         }
     }
     
-    h2 a{
-        font-size: 3rem;
+    @include width-above(500px){
+        h2 a{
+            font-size: 3rem;
+        }
     }
 }
 
@@ -42,6 +44,14 @@
     text-transform: uppercase;
     line-height: 1em !important;
     margin-bottom: -.35em;
+    
+    @include width-below(800px){
+        font-size: 6rem;
+    }
+    
+    @include width-below(500px){
+        display: none;
+    }
 }
 
 @each $cat, $couleur in $cats {

@@ -32,9 +32,10 @@
     li{
         display: inline-block;
         font-size: 1.4rem;
+        margin-bottom: 10px;
         
         &:not(:last-child){
-            margin-right: $small-value;
+            margin-right: 10px;
         }
     }
     

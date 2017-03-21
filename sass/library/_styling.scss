@@ -48,6 +48,11 @@ blockquote {
   position: relative;
   padding-left: 3em;
   min-height: 2em;
+    
+    @include width-below(600px){
+        padding-left: 2em;
+    }
+    
 }
 
 blockquote::before {
@@ -60,6 +65,10 @@ blockquote::before {
   height: .4em;
   line-height: .9;
   color: rgba(0, 0, 0, .3);
+    
+    @include width-below(600px){
+        font-size: 3em;
+    }
 }
 
 blockquote > footer {
