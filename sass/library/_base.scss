@@ -25,6 +25,10 @@ body {
   color: $base-color;
   font-family: $font-stack-common;
   line-height: $line-height;
+    
+    @include width-below(900px){
+        font-size: calc(#{$base-font-size} / 1.2);
+    }
 }
 
 a {
@@ -82,6 +86,10 @@ h1, .#{$kna-namespace}h1-like {
   @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
+    
+    @include width-below(900px){
+        font-size: calc(#{$h1-size}/1.5);
+    }
 }
 
 h2, .#{$kna-namespace}h2-like {
@@ -89,6 +97,10 @@ h2, .#{$kna-namespace}h2-like {
   @if variable_exists(font-stack-headings) and $font-stack-headings != $font-stack-common {
     font-family: $font-stack-headings;
   }
+    
+    @include width-below(900px){
+        font-size: calc(#{$h2-size}/1.5);
+    }
 }
 
 h3, .#{$kna-namespace}h3-like {

@@ -49,6 +49,12 @@
         position: relative;
         z-index: 2;
         margin-top: 20px;
+        
+        @include width-below(1100px){
+            margin-top: 5px;
+        }
+        
+        
     }
     
     .format{
@@ -105,20 +111,32 @@
         position: absolute;
         z-index: 0;
         left: 50%;
-        top: 70%;
+        top: 50%;
         transform: translate(-50%, -50%);
         width: 100%;
         color: #fff;
         text-shadow: 20px 20px 20px rgba(#000, .5);
         opacity: .2;
+        padding-top: 1.5%;
+        
+        @include width-below(1100px){
+            font-size: 10rem;
+        }
+        
+        @include width-below(700px){
+            font-size: 7rem;
+            width: 200%;
+        }
     }
     
     p{
         color: #fff;
+        font-family: 'EloquentJFPro';
         font-style: italic;
         font-size: 3rem;
         position: relative;
         z-index: 2;
+        margin-top: 0;
     }
 }
 

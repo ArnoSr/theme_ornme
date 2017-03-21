@@ -24,15 +24,15 @@
                 
                 <div class="menu-top-wrapper">
                    
-                   <div class="wrapper grid-3">
+                   <div class="wrapper wrapperMenu">
                     
-                    <div class="menu flex-container" role="navigation">
+                    <div class="menu" role="navigation">
                         <div class="bt-menu">
                             
                             <label for="checkboxMenu" aria-label="Menu"><span class="icon"></span><span class="text-menu">Fermer</span></label>
                         </div>
                         <a href="<?php echo get_site_url();?>/vlog" class="lien-vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a>
-                        <a id="link_tags"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
+                        <a id="link_tags" class="link-tags"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a>
                     </div>
 
                     <div class="logo">
@@ -41,7 +41,7 @@
                         </a>
                     </div>
                     
-                    <div class="flex-container menu-right">
+                    <div class="menu-right">
                         <a class="lire-revue" href="">
                             <img src="<?php echo get_template_directory_uri();?>/img/mag.png" alt="">
                             Lire la revue
@@ -53,9 +53,9 @@
 
                 </div>
                 
-                <?php // Le Menu ?>
+                <?php // Le Menu desktop ?>
                 
-                <div class="wrapper-menu">
+                <div class="wrapper-menu menu-desktop">
                     <div class="wrapper">
                         <div class="menu-cat-wrapper">
                             <ul>
@@ -107,6 +107,29 @@
                             <div class="menu-pub">
                             pub
                             </div>
+                        </div>
+                    </div>
+                </div> 
+                
+                <?php // Le Menu responsive ?>
+                
+                <div class="wrapper-menu menu-mobile">
+                    <div class="wrapper">
+                        <div class="menu-cat-wrapper">
+                           <ul>
+                               <li><a href="">Rubriques</a>
+                               <ul>
+                                <?php foreach(get_categories() as $cat): ?>
+                                <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
+                                <?php endforeach; ?>
+
+                            </ul>
+                               </li>
+                                <li><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
+                                <li><a href="">Tags</a></li>
+                                <li><a href="">Contact</a></li>
+                           </ul>
+                            
                         </div>
                     </div>
                 </div> 

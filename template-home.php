@@ -73,12 +73,12 @@
 
     <?php if( $featuredPost->have_posts() ): ?>
     
-        <div class="wrapper wrapper-plus grid has-gutter-xl big-featured">
+        <div class="wrapper wrapper-plus big-featured">
         <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
             
             <?php array_push($featured_posts, get_the_ID()); ?>
 
-            <div class="format-third one-third  featured-home <?php echo(get_the_category()[0]->slug);?>">
+            <div class="format-third featured-home <?php echo(get_the_category()[0]->slug);?>">
 
                 <div class="bg-category"><?php echo(get_the_category()[0]->name);?></div>
                 <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
@@ -95,8 +95,9 @@
             
         <?php endwhile; ?>
 
-            <div>
+            <div class="featured-pub">
                 <div class="bg-category">Annonce</div>
+                pub
             </div>
         </div>
     

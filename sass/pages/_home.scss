@@ -6,6 +6,10 @@
     position: relative;
     padding-bottom: 10vh;
     
+    @include width-below(750px){
+        min-height: 100vh;
+    }
+    
     &::before{
         content:'';
         position: absolute;
@@ -19,9 +23,17 @@
     
     .wrapper{
         margin-top: auto;
-        margin-bottom: auto;
+        margin-bottom: $medium-value;
         position: relative;
         z-index: 2;
+        
+        @include width-below(700px){
+            .w50{
+               width: 100%;
+            }
+        }
+        
+
     }
     
     .featured-title{
@@ -43,6 +55,10 @@
             color: inherit;
             text-decoration: none;
             display: inline-block;
+        }
+        
+        @include width-below(700px){
+            display: none;
         }
     }
     
@@ -71,6 +87,47 @@
         position: relative;
         z-index: 2;
         margin-top: -10vh;
+        display: flex;
+        
+        div:not(:last-child){
+            margin-right: $medium-value;
+        }
+        
+        .format-third{
+            width: 33%;
+        }
+        
+        @include width-below($mobile-size){
+            flex-wrap: wrap;
+            
+            div:not(:first-child){
+                margin-right: 0;
+            }
+            
+            .format-third{
+                width: calc(50% - #{$medium-value}/2);
+            }
+        }
+        
+        @include width-below(500px){
+            div{
+                margin-right: 0 !important;
+            }
+            
+            .format-third{
+                width: 100%;
+                
+                &:not(:last-child){
+                    margin-bottom: $large-value;
+                }
+            }
+        }
+    }
+}
+
+@include width-below($mobile-size){
+    .featured-pub{
+        display: none;
     }
 }
 
@@ -83,6 +140,14 @@
     margin-bottom: -.4em;
     margin-left: $small-value;
     color: $gris3;
+    
+    @include width-below(1100px){
+        font-size: 4rem;
+    }
+    
+    @include width-below(800px){
+        display: none;
+    }
 }
 
 .featured-home{
@@ -140,6 +205,13 @@
         font-size: 1.4rem;
     }
 }
+
+    @include width-below(600px){
+        .wrapper-cat .wrapper-articles{
+            display: none;
+        }
+    }
+
 
 .wrap-bt{
     text-align: center;

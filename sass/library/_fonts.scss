@@ -24,7 +24,7 @@
 
 
 @font-face {
-    font-family: 'calendas plus';
+    font-family: 'calendasplus';
     src: url('fonts/calendas_plus_bold-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus_bold-webfont.woff') format('woff');
     font-weight: bold;
@@ -32,7 +32,7 @@
 }
 
 @font-face {
-    font-family: 'calendas plus';
+    font-family: 'calendasplus';
     src: url('fonts/calendas_plus_italic-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus_italic-webfont.woff') format('woff');
     font-weight: normal;
@@ -40,9 +40,17 @@
 }
 
 @font-face {
-    font-family: 'calendas plus';
+    font-family: 'calendasplus';
     src: url('fonts/calendas_plus-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
+}
+
+@font-face {
+    font-family: 'EloquentJFPro';
+    src: url('fonts/eloquentjfpro-italic-webfont.woff2') format('woff2'),
+         url('fonts/eloquentjfpro-italic-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: italic;
 }

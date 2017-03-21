@@ -1,6 +1,11 @@
 .main{
 }
 
+.wrapperMenu{
+    display: flex;
+    width: 100%;
+}
+
 .header{
     transition: all ease .25s;
     font-family: $font-stack-headings;
@@ -19,6 +24,28 @@
     background-color: $color-fond;
     overflow: hidden;
     font-size: 1.4rem;
+    
+    @include width-below($mobile-size){
+        
+        .wrapper{
+            padding: 10px $medium-value;
+        }
+        
+        svg #baseline{
+            opacity: 0;
+        }
+        
+        .logo a{
+            width: 150px;
+            position: relative;
+            top: 10px;
+        }
+        
+        .lire-revue img{
+            width: 60px;
+            height: auto;
+        }
+    }
     
     *{
         transition: all ease .25s;
@@ -50,11 +77,12 @@
 
 .logo{
     text-align: center;
+    flex: 1;
     
     a{
         transition: height ease .25s;
         display: inline-block;
-        width: 215px;
+        max-width: 215px;
     }
     
     svg{
@@ -63,6 +91,8 @@
 }
 
 .menu{
+    
+    display: flex;
     
     a{
         text-decoration: none;
@@ -81,12 +111,16 @@
         }
         
         &:not(:last-child){
-            margin-right: $large-value;
+            margin-right: $medium-value;
         }
     }
     
     .lien-vlog{
         color: $vlog;
+        
+        @include width-below($mobile-size){
+            display: none;
+        }
         
         svg{
             transition: left ease .3s;
@@ -99,6 +133,14 @@
             svg{
                 left: 5px;
             }
+        }
+    }
+    
+    .link-tags{
+        cursor: pointer;
+        
+        @include width-below($mobile-size){
+            display: none;
         }
     }
 }
@@ -147,7 +189,7 @@
 }
 
 .bt-menu{
-    margin: auto $large-value auto 0;
+    margin: auto $medium-value auto 0;
     
     label{
         padding: $small-value 0;
@@ -158,6 +200,10 @@
         opacity: 0;
         position: absolute;
         left: -10000px;
+        
+        @include width-below(450px){
+            display: none !important;
+        }
     }
     
     .icon{
@@ -212,15 +258,18 @@
 
 .menu-right{
     
+    display: flex;
     align-items: center;
-    justify-content: flex-end;
     
     .lire-revue{
         color: $gris1;
         text-decoration: none;
         position: relative;
         padding-left: calc(84px + #{$small-value});
-        margin-right: $large-value;
+        
+        @include width-below($mobile-size){
+            display: none;
+        }
         
         img{
             position: absolute;
@@ -235,6 +284,7 @@
     border: 0;
     background: none;
     cursor: pointer;
+    margin-left: $medium-value;
     
     svg{
         width: 20px;
@@ -263,6 +313,10 @@
 .menu-cat-wrapper{
     background-color: $gris5;
     min-width: 20%;
+    
+    @include width-below($mobile-size){
+        min-width: 100%;
+    }
     
     ul{
         list-style: none;
@@ -405,5 +459,28 @@
     &.tagOpen{
         opacity: 1;
         z-index: 100;
+    }
+}
+
+@include width-below($mobile-size){
+    .menu-desktop{
+        display: none !important;
+    }
+    
+    .menu-mobile{
+        position: fixed;
+        width: calc(100% - 50px);
+        right: 100%;
+        top: 0;
+        
+        ul ul{
+            display: none;
+        }
+    }
+}
+
+@include width-above($mobile-size+1){
+    .menu-mobile{
+        display: none !important;
     }
 }

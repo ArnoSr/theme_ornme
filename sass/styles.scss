@@ -25,6 +25,8 @@
 
 @import "_vendor/_normalize.scss"; // normalize (basic reset)
 
+@import "breakpoints";
+
 // WARNING : you should comment the following @import (variables)
 // and move variables file from knacss folder to your own project folder!
 @import "_config/_variables.scss";
@@ -62,8 +64,6 @@
 /* Here should go your own CSS styles */
 // You can also link them with a Sass @import
 // @import "my-styles";
-
-@import "breakpoints";
 
 @import "general_layout";
 

@@ -4,6 +4,24 @@
 		
 		'use strict';
         
+        //Menu
+        
+        
+        function verif_menu(){
+            if($('#checkboxMenu').is(':checked')){
+                $('body').addClass('menu_open');
+                console.log('coché');
+            }else{
+                $('body').removeClass('menu_open');
+                console.log('pas coché');
+            }
+        }
+        
+        verif_menu();
+        $('#checkboxMenu').change(function(){
+            verif_menu();
+        });
+        
         $('.menu-cat-wrapper li:first-child').addClass('actif');
         $('.cat-menu:first-child').show();
 		
@@ -24,6 +42,10 @@
         //Menu
         //Padding sur le main selong hauteur du menu
         $('.main').css('padding-top', $('.menu-top-wrapper').height());
+        
+        $(window).resize(function(){
+            $('.main').css('padding-top', $('.menu-top-wrapper').height());
+        });
 
         
         //Mini menu
