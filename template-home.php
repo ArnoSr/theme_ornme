@@ -142,7 +142,7 @@
     
     </div> 
     
-    <?php include('vlog.php');?>
+    <?php include('snippets/vlog.php');?>
     
     <div class="wrapper-cat">
     

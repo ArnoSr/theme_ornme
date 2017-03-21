@@ -28,7 +28,7 @@
 
             <?php while($vlog->have_posts() ) : $vlog->the_post(); ?>
 
-                <?php include('snippets/format-vlog.php'); ?>
+                <?php include('format-vlog.php'); ?>
 
             <?php endwhile; ?>
 

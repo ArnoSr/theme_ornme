@@ -28,7 +28,7 @@
 
     </div>   
 
-    <?php include('vlog.php');?>
+    <?php include('snippets/vlog.php');?>
 
 <?php get_footer(); ?>
 
