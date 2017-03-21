@@ -9,7 +9,10 @@
             </ul>
         </div>
         <div class="img-cross-mobile">
-            <img src="<?php echo get_template_directory_uri();?>/img/mobiles.png" alt="">
+            <img src="<?php echo get_template_directory_uri();?>/img/mobiles.png" srcset="
+            <?php echo get_template_directory_uri();?>/img/mobile-responsive.png 700w,
+            <?php echo get_template_directory_uri();?>/img/mobiles.png            
+            " alt="">
         </div>
     </div>
 </div>

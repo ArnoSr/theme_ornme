@@ -3,17 +3,21 @@
     padding-top: 75px;
     padding-bottom: 75px;
     
-    .wrapper{
-        align-items: center;
-        display: flex;
-        
-        > div{
-            width: 50%;
-            
-            &:not(:last-child){
-                margin-right: $medium-value;
+    @include width-above(701px){
+    
+        .wrapper{
+            align-items: center;
+            display: flex;
+
+            > div{
+                width: 50%;
+
+                &:not(:last-child){
+                    margin-right: $medium-value;
+                }
             }
         }
+        
     }
     
     h2{
@@ -33,10 +37,25 @@
         
         li{
             display: inline-block;
+            margin-bottom: $small-value;
             
             &:not(:last-child){
                 margin-right: $small-value;
             }
+        }
+    }
+    
+    @include width-below(700px){
+        
+        padding-bottom: 0;
+        
+        .wrapper{
+            padding-bottom: 0;
+        }
+        
+        .img-cross-mobile{
+            margin-top: $large-value;
+            text-align: center;
         }
     }
 }
