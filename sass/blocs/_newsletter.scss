@@ -51,4 +51,14 @@
         }
     }
     
+    @include width-below(700px){
+        [type='email']{
+            margin-bottom: $small-value;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+    }
+    
 }
