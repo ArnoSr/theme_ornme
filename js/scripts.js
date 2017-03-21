@@ -6,7 +6,6 @@
         
         //Menu
         
-        
         function verif_menu(){
             if($('#checkboxMenu').is(':checked')){
                 $('body').addClass('menu_open');
@@ -18,6 +17,7 @@
         }
         
         verif_menu();
+        
         $('#checkboxMenu').change(function(){
             verif_menu();
         });
@@ -75,12 +75,14 @@
                   breakpoint: 800,
                     settings: {
                         slidesToShow: 2,
+                        slidesToScroll: 2,
                   }
               },
               {
                   breakpoint: 500,
                     settings: {
                         slidesToShow: 1,
+                        slidesToScroll: 1,
                   }
               }
           ]
@@ -97,18 +99,21 @@
                   breakpoint: 1200,
                     settings: {
                         slidesToShow: 3,
+                        slidesToScroll: 3,
                   }
               },
               {
                   breakpoint: 800,
                     settings: {
                         slidesToShow: 2,
+                        slidesToScroll: 2,
                   }
               },
               {
                   breakpoint: 500,
                     settings: {
                         slidesToShow: 1,
+                        slidesToScroll: 1,
                   }
               }
           ]
