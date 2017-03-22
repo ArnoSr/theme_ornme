@@ -1,0 +1,134 @@
+.contact-page{
+    background-color: $gris5;
+    color: #fff;
+    overflow: hidden;
+    
+    h3{
+        font-weight: $regular;
+        margin-bottom: .5em;
+    }
+    
+    p a{
+        color: inherit;
+    }
+    
+    label{
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        color: $gris4;
+        display: block;
+    }
+    
+    textarea{
+        margin-top: 0;
+    }
+    
+    form > p{
+        text-align: center;
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    textarea{
+        transition: all ease .25s;
+        width: 100%;
+        border: 0;
+        border-bottom: 1px solid $gris4;
+        font-size: 1.8rem;
+        
+        &:focus{
+            border-bottom-color: $menu-color;
+        }
+    }
+    
+    .wpcf7-not-valid{
+        border-bottom-color: red !important;
+    }
+    
+    .wpcf7-response-output{
+        position: relative;
+        z-index: 2;
+        border: 0;
+        font-size: 1.4rem;
+        text-align: center;
+        background-color: $gris5;
+        max-width: 400px;
+        margin: auto;
+    }
+    
+    input[type="submit"]{
+        border:0;
+        background: none;
+        font-weight: $bold;
+        color: #fff;
+        cursor: pointer;
+        margin-top: .5em;
+        margin-bottom: .5em;
+    }
+    
+    span.wpcf7-not-valid-tip{
+        margin-top: .4em;
+        font-size: 1.4rem;
+    }
+}
+
+.wrapper-half{
+    display: flex;
+    padding: $large-value;
+    position: relative;
+    
+    @include width-below(900px){
+        flex-direction: column;
+        padding: $medium-value;
+        
+        > div{
+            &:not(:last-child){
+                margin-bottom: $medium-value;
+            }
+        }
+    }
+    
+    @include width-below(500px){
+        padding: $medium-value $small-value;
+    }
+    
+    @include width-above(901px){
+        > div{
+            width: 50%;
+
+            &:not(:last-child){
+                margin-right: $large-value;
+            }
+        }
+    }
+    
+    @include width-above(501px){
+        &::after{
+            content:'';
+            display: block;
+            position: absolute;
+            height: 100%;
+            width: 100%;
+            left: calc(100% - 150px);
+            top: 0;
+            background-color: $gris4;
+            z-index: 0;
+        }  
+    }
+}
+
+.wrapper-form{
+    background-color: #fff;
+    padding: $medium-value $large-value;
+    box-shadow: 0 0 20px rgba(#000, .3);
+    position: relative;
+    z-index: 1;
+    
+    @include width-below(900px){
+        padding: $medium-value;
+    }
+    
+    @include width-below(500px){
+        padding: $medium-value $small-value;
+    }
+}
