@@ -14,6 +14,9 @@
     color: $gris1;
     overflow: hidden;
     position: fixed;
+    top: 0;
+    bottom: 0;
+    overflow-y: auto;
     z-index: 100;
     width: 100%;
 }
@@ -482,6 +485,8 @@
         width: calc(100% - 70px);
         left: calc(-100% + 70px);
         top: 0;
+        bottom: 0;
+        overflow-y: auto;
         min-height: 100vh;
         
         &.menu-mobile{
