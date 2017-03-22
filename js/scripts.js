@@ -9,10 +9,8 @@
         function verif_menu(){
             if($('#checkboxMenu').is(':checked')){
                 $('body').addClass('menu_open');
-                console.log('coché');
             }else{
                 $('body').removeClass('menu_open');
-                console.log('pas coché');
             }
         }
         

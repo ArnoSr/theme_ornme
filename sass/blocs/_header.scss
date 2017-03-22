@@ -461,19 +461,40 @@
 }
 
 @include width-below($mobile-size){
+    
+    body{
+        transition: all ease .3s;
+        position: relative;
+        left: 0;
+    }
+    
+    body.menu_open{
+        left: calc(100% - 70px);
+    }
+    
     .menu-desktop{
         display: none !important;
     }
     
     .menu-mobile{
+        transition: left ease .3s;
         position: fixed;
-        width: calc(100% - 50px);
-        right: 100%;
+        width: calc(100% - 70px);
+        left: calc(-100% + 70px);
         top: 0;
+        min-height: 100vh;
+        
+        &.menu-mobile{
+            display: block;
+        }
         
         ul ul{
             display: none;
         }
+    }
+    
+    [id="checkboxMenu"]:checked ~ .menu-mobile{
+        left:0;
     }
 }
 
