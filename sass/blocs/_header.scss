@@ -489,6 +489,17 @@
         overflow-y: auto;
         min-height: 100vh;
         
+        &::after{
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom:0;
+            background: linear-gradient(to right, rgba(#000, 0), rgba(#000, 1));
+            right: 0;
+            width: 50px;
+            z-index: 0;
+        }
+        
         &.menu-mobile{
             display: block;
         }
