@@ -490,6 +490,67 @@
         
         ul ul{
             display: none;
+            
+            li{
+                font-size: 1.8rem;
+                
+                &:last-child::after{
+                    display: none;
+                }
+            }
+            
+            a{
+                padding: .75em 0 .75em 15px;
+                padding-left: 40px;
+            }
+        }
+        
+        li{
+            font-size: 2rem;
+        
+            &::after{
+                content:'';
+                display: block;
+                height: 1px;
+                width: 80%;
+                background-color: rgba(#fff, .1);
+                margin: auto;
+            }
+            
+            svg{
+                transition: fill ease .25s;
+                height: 20px;
+                width: 20px;
+                margin-right: 10px;
+                position: relative;
+                top: 2px;
+            }
+            
+            a:hover svg{
+                fill: #fff;
+            }
+        }
+        
+        .rubriques > a{
+            color: $menu-color;
+            
+            svg{
+                fill: $menu-color;
+            }
+        }
+        
+        .vlog a{
+            color: $vlog;
+            
+            svg{
+                fill: $vlog;
+            }
+        }
+        
+        .tags a{
+            svg{
+                fill: $gris1;
+            }
         }
     }
     

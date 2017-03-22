@@ -20,11 +20,11 @@
             verif_menu();
         });
         
-        $('.menu-cat-wrapper li:first-child').addClass('actif');
+        $('.menu-desktop li:first-child').addClass('actif');
         $('.cat-menu:first-child').show();
 		
         //Sous-menu
-        $('.menu-cat-wrapper li').mouseover(function(){
+        $('.menu-desktop li').mouseover(function(){
             var $cat = $(this).attr('data-menu');
             $('.menu-cat-wrapper li').removeClass('actif');
             $(this).addClass('actif');
@@ -36,6 +36,13 @@
             }else{
                 $('.vlog-menu').hide();
             }
+        });
+        
+        // Menu responsive
+        
+        $('.has-submenu > a').click(function(event){
+           event.preventDefault();
+            $(this).parent().find('ul').fadeToggle();
         });
         
         //Tags
