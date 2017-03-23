@@ -65,7 +65,7 @@ $form_completed = false;
         
     $files = $_FILES['file_evt'];
         
-    $taille_maxi = 3500000; //3MO
+    $taille_maxi = 3145728; //3MO
         
     //$taille = filesize($_FILES['avatar']['tmp_name']);
 
@@ -165,8 +165,8 @@ $form_completed = false;
                                 <input type="text" id="categorie-evt" name="categorie_evt">
                                 <label for="informations-evt">Informations</label>
                                 <textarea name="informations_evt" id="informations-evt" rows="3"></textarea>
-                                <label for="file-evt">Charger une photo ou une vidéo (max 2mo)</label>
-                                <input type="file" id="file-evt" name="file_evt" accept="video/*,image/*" data-max-size="3000000" class="upload-file">
+                                <label for="file-evt">Charger une photo ou une vidéo (max 3mo)</label>
+                                <input type="file" id="file-evt" name="file_evt" accept="video/*,image/*" data-max-size="3145728" class="upload-file">
                                 <label for="file-evt" class="label-input">
                                     <span class="bt-upload">Parcourir...</span>
                                     <span class="file-upload">Aucun fichier sélectionné</span>
@@ -209,7 +209,7 @@ $form_completed = false;
                     if(fileInput.get(0).files.length){
                         var fileSize = fileInput.get(0).files[0].size; // in bytes
                         if(fileSize>maxSize){
-                            jQuery('.file-upload').html('Votre fichier est trop lourd.');
+                            jQuery('.file-upload').html('<strong style="color:red;">Votre fichier est trop lourd. Poids max 3 MO</strong>');
                         }else{
                             jQuery('.file-upload').html(name_file);
                             jQuery('.response-output').hide();
