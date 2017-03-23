@@ -165,7 +165,7 @@ $form_completed = false;
 
 ?>
     <?php /* Template Name: Événement */ get_header(); ?>
-        <main role="main" class="contact-page">
+        <main role="main" class="contact-page background-fixed-page" style="background-image: url('<?php the_post_thumbnail_url();?>');">
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
                 <!-- section -->
                 <section class="wrapper wrapper-half">
