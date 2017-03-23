@@ -361,7 +361,7 @@ add_shortcode('html5_shortcode_demo_2', 'html5_shortcode_demo_2'); // Place [htm
 	Custom Post Types
 \*------------------------------------*/
 
-    register_taxonomy_for_object_type('post_tag', 'html5-blank');
+register_taxonomy_for_object_type('post_tag', 'html5-blank');
 
 // Create 1 Custom Post type for a Demo, called HTML5-Blank
 function create_post_type_html5()
@@ -394,6 +394,30 @@ function create_post_type_html5()
         'taxonomies' => array(
             'post_tag'
         ) // Add Category and Post Tags support
+    ));
+    
+    register_post_type('evenement', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => 'Événements',
+            'singular_name' => 'Événement',
+            'add_new' => 'Ajouter',
+            'add_new_item' => 'Ajouter un événement',
+            'edit' => 'Modifier',
+            'edit_item' => 'Modifier un événement',
+            'new_item' => 'Nouvel événement',
+            'view' => 'Voir l\'événement',
+            'all_items' => 'Tous les événements'
+        ),
+        'public' => true,
+        'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
+        'has_archive' => true,
+        'supports' => array(
+            'title',
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-calendar-alt',
     ));
 }
 
@@ -493,6 +517,7 @@ function or_duree_video($post_ID){
     endif;
    
 }
+
 
 //
 

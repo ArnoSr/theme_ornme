@@ -17,6 +17,10 @@
         text-transform: uppercase;
         color: $gris4;
         display: block;
+        
+        &:not(:first-child){
+            margin-top: 1em;
+        }
     }
     
     textarea{
@@ -45,7 +49,8 @@
         border-bottom-color: red !important;
     }
     
-    .wpcf7-response-output{
+    .wpcf7-response-output,
+    .response-output{
         position: relative;
         z-index: 2;
         border: 0;
@@ -131,4 +136,39 @@
     @include width-below(500px){
         padding: $medium-value $small-value;
     }
+}
+
+.form-completed{
+    max-width: 400px;
+    font-size: 1.8rem;
+    margin-bottom: 1em;
+    color: $menu-color;
+}
+
+.bt-upload{
+    transition: all ease .25s;
+    display: inline-block;
+    padding: .8em 2em .5em;
+    border: 2px solid $gris4;
+    border-radius: 100em;
+    margin-right: $small-value;
+    
+    &:hover{
+        color: $menu-color;
+        border-color: $menu-color;
+    }
+}
+
+.file-upload{
+    font-size: 1.4rem;
+    color: $gris5;
+    text-transform: none;
+}
+
+.label-input{
+    margin-bottom: $medium-value;
+}
+
+#file-evt{
+    display: none;
 }
