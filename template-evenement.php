@@ -182,8 +182,6 @@ $form_completed = false;
                             <div class="wrapper-form">
                                 <label for="titre-evt">Titre de l'événement</label>
                                 <input type="text" id="titre-evt" name="titre_evt" required>
-                                <label for="categorie-evt">Catégorie de l'événement</label>
-                                <input type="text" id="categorie-evt" name="categorie_evt">
                                 <label for="informations-evt">Informations</label>
                                 <textarea name="informations_evt" id="informations-evt" rows="3"></textarea>
                                 <label for="file-evt">Charger une photo ou une vidéo (max 3mo)</label>
