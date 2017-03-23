@@ -37,6 +37,24 @@ $form_completed = false;
     if(isset($_POST['commentaire_evt']) && $_POST['commentaire_evt'] != ''){
         $commentaire_evt = $_POST['commentaire_evt'];
     }
+
+    if(isset($_POST['date_debut_evt']) && $_POST['date_debut_evt'] != ''){
+        $date_debut_evt = $_POST['date_debut_evt'];
+    }
+
+    if(isset($_POST['heure_debut_evt']) && $_POST['heure_debut_evt'] != ''){
+        $heure_debut_evt = $_POST['heure_debut_evt'];
+    }
+
+    if(isset($_POST['date_fin_evt']) && $_POST['date_fin_evt'] != ''){
+        $date_fin_evt = $_POST['date_fin_evt'];
+    }
+
+    if(isset($_POST['heure_fin_evt']) && $_POST['heure_fin_evt'] != ''){
+        $heure_fin_evt = $_POST['heure_fin_evt'];
+    }
+
+    
     
     if($validation_form == true){
         
@@ -55,7 +73,10 @@ $form_completed = false;
         if(isset($facebook_evt)) update_field('url_facebook', $facebook_evt, $id);
         if(isset($twitter_evt)) update_field('url_twitter', $twitter_evt, $id);
         if(isset($commentaire_evt)) update_field('commentaire', $commentaire_evt, $id);
-        //if(isset($file_evt)) update_field('photo_ou_video', $file_evt, $id);
+        if(isset($date_debut_evt)) update_field('date_de_debut', $date_debut_evt, $id);
+        if(isset($heure_debut_evt)) update_field('date_de_fin', $date_debut_evt, $id);
+        if(isset($date_fin_evt)) update_field('heure_de_debut', $date_fin_evt, $id);
+        if(isset($heure_fin_evt)) update_field('heure_de_fin', $heure_fin_evt, $id);
         
     if($_FILES){
         
@@ -176,6 +197,13 @@ $form_completed = false;
                                 <input type="text" id="ville-evt" name="ville_evt">
                                 <label for="adresse-evt">Adresse</label>
                                 <input type="text" id="adresse-evt" name="adresse_evt">
+                                
+                                <label for="date-debut-evt">Date de début</label>
+                                <input class="input-date" type="date" name="date_debut_evt" placeholder="<?php echo date('d/m/o');?>"><input class="input-date" type="time" name="heure_debut_evt" placeholder="<?php echo date('H:i');?>">>
+                                
+                                <label for="date-fin-evt">Date de fin</label>
+                                <input class="input-date" type="date" name="date_fin_evt" placeholder="<?php echo date('d/m/o');?>"><input class="input-date" type="time" name="heure_fin_evt" placeholder="<?php echo date('H:i');?>">>
+                                
                                 <label for="url-evt">Url événement</label>
                                 <input type="text" id="url-evt" name="url_evt">
                                 <label for="facebook-evt">Url Facebook</label>
@@ -183,7 +211,7 @@ $form_completed = false;
                                 <label for="twitter-evt">Url Twitter</label>
                                 <input type="text" id="twitter-evt" name="twitter_evt">
                                 <label for="commentaire-evt">Commentaire</label>
-                                <textarea name="commentaire-evt" id="commentaire_evt" rows="3"></textarea>
+                                <textarea name="commentaire_evt" id="commentaire_evt" rows="3"></textarea>
                             </div>
                             <p>
                                 <input type="submit" value="Envoyer">
@@ -234,6 +262,17 @@ $form_completed = false;
 
                 });
                 
+                jQuery('input[type="date"]').pickadate({
+                    format: 'd mmmm yyyy',
+                      monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
+                      weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
+                      today: 'aujourd\'hui',
+                      clear: 'effacer',
+                      formatSubmit: 'yyyy/mm/dd'
+                });              
+                jQuery('input[type="time"]').pickatime({
+                    format: 'H:i',
+                });              
                 
             });
     </script>

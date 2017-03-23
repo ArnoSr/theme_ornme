@@ -78,6 +78,16 @@ function html5blank_conditional_scripts()
         wp_enqueue_script('scripts_granim'); // Enqueue it!
     }
     
+     if (is_page_template('template-evenement.php')) {
+        wp_register_script('picker', get_template_directory_uri() . '/js/lib/picker.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('picker');
+        wp_register_script('picker_date', get_template_directory_uri() . '/js/lib/picker.date.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('picker_date');
+         
+        wp_register_script('picker_time', get_template_directory_uri() . '/js/lib/picker.time.js', array('jquery'), '1.0.0', true);
+        wp_enqueue_script('picker_time');
+    }
+    
     if (is_single()) {        
         wp_register_script('scripts_single', get_template_directory_uri() . '/js/scripts_single.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('scripts_single'); // Enqueue it!
