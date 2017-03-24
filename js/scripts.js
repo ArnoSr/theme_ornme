@@ -134,9 +134,9 @@
             
             if($('.search-input').val() == ''){
                 e.preventDefault();
-            $(this).parent().find('.search-input').fadeIn().focus();
-            $('.lire-revue').hide();
-            $('.logo').hide();
+                $(this).parent().find('.search-input').fadeIn().focus();
+                $('.lire-revue').hide();
+                $('.logo').hide();
             }
  
         });

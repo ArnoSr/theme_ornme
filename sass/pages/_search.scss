@@ -1,4 +1,9 @@
 .search{
+    
+    .tag-background{
+        overflow: hidden;
+    }
+    
     .single-vlog{
         width: calc(25% - #{$medium-value});
     
@@ -17,7 +22,7 @@
         form{
             display: inline-block;
             position: relative;
-            min-width: 500px;
+            min-width: 75%;
             
             input[type="search"]{
                 transition: all ease .25s;
@@ -40,6 +45,8 @@
                 svg{
                     transition: fill ease .25s;
                     fill: $gris4;
+                    position: relative;
+                    top: -3px;
                 }
                 
                 &:hover svg{
