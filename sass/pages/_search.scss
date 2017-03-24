@@ -1,0 +1,51 @@
+.search{
+    .single-vlog{
+        width: calc(25% - #{$medium-value});
+    
+        @include width-below(1100px){
+            width: calc(50% - #{$medium-value});
+        }
+        
+        margin-right: $medium-value;
+        margin-bottom: $medium-value;
+    }
+    
+    .form-no-result{
+        margin-top: 100px;
+        text-align: center;
+        
+        form{
+            display: inline-block;
+            position: relative;
+            min-width: 500px;
+            
+            input[type="search"]{
+                transition: all ease .25s;
+                border: 0;
+               border-bottom: 1px solid $gris4; 
+                width: 100%;
+                
+                &:focus{
+                    border-bottom-color: $menu-color;
+                }
+            }
+            
+            button[type="submit"]{
+                position: absolute;
+                border: 0;
+                background: none;
+                right: 0;
+                cursor: pointer;
+                
+                svg{
+                    transition: fill ease .25s;
+                    fill: $gris4;
+                }
+                
+                &:hover svg{
+                    fill: $menu-color;
+                }
+            }
+        }
+    }
+}
