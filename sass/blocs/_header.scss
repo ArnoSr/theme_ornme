@@ -59,6 +59,8 @@
     
     &.smaller{
         
+        height: $menu-small-height;
+        
         .wrapper{
             padding: 10px $medium-value;
         }

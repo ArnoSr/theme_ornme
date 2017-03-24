@@ -1,5 +1,5 @@
 .single-article{
-    margin-top: 50px;
+    margin-top: 10px;
     display: flex;
 }
 
@@ -52,6 +52,7 @@
     
     .twitter-tweet{
         margin: $medium-value auto !important;
+        z-index: 0 !important;
     }
         
     //Couleurs en fonction de la catégorie
@@ -221,5 +222,49 @@
     .wrapper-article{
         margin-right: 0;
         width: 100%;
+    }
+}
+
+// Barre tps lecture
+
+.tps-lecture{
+    background: linear-gradient(to bottom, rgba(#fff, 1) 50%, rgba(#fff, 0));
+    position: sticky;
+    top: $menu-small-height;
+    z-index: 2;
+}
+
+.barre-tps-lecture{
+    height: 4px;
+    width: 0;
+}
+
+@each $cat, $couleur in $cats {
+    .#{$cat} {
+        .barre-tps-lecture{
+            background-color: $couleur;
+        }  
+        
+        .reste-tps-lecture{
+            color: $couleur;
+            
+            svg{
+                fill: $couleur;
+            }
+        }
+    }
+} 
+
+.reste-tps-lecture{
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: $medium;
+    
+    svg{
+        width: 17px;
+        height: 17px;
+        margin-right: 5px;
+        position: relative;
+        top: 4px;
     }
 }

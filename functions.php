@@ -487,6 +487,15 @@ function or_temps_lecture($contenu){
     print '<span>'.$temps_lecture_arrondi.' min</span>';
 }
 
+function or_temps_minute_lecture($contenu){    
+    $nb_mots = str_word_count($contenu);
+    $vitesse_lecture = 200; //mots par minute
+    $temps_lecture = $nb_mots / $vitesse_lecture;
+    $temps_lecture_arrondi = round($temps_lecture);
+    
+    print '<span class="tps_restant">'.$temps_lecture_arrondi.'</span>';
+}
+
 //Extra field sur page profil
 
 function modify_contact_methods($profile_fields) {

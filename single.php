@@ -25,6 +25,12 @@
        </div>
     </div>
     
+    <div class="tps-lecture">
+        <div class="barre-tps-lecture"></div>
+        <div class="reste-tps-lecture wrapper"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> Temps restant : <?php or_temps_minute_lecture(get_the_content()); ?> min</div>
+    </div>
+    
+    
     
     <div class="wrapper single-article">
         <div class="wrapper-article">
