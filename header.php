@@ -41,10 +41,31 @@
                 </div>
 
                 <div class="menu-right">
-                    <a class="lire-revue" href="">
-                        <img src="<?php echo get_template_directory_uri();?>/img/mag.png" alt="">
-                        Lire la revue
+                   
+                    <?php
+                    
+                    $argCat = array(
+                            'post_type'		=> 'revue',
+                            'posts_per_page' => 1,
+                        ); 
+
+                        $singleCat = new WP_Query( $argCat ); ?>
+
+                        <?php if($singleCat->have_posts() ): ?>
+
+                        <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+                        
+                        <?php $image = get_field('apercu'); ?>
+
+                   
+                    <a class="lire-revue" href="<?php the_field('lien_vers_le_pdf');?>" target="_blank" title="<?php the_title();?>">
+                        <img src="<?php echo $image['sizes']['large300']; ?>" alt=""/>
+                        <?php the_field('texte'); ?>
                     </a>
+                    
+                    <?php endwhile; ?>
+                    <?php endif;?>
+                    
                     <button aria-label="Accéder à la recherche" class="bt-search" title="Accéder à la recherche"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loupe"></use></svg></use></button>
                 </div>
 

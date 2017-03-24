@@ -8,6 +8,8 @@ if (function_exists('add_theme_support'))
     // Add Thumbnail Theme Support
     add_theme_support('post-thumbnails');
 
+    
+    add_image_size('large300', 300, '', true); // Large Thumbnail
     add_image_size('large1000', 1200, '', true); // Large Thumbnail
     add_image_size('large1400', 1400, '', true); // Large Thumbnail
 
@@ -428,6 +430,33 @@ function create_post_type_html5()
         'can_export' => true, // Allows export in Tools > Export
         'menu_position' => 5,
         'menu_icon' => 'dashicons-calendar-alt',
+    ));
+    
+    register_post_type('revue', // Register Custom Post Type
+        array(
+        'labels' => array(
+            'name' => 'Revues',
+            'singular_name' => 'Revue',
+            'add_new' => 'Ajouter',
+            'add_new_item' => 'Ajouter une revue',
+            'edit' => 'Modifier',
+            'edit_item' => 'Modifier une revue',
+            'new_item' => 'Nouvelle revue',
+            'view' => 'Voir la revue',
+            'all_items' => 'Toutes les revues'
+        ),
+        'public' => true,
+        'hierarchical' => true,
+        'exclude_from_search' => true,
+        'publicly_queryable' => false,
+        'show_in_admin_bar' => false,
+        'has_archive' => false,
+        'supports' => array(
+            'title',
+        ), // Go to Dashboard Custom HTML5 Blank post for supports
+        'can_export' => true, // Allows export in Tools > Export
+        'menu_position' => 5,
+        'menu_icon' => 'dashicons-book-alt',
     ));
 }
 
