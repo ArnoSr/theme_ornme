@@ -3,6 +3,7 @@
 
 .wrapperMenu{
     display: flex;
+    justify-content: space-between;
     width: 100%;
 }
 
@@ -286,22 +287,6 @@
         }
     }
 }
-
-.bt-search{
-    padding: 0;
-    border: 0;
-    background: none;
-    cursor: pointer;
-    margin-left: $medium-value;
-    
-    svg{
-        width: 20px;
-        fill: $gris1;
-        position: relative;
-        top: 3px;
-    }
-}
-
 
 // Menu
 
@@ -591,4 +576,53 @@
 
 .vlog-menu{
     display: none;
+}
+
+//Recherche
+
+.header .search{
+
+        background: none;
+        display: flex;
+        justify-content: flex-end;
+        margin-left: $medium-value;
+
+        input[type="search"]{
+            transition: all ease .25s;
+            border: 0;
+            border-bottom: 1px solid $gris1; 
+            background: none;
+            color: #fff;
+            min-width: 500px;
+            display: none;
+            
+            @include width-below(900px){
+                min-width: 300px;
+            }
+            
+            @include width-below(900px){
+                min-width: 100%;
+                width: 100%;
+            }
+
+            &:focus{
+                border-bottom-color: $menu-color;
+            }
+        }
+
+        button[type="submit"]{
+            border: 0;
+            background: none;
+            right: 0;
+            cursor: pointer;
+
+            svg{
+                width: 20px;
+                fill: $gris1;
+            }
+
+            &:hover svg{
+                fill: $menu-color;
+            }
+        }
 }

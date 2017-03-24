@@ -128,7 +128,18 @@
         
         $('.page-template-default').find('iframe').parent().addClass('video');
         
+        // Recherche
         
+        $('.header .search-submit').click(function(e){
+            
+            if($('.search-input').val() == ''){
+                e.preventDefault();
+            $(this).parent().find('.search-input').fadeIn().focus();
+            $('.lire-revue').hide();
+            $('.logo').hide();
+            }
+ 
+        });
 
 
 	});
