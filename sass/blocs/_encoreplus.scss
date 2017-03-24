@@ -21,6 +21,7 @@
 
 .more-wrapper{
     display: flex;
+    flex-wrap: wrap;
     
     @each $cat, $couleur in $cats {
         .#{$cat} {
