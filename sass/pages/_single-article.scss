@@ -9,6 +9,7 @@
         width: 100% !important;
         height: auto;
         margin: 2em 0;
+        position: relative;
         
         img{
             width: 100%;
@@ -232,6 +233,7 @@
     position: sticky;
     top: $menu-small-height;
     z-index: 2;
+    overflow: hidden;
 }
 
 .barre-tps-lecture{

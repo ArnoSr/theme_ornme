@@ -1,0 +1,91 @@
+@font-face{
+	font-family: 'jsps';
+	src: url('fonts/jsps.eot?142');
+	src: url('fonts/jsps.eot?#iefix142') format('embedded-opentype'),
+		 url('fonts/jsps.woff?142') format('woff'),
+		 url('fonts/jsps.ttf?142') format('truetype'),
+		 url('fonts/jsps.svg?142#jsps') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="jsps-"],
+[class*=" jsps-"]{
+	font-family: 'jsps'!important;
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 1.5em;
+}
+.jsps-facebook:before {
+	position: relative;
+	left: -.05em;
+	content: "\ea8c";
+	vertical-align: 0.11em;
+}
+.jsps-twitter:before {
+	content: "\ea91";
+}
+.jsps-linkedin:before {
+	content: "\eac9";
+	font-size: 0.85em;
+	vertical-align: 0.2em;
+}
+
+.juiz_sps_links {
+	word-wrap: normal!important;
+	clear: both;
+	margin: 1em 0;
+}
+.juiz_sps_maybe_hidden_text {
+	position:absolute;
+	left:-9999em;
+	text-indent:-9999em;
+}
+[dir="rtl"] .juiz_sps_maybe_hidden_text {
+	position:absolute;
+	right:-9999em;
+}
+
+.juiz_sps_network_name{
+    display: none;
+}
+
+// 
+
+.wrapper-article{
+    position: relative;
+}
+
+.social{
+    float :left;
+    position: sticky;
+    top: 50vh;
+    
+    @include width-below(500px){
+        display: none;
+    }
+    
+    ul{
+        list-style-type: none;
+        margin: 0 !important;
+        padding-left: 0;
+    }
+    
+    li{
+        &:not(:last-child){
+            margin-bottom: 1em;
+        }
+    }
+    
+    a{
+        transition: color ease .25s;
+        color: $gris4;
+        text-decoration: none;
+    }
+}
