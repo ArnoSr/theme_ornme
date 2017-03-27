@@ -104,6 +104,7 @@
     position: relative;
     top: -45px;
     width: 60px;
+    flex-shrink: 0;
 
     svg{
         width: 40px;
