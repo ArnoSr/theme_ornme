@@ -63,11 +63,9 @@
 }
 
 .social{
-    float :left;
-    position: sticky;
-    top: 50vh;
+    
     text-align: center;
-    margin-top: $large-value;
+    
     
     @include width-below(500px){
         display: none;
@@ -100,5 +98,26 @@
         font-size: 1.4rem;
         font-weight: $medium;
         color: $gris4;
+    }
+}
+
+.content-single-vlog{
+    .social{
+        float: right;
+        margin-left: $large-value;
+        
+        a:hover{
+            color: $vlog;
+        }
+    }
+}
+
+.single-article{
+    
+    .social{
+        float :left;
+        position: sticky;
+        top: 50vh;
+        margin-top: $large-value;
     }
 }

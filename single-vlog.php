@@ -24,6 +24,7 @@
                    <h1><?php the_title();?></h1>
                    <p class="author-vlog">par <?php the_author_posts_link(); ?></p>
    
+                       <?php include('snippets/social.php'); ?>
                     <?php the_content();?>
                     
                     <div class="list-tag">
