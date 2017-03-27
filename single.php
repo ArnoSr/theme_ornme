@@ -34,11 +34,8 @@
     
     <div class="wrapper single-article">
         <div class="wrapper-article">
-                       <div class="social">
-                <?php 
-                    echo do_shortcode('[juiz_sps buttons="facebook, twitter, linkedin"]');
-                ?>
-            </div>
+            
+            <?php include('snippets/social.php'); ?>
             <?php the_content(); ?>
         </div>
         <aside class="sidebar-article">

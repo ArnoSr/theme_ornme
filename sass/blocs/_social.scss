@@ -66,6 +66,8 @@
     float :left;
     position: sticky;
     top: 50vh;
+    text-align: center;
+    margin-top: $large-value;
     
     @include width-below(500px){
         display: none;
@@ -87,5 +89,16 @@
         transition: color ease .25s;
         color: $gris4;
         text-decoration: none;
+    }
+    
+    .juiz_sps_links{
+        margin-top: 0;
+    }
+    
+    .partager-titre{
+        text-transform: uppercase;
+        font-size: 1.4rem;
+        font-weight: $medium;
+        color: $gris4;
     }
 }

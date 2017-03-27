@@ -94,8 +94,8 @@
     }
     
     p, h2, h3, h4, h5, blockquote, ul, ol, .wp-caption-text{
-        margin-left: $large-value;
-        margin-right: $large-value;
+        margin-left: 100px;
+        margin-right: 100px;
         
         @include width-below(500px){
             margin-left: $medium-value;
