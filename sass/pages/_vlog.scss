@@ -247,16 +247,31 @@
     }
     
     .icon-vlog{
-        width: 60px;
-        height: 60px;
-        background-color: $vlog;
-        display: flex;
-        border-radius: 100em;
         
         svg{
+            width: 60px;
+            height: 60px;
             margin: auto;
             fill: #fff;
+            display: inline-block;
+            vertical-align: middle;
         }
+        
+        p{
+            display: inline-block;
+            vertical-align: middle;
+            margin-top: 0;
+            margin-left: 1em;
+            font-weight: $bold;
+            font-size: 2.5rem;
+        }
+        
+        color: #fff;
+    }
+    
+    .alaune{
+        font-weight: $bold;
+        color: #fff;
     }
 }
 
