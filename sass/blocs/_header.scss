@@ -3,6 +3,7 @@
 
 .wrapperMenu{
     display: flex;
+    align-items: center;
     justify-content: space-between;
     width: 100%;
     margin-top: auto;
@@ -364,7 +365,7 @@
 
 .menu-cat-content{
     background-color: #0d0e0f;
-    display: flex;
+    max-width: 80%;
     
     .description-title{
         font-size: 6rem;
@@ -374,9 +375,13 @@
         margin-bottom: $small-plus-value;
     }
     
-
+    .thumb{
+        max-width: 100%;
+    }
+    
     .wrapper-articles-menu{
         display: flex;
+        flex-shrink: 1;
         flex-wrap: wrap;
         position: relative;
         
@@ -407,6 +412,7 @@
     
     .big-wrapper-menu{
         display: flex;
+        flex-shrink: 1;
     }
 
     

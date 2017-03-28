@@ -117,7 +117,7 @@
                                     <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
 
                                         <div class="">
-                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                            <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
                                             <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
                                         </div>
 
