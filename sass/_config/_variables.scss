@@ -47,6 +47,14 @@ $or-bord : #0e55e5;
 $vlog : #f83938;
 $menu-color : #6091ff;
 
+// Dégradés
+
+$gradient-or-cadre : linear-gradient(to bottom, #ff9068, #ff4b1f);
+$gradient-or-sujet : linear-gradient(to bottom, #dc281e, #f00000);
+$gradient-or-piste : linear-gradient(to bottom, #fd8100, #fa4e00);
+$gradient-or-doeuvre : linear-gradient(to bottom, #9bd053, #45b649);
+$gradient-or-bord : linear-gradient(to bottom, #0f59f0, #0a3ea9);
+
 $cats: ("or-cadre": $or-cadre, "or-sujet": $or-sujet, "or-piste": $or-piste, "or-doeuvre": $or-doeuvre, "or-bord": $or-bord);
 
 

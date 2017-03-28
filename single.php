@@ -31,7 +31,6 @@
     </div>
     
     
-    
     <div class="wrapper single-article">
         <div class="wrapper-article">
             

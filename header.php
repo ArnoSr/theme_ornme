@@ -105,7 +105,10 @@
 
                             <div class="cat-menu cat-<?php echo $cat->slug; ?>">
 
-                                <p class="description-title"><?php echo $cat->description; ?></p>
+                                <div class="hgroup-cat">
+                                    <h1><?php echo $cat->name; ?></h1>
+                                    <p><?php echo $cat->description; ?></p>
+                                </div>
 
                                 <div class="wrapper-articles-menu">
 
@@ -138,7 +141,10 @@
 
                             <div class="">
 
-                                <p class="description-title">Vlog</p>
+                                <div class="hgroup-cat">
+                                    <h1>Vlog</h1>
+                                    <p>Nos photos & vidéos</p>
+                                </div>
 
                                 <div class="wrapper-articles-menu">
 
@@ -158,10 +164,6 @@
 
                         </div>
 
-                        </div>
-
-                        <div class="menu-pub">
-                        pub
                         </div>
                     </div>
                 </div>
