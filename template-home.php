@@ -23,9 +23,58 @@
     <?php if( $featuredPostTop->have_posts() ): ?>
     <?php while( $featuredPostTop->have_posts() ) : $featuredPostTop->the_post(); ?>
     
+
+        <?php if (has_post_thumbnail() && !post_password_required()): ?>
+        
+        <?php
+            $thumb_id = get_post_thumbnail_id();
+            $thumb_url_large_array = wp_get_attachment_image_src($thumb_id, 'large1920', true);
+            $thumb_url_large = $thumb_url_large_array[0];
+            $thumb_url_medium_array = wp_get_attachment_image_src($thumb_id, 'large1400', true);
+            $thumb_url_medium = $thumb_url_medium_array[0];
+            $thumb_url_small_array = wp_get_attachment_image_src($thumb_id, 'large900', true);
+            $thumb_url_small = $thumb_url_small_array[0];
+            $thumb_url_tiny_array = wp_get_attachment_image_src($thumb_id, 'large600', true);
+            $thumb_url_tiny = $thumb_url_tiny_array[0];
+        ?>
+
+        
+
+		
+		<style type="text/css">
+
+		@media only screen and (min-width: 1500px){
+			.featured-post{
+				background-image: url('<?php echo $thumb_url_large; ?>');
+			}
+		}
+
+		@media only screen and (min-width: 800px) and (max-width: 1499px){
+			.featured-post{
+				background-image: url('<?php echo $thumb_url_medium; ?>');
+			}
+		}
+
+		@media only screen and (max-width: 799px) and (min-width: 500px){
+			.featured-post{
+				background-image: url('<?php echo $thumb_url_small; ?>');
+			}
+		}
+
+		@media only screen and (max-width: 499px){
+			.featured-post{
+				background-image: url('<?php echo $thumb_url_tiny; ?>');
+			}
+		}
+			
+	</style>
+  
+  <?php endif; ?>
+   
+    
     <?php array_push($featured_posts, get_the_ID()); ?>
     
-    <div class="featured-post" style="background-image: url('<?php the_post_thumbnail_url();?>');">
+    <div class="featured-post">
       
        <div class="wrapper">
           

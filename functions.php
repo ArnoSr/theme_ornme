@@ -9,9 +9,12 @@ if (function_exists('add_theme_support'))
     add_theme_support('post-thumbnails');
 
     
-    add_image_size('large300', 300, '', true); // Large Thumbnail
-    add_image_size('large1000', 1200, '', true); // Large Thumbnail
-    add_image_size('large1400', 1400, '', true); // Large Thumbnail
+    add_image_size('large300', 300, '', true);
+    add_image_size('large600', 600, '', true);
+    add_image_size('large900', 900, '', true);
+    add_image_size('large1000', 1200, '', true);
+    add_image_size('large1400', 1400, '', true);
+    add_image_size('large1920', 1920, '', true);
 
     // Enables post and comment RSS feed links to head
     add_theme_support('automatic-feed-links');
@@ -73,6 +76,7 @@ function html5blank_header_scripts()
 function html5blank_conditional_scripts()
 {
     if (is_page_template('template-home.php') or is_category()) {
+        
         wp_register_script('granim', get_template_directory_uri() . '/js/lib/granim.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('granim');
         
@@ -81,8 +85,10 @@ function html5blank_conditional_scripts()
     }
     
      if (is_page_template('template-evenement.php')) {
+         
         wp_register_script('picker', get_template_directory_uri() . '/js/lib/picker.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('picker');
+         
         wp_register_script('picker_date', get_template_directory_uri() . '/js/lib/picker.date.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('picker_date');
          
