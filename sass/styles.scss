@@ -10,6 +10,8 @@
 @import "_config/_variables.scss";
 
 // Libraries
+
+@import "library/_fonts.scss"; // typos
 @import "library/_base.scss"; // basic styles
 @import "library/_print.scss"; // print quick reset
 @import "library/_styling.scss"; // minor stylings
