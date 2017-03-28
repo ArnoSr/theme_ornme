@@ -84,7 +84,7 @@
                         <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
                         <?php endforeach; ?>
                         <li class="vlog"><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
-                        <li><a href="">Contact</a></li>
+                        <li><a href="<?php echo get_site_url();?>/contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="menu-cat-content">
@@ -109,18 +109,24 @@
                                     <h1><?php echo $cat->name; ?></h1>
                                     <p><?php echo $cat->description; ?></p>
                                 </div>
+                                
+                                <div class="big-wrapper-menu">
+                                
+                                    <div class="wrapper-articles-menu">
 
-                                <div class="wrapper-articles-menu">
+                                    <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
 
-                                <?php while($singleCat->have_posts() ) : $singleCat->the_post(); ?>
+                                        <div class="">
+                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                        </div>
 
-                                    <div class="">
-                                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-                                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                    <?php endwhile; ?>
+
                                     </div>
 
-                                <?php endwhile; ?>
-
+                                    <div class="menu-pub">Pub</div>
+                                
                                 </div>
 
                             </div>
@@ -139,23 +145,31 @@
 
                         <?php if($singleVlog->have_posts() ): ?>
 
-                            <div class="">
+                            <div>
 
                                 <div class="hgroup-cat">
                                     <h1>Vlog</h1>
                                     <p>Nos photos & vidéos</p>
                                 </div>
+                                
+                                <div class="big-wrapper-menu">
 
-                                <div class="wrapper-articles-menu">
+                                    <div class="wrapper-articles-menu">
 
-                                <?php while($singleVlog->have_posts() ) : $singleVlog->the_post(); ?>
+                                    <?php while($singleVlog->have_posts() ) : $singleVlog->the_post(); ?>
 
-                                    <div class="">
-                                        <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
-                                        <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
-                                    </div>
+                                        <div>
+                                            <a href="<?php the_permalink();?>"><?php the_post_thumbnail('large1000'); ?></a>
+                                            <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                                        </div>
 
-                                <?php endwhile; ?>
+                                    <?php endwhile; ?>
+
+                                    
+                                
+                                </div>
+                                
+                                <div class="menu-pub">Pub</div>
 
                                 </div>
 
@@ -188,7 +202,7 @@
                             
                             <li class="vlog"><a href="<?php echo get_site_url();?>/vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a></li>
                             <li class="tags"><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a></li>
-                            <li><a href="">Contact</a></li>
+                            <li><a href="<?php echo get_site_url();?>/contact">Contact</a></li>
                        </ul>
                        
                     </div>
