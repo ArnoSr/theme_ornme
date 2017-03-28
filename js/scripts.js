@@ -141,6 +141,24 @@
  
         });
         
+        // Animations
+        
+        window.sr = ScrollReveal({mobile:true});
+		
+		//Header
+		//sr.reveal('.header');
+		sr.reveal('.big-featured > div', 100);
+		sr.reveal('.featured-post');
+        //sr.reveal('.logo *', 20);
+        sr.reveal('.wrapper-vlog > div', 100);
+        sr.reveal('* > .wrapper-articles > div', 100);
+        sr.reveal('.wrapper-articles > format');
+        sr.reveal('.cross-mobile .wrapper > div', 100);
+        sr.reveal('.cross-newsletter');
+        sr.reveal('.links-footer');
+        sr.reveal('.footer');
+        sr.reveal('.wrapper-article *');
+        
 	});
 	
 })(jQuery, this);
