@@ -173,7 +173,7 @@ $form_completed = false;
                         <?php the_content(); ?>
                     </div>
                     <div>
-                        <h1 class="h4-like"><?php the_title();?></h1>
+                        <h1 class="h3-like title-form"><?php the_title();?></h1>
                         <?php if($form_completed == true): ?>
                         <div class="form-completed"><p>Votre événement a bien été ajouté. Il va être étudié avant d'être publié. Merci !</p></div>
                         <?php endif;?>

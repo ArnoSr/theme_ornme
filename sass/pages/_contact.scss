@@ -20,11 +20,16 @@
     background-color: $gris5;
     color: #fff;
     overflow: hidden;
+    
+    h2{
+        font-size: 4rem;
+    }
 
     
     h3{
         font-weight: $regular;
         margin-bottom: .5em;
+        font-size: 3rem;
     }
     
     p a{
@@ -207,4 +212,9 @@
 
 #file-evt{
     display: none;
+}
+
+.title-form{
+    font-weight: $regular;
+    font-size: 3rem;
 }
