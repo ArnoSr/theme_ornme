@@ -84,7 +84,6 @@
                         <li data-menu="<?php echo $cat->slug;?>" class="<?php echo $cat->slug;?>"><a href="<?php echo get_site_url().'/'.$cat->slug;?>"><?php echo $cat->name;?></a></li>
                         <?php endforeach; ?>
                         <li class="vlog"><a href="<?php echo get_site_url();?>/vlog">Vlog</a></li>
-                        <li><a href="<?php echo get_site_url();?>/contact">Contact</a></li>
                         </ul>
                     </div>
                     <div class="menu-cat-content">
@@ -208,7 +207,6 @@
                             
                             <li class="vlog"><a href="<?php echo get_site_url();?>/vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a></li>
                             <li class="tags"><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a></li>
-                            <li><a href="<?php echo get_site_url();?>/contact">Contact</a></li>
                        </ul>
                        
                     </div>
