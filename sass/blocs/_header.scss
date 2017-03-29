@@ -482,6 +482,7 @@
     z-index: -10;
     box-shadow: 0 40px 40px rgba(#000, .2);
     opacity: 0;
+    top: -1000px;
     
     .wrapper{
         padding-bottom: calc(#{$medium-value} - #{$small-value});
@@ -520,6 +521,7 @@
     &.tagOpen{
         opacity: 1;
         z-index: 100;
+        top: auto;
     }
 }
 
