@@ -210,10 +210,13 @@ $form_completed = false;
                                 <input type="text" id="twitter-evt" name="twitter_evt">
                                 <label for="commentaire-evt">Commentaire</label>
                                 <textarea name="commentaire_evt" id="commentaire_evt" rows="3"></textarea>
-                            </div>
-                            <p>
+                                
+                                                            <p class="wrapper-submit">
                                 <input type="submit" value="Envoyer">
                             </p>
+                            
+                            </div>
+
                             
                         </form>
                     </div>
@@ -267,10 +270,7 @@ $form_completed = false;
                       today: 'aujourd\'hui',
                       clear: 'effacer',
                       formatSubmit: 'yyyy/mm/dd'
-                });              
-                jQuery('input[type="time"]').pickatime({
-                    format: 'H:i',
-                });              
+                });                           
                 
             });
     </script>

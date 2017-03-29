@@ -105,6 +105,14 @@
     }
 }
 
+.wrapper-submit{
+    text-align: center;
+    
+    input[type="submit"]{
+        color: $gris5;
+    }
+}
+
 .wrapper-half{
     display: flex;
     padding: $large-value;
