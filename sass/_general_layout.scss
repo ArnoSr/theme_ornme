@@ -55,6 +55,7 @@
 
 .meta{
     font-size: 1.4rem;
+    font-weight: $medium;
 
     a{
         text-decoration: none;
@@ -74,9 +75,18 @@
     .featured-category{
         text-transform: uppercase;
     }
+    
+    .featured-author{
+        font-weight: $regular;
+    }
 
     .featured-author a{
         color: inherit;
+        font-weight: $medium;
+    }
+    
+    .meta-date{
+        font-weight: $regular;
     }
     
     svg{
