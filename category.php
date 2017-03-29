@@ -1,8 +1,6 @@
 <?php get_header(); ?>
        <div class="wrapper-cat">
     
-    <canvas id="canvas"></canvas>
-    
     <?php
 if(is_category()) {
 	$category = get_query_var('cat');

@@ -14,6 +14,26 @@
 .cat-gradient{
     position: relative;
     //min-height: 100vh;
+    
+    &.or-cadre{
+        background: $gradient-or-cadre;
+    }
+    
+    &.or-sujet{
+        background: $gradient-or-sujet;
+    }
+    
+    &.or-piste{
+        background: $gradient-or-piste;
+    }
+    
+    &.or-doeuvre{
+        background: $gradient-or-doeuvre;
+    }
+    
+    &.or-bord{
+        background: $gradient-or-bord;
+    }
 }
 
 .cat-background{

@@ -76,7 +76,7 @@ function html5blank_header_scripts()
 // Load HTML5 Blank conditional scripts
 function html5blank_conditional_scripts()
 {
-    if (is_page_template('template-home.php') or is_category()) {
+    if (is_page_template('template-home.php')) {
         
         wp_register_script('granim', get_template_directory_uri() . '/js/lib/granim.min.js', array('jquery'), '1.0.0', true);
         wp_enqueue_script('granim');
