@@ -70,19 +70,23 @@
         font-weight: $medium;
         margin-top: $small-value;
         color: #fff;
-
         
         span:not(:last-child)::after{
             background-color: #fff;
+        }
+        
+        svg{
+            fill: #fff;
         }
     }
 }
 
 .wrapper-article-home{
-    background: linear-gradient(to bottom, #e1e2e2 0%, #fff 75%);
+    //background: linear-gradient(to bottom, #e1e2e2 0%, #fff 75%);
+    background-color: #f1f2f2;
 
     .wrapper{
-        background-color: #fff;   
+        background-color: #f1f2f2;   
         
         @include width-above(501px){
             max-width: calc(#{$wrapper-size} + #{$medium-value}*2);
@@ -96,6 +100,8 @@
     z-index: 2;
     margin-top: -10vh;
     display: flex;
+    background: linear-gradient(to bottom, #fff 0, #f1f2f2 100%);
+    box-shadow: 0 -160px 100px rgba(#000, .1);
 
     div:not(:last-child){
         margin-right: $medium-value;
