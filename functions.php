@@ -239,6 +239,12 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
     echo $output;
 }
 
+function ornorme_custom_excerpt_length( $length ) {
+    return 20;
+}
+
+add_filter( 'excerpt_length', 'ornorme_custom_excerpt_length', 999 );
+
 // Custom View Article link to Post
 function html5_blank_view_article($more)
 {
