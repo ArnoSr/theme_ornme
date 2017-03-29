@@ -5,8 +5,9 @@
     
     .bt{
         &:hover{
-            color: $vlog;
-            border-color: $vlog;
+            color: #fff;
+            background-color: rgba($vlog, .85);
+            border-color: transparent;
         } 
     }
     
