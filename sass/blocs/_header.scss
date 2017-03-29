@@ -159,6 +159,15 @@
         cursor: pointer;
         text-transform: uppercase;
         
+        svg{
+            transition: all ease .25s;
+            transform-origin: center;
+        }
+        
+        &:hover svg{
+            transform: rotate(10deg);
+        }
+        
         @include width-below($mobile-size){
             display: none;
         }
