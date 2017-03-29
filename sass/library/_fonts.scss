@@ -47,6 +47,14 @@
 }
 
 @font-face {
+    font-family: 'geomanist';
+    src: url('fonts/geomanist-bold-italic-webfont.woff2') format('woff2'),
+         url('fonts/geomanist-bold-italic-webfont.woff') format('woff');
+    font-weight: $bold;
+    font-style: italic;
+}
+
+@font-face {
     font-family: 'calendasplus';
     src: url('fonts/calendas_plus_bold-webfont.woff2') format('woff2'),
          url('fonts/calendas_plus_bold-webfont.woff') format('woff');
