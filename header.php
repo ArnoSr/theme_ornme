@@ -214,15 +214,22 @@
             </div> 
 
             <?php // Le menu des tags ?>
+            
+
 
             <div class="wrapper-tags">
                 <div class="wrapper">
-                    <?php if(get_the_tag_list()) {
-                        echo get_the_tag_list('<ul><li>','</li><li>','</li></ul>');
-                    } ?>
+                    
+                     <ul>
+                        <?php foreach(get_tags() as $tag): ?>
+                         <li><a href="<?php echo get_site_url();?>/tag/<?php echo $tag->slug;?>"><?php echo $tag->name; ?></a></li>
+                         <?php endforeach; ?>
+                     </ul>
                 </div>
             </div>  
     </header>
     <!-- /header -->
 
+  
+  
    <div class="main">

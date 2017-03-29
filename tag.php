@@ -15,10 +15,18 @@
         <div class="wrapper-articles">
 
         <?php while(have_posts() ) : the_post(); ?>
+      
+           <?php 
+                if(get_post_type() == 'post'){
+                   include('snippets/format-article.php');
+                }
 
-            <?php include('snippets/format-article.php'); ?>
-
-        <?php endwhile; ?>
+                if(get_post_type() == 'vlog'){
+                   include('snippets/format-vlog.php'); 
+                }
+            ?>
+            
+            <?php endwhile; ?>
 
         </div>
         
