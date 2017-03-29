@@ -2,7 +2,7 @@
     background-size: cover;
     background-position: center;
     display: flex;
-    min-height: 75vh;
+    min-height: calc(100vh - #{$menu-big-height});
     position: relative;
     padding-bottom: 10vh;
     
