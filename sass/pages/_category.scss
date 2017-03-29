@@ -42,8 +42,9 @@
                 transition: all ease .25s;
                 
                 &:hover{
-                    color: darken($couleur, 30%);
-                    border-color: darken($couleur, 30%);
+                    color: $couleur;
+                    background-color: rgba(#fff, .85);
+                    border-color: transparent;
                 }
             }
         }
