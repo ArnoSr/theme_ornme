@@ -155,8 +155,8 @@
         sr.reveal('.wrapper-articles > format');
         sr.reveal('.cross-mobile .wrapper > div', 100);
         sr.reveal('.cross-newsletter');
-        sr.reveal('.links-footer');
-        sr.reveal('.footer');
+        sr.reveal('.links-footer > *');
+        sr.reveal('.footer > *');
         sr.reveal('.wrapper-article *');
         
 	});
