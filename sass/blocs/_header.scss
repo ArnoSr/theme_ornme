@@ -317,6 +317,14 @@
             top: -20px;
             max-width: 85px;
         }
+        
+        &:hover{
+            color: #fff;
+            
+            img{
+                top: -30px;
+            }
+        }
     }
 }
 
