@@ -12,7 +12,7 @@ if (function_exists('add_theme_support'))
     add_image_size('large300', 300, '', true);
     add_image_size('large600', 600, '', true);
     add_image_size('large900', 900, '', true);
-    add_image_size('large1000', 1200, '', true);
+    add_image_size('large1000', 1200, 675, array('center', 'center'));
     add_image_size('large1400', 1400, '', true);
     add_image_size('large1920', 1920, '', true);
 
