@@ -341,6 +341,16 @@
         display: flex;
         padding: 0;
     }
+    
+    .menu-cat-content{
+        overflow: hidden;
+    }
+    
+    .hgroup-cat{
+        h1{
+            width: 200%;
+        }
+    }
 }
 
 .menu-cat-wrapper{
