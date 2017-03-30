@@ -398,9 +398,11 @@
         flex-shrink: 1;
         flex-wrap: wrap;
         position: relative;
+        width: calc(100% - 300px - #{$medium-value});
         
         > div{
             width: calc(50% - #{$medium-value}/2);
+            max-width: 300px;
             margin-bottom: $medium-value;
             
             &:nth-child(odd){
@@ -431,7 +433,7 @@
 
     
     .menu-pub{
-        width: 33%;
+        width: 300px;
         margin-left: $medium-value;
     }
     
