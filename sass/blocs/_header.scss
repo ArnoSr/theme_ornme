@@ -90,8 +90,10 @@
 
 
 .logo{
+    transition: all ease .25s;
     text-align: center;
     flex: 1;
+    opacity: 1;
     
     a{
         transition: height ease .25s;
@@ -103,6 +105,10 @@
         fill: #fff;
         width: 200px;
         height: auto;
+    }
+    
+    &.remove{
+        display: none;
     }
 }
 
@@ -297,13 +303,19 @@
     justify-content: flex-end;
     
     .lire-revue{
+        transition: all ease .25s;
         color: $gris1;
         text-decoration: none;
         position: relative;
         padding-left: calc(84px + #{$small-value});
         text-transform: uppercase;
+        opacity: 1;
         
         @include width-below($mobile-size){
+            display: none;
+        }
+        
+        &.remove{
             display: none;
         }
         
@@ -659,48 +671,51 @@
 //Recherche
 
 .header .search{
+    transition: all ease .5s;
+    background: none;
+    display: flex;
+    justify-content: flex-end;
+    margin-left: $medium-value;
+    width: 35px;
 
+    input[type="search"]{
+        transition: border ease .25s, width ease .5s, opacity ease .5s;
+        border: 0;
+        border-bottom: 1px solid $gris1; 
         background: none;
-        display: flex;
-        justify-content: flex-end;
-        margin-left: $medium-value;
+        color: #fff;
+        width: 0;
+        opacity: 0;
 
+        &:focus{
+            border-bottom-color: $menu-color;
+        }
+    }
+    
+    &.open{
+        transition: all ease .8s .1s;
+        width: 100%;
+        
         input[type="search"]{
-            transition: all ease .25s;
-            border: 0;
-            border-bottom: 1px solid $gris1; 
-            background: none;
-            color: #fff;
-            min-width: 500px;
-            display: none;
-            
-            @include width-below(900px){
-                min-width: 300px;
-            }
-            
-            @include width-below(900px){
-                min-width: 100%;
-                width: 100%;
-            }
+            transition: all ease .8s .1s;
+            width: 100%;
+            opacity: 1;
+        }
+    }
 
-            &:focus{
-                border-bottom-color: $menu-color;
-            }
+    button[type="submit"]{
+        border: 0;
+        background: none;
+        right: 0;
+        cursor: pointer;
+
+        svg{
+            width: 20px;
+            fill: $gris1;
         }
 
-        button[type="submit"]{
-            border: 0;
-            background: none;
-            right: 0;
-            cursor: pointer;
-
-            svg{
-                width: 20px;
-                fill: $gris1;
-            }
-
-            &:hover svg{
-                fill: $menu-color;
-            }
+        &:hover svg{
+            fill: $menu-color;
         }
+    }
 }

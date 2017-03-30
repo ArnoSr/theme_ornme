@@ -134,11 +134,27 @@
             
             if($('.search-input').val() == ''){
                 e.preventDefault();
-                $(this).parent().find('.search-input').fadeIn().focus();
-                $('.lire-revue').hide();
-                $('.logo').hide();
+                
+                $('.lire-revue').addClass('remove');
+                $('.logo').addClass('remove');
+                $(this).parent().addClass('open');
             }
- 
+        });
+        
+        function remove(){
+            $('.lire-revue').removeClass('remove');
+            $('.logo').removeClass('remove');
+        }
+        
+        $(window).click(function() {
+            $('.search').removeClass('open');
+            console.log('kikoo');
+            setTimeout(remove, 500);
+            
+        });
+
+        $('.search').click(function(event){
+            event.stopPropagation();
         });
         
         // Animations
