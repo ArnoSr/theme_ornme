@@ -11,3 +11,6 @@
         </div>
     </div>
 </div>
+
+
+<?php // A modifier aussi dans la page single article, sans le format ?>

@@ -154,7 +154,7 @@
         sr.reveal('.cross-mobile .wrapper > div', 100);
         sr.reveal('.cross-newsletter > *');
         sr.reveal('.links-footer > *');
-        sr.reveal('.copyright');
+        sr.reveal('.copyright > *');
         sr.reveal('.wrapper-article *');
         
 	});

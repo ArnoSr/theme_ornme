@@ -135,9 +135,18 @@
 	<div class="more-article">
 	    <div class="wrapper">
 	        <p class="more-title">Encore + <?php echo $cat[0]->name;?></p>
-	        <div class="more-wrapper">
+	        <div class="more-wrapper big-featured">
 	        <?php while( $featuredPost->have_posts() ) : $featuredPost->the_post(); ?>
-	            <?php include('snippets/format-article.php'); ?>
+            <div class="format-third featured-home <?php echo(get_the_category()[0]->slug);?>">
+                <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
+                <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
+                <div class="excerpt">
+                    <?php the_excerpt();?>
+                </div>
+                <div class="meta">
+                 <div><span><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php or_temps_lecture(get_the_content());?></span> <span class="featured-author">par <?php the_author_posts_link(); ?></span> <span>Publié le <?php the_time('j F Y');?></span></div>
+                </div>
+            </div>
 	        <?php endwhile;?>
 	        </div>
 	    </div>

@@ -94,14 +94,18 @@
         }
     }
 }
+
+.home .big-featured{
+    background: linear-gradient(to bottom, #fff 0, #f1f2f2 100%);
+    box-shadow: 0 -160px 100px rgba(#000, .1);
+    margin-top: -10vh;
+}
     
 .big-featured{
     position: relative;
     z-index: 2;
-    margin-top: -10vh;
+    
     display: flex;
-    background: linear-gradient(to bottom, #fff 0, #f1f2f2 100%);
-    box-shadow: 0 -160px 100px rgba(#000, .1);
 
     div:not(:last-child){
         margin-right: $medium-value;
