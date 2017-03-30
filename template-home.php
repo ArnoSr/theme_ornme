@@ -195,17 +195,21 @@
     
     <div class="wrapper-cat">
     
-        <canvas id="canvas"></canvas> 
+        <canvas id="canvas"></canvas>
+    
 
         <?php
 
         // Liste des catégories
 
-        //var_dump(get_categories());
-
-
         foreach(get_categories() as $cat):
+        
+        ?>     
 
+
+        <?php
+        
+                // Compter le nb à afficher
         $argCat = array(
             'post_type'		=> 'post',
             'posts_per_page' => 4,
@@ -214,11 +218,69 @@
         ); 
 
         $singleCat = new WP_Query( $argCat );
+        
+        $simple = 0;
+        $double = 0;
+        $nombre = 0;
 
+        if($singleCat->have_posts()):
+            
+        
+        
         ?>
 
+        <div class="cat-background cat-gradient <?php echo($cat->slug);?>"> 
+            
+            <?php
+            
+                while($singleCat->have_posts() ){
+                $singleCat->the_post();
+                if(get_field('format_souhaite') != 'largeurdouble'){
+                    $simple += 1;
+                    $nombre += 1;
+                }else{
+                    $double += 1;
+                    $nombre += 2;
+                }
+                
+                // Les cas simples
+                if($nombre == 4){
+                    if($double == 1){
+                        $nbPosts = 3;
+                        break;
+                    }else if($double == 2){
+                        $nbPosts = 2;
+                        break;
+                    }else if($double == 0){
+                        $nbPosts = 4;
+                    }
+                
+                // Les cas où il faut forcer
+                }else if($nombre > 4){
+                    
+                    if($double == 1){
+                       $nbPosts = 4;
+                        echo('<input type="hidden" name="force_format"/>');
+                        break;
+                    }else if($double == 2){
+                        $nbPosts = 3;
+                        echo('<input type="hidden" name="force_format"/>');
+                        break;
+                    }
+                }
+            }
+            
+                //Afficher les posts
+                $argCat = array(
+                    'post_type'		=> 'post',
+                    'posts_per_page' => $nbPosts,
+                    'post__not_in' => $featured_posts,
+                    'category_name' => $cat->slug
+                ); 
 
-        <div class="cat-background cat-gradient <?php echo($cat->slug);?>">        
+                $singleCat = new WP_Query( $argCat );
+
+            ?>       
 
             <?php if($singleCat->have_posts() ): ?>
 
@@ -246,6 +308,12 @@
             <?php endif;?>    
 
         </div>
+        
+        <script>
+            jQuery('[name="force_format"]').parent().find('.wrapper-articles .format:last-child').removeClass('format-largeurdouble').addClass('format-normal');
+        </script>
+        
+        <?php endif;?>
 
         <?php endforeach; ?>
     
