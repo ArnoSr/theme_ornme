@@ -12,7 +12,7 @@
         position: relative;
         
         img{
-            width: 100%;
+            max-width: 100%;
         }
         
         .wp-caption-text{
@@ -116,9 +116,14 @@
         margin-right: 0;
     }
     
-    .size-medium{
-        padding-left: $large-value;
-        padding-right: $large-value;
+    img{
+        padding-left: 100px;
+        padding-right: 100px;
+    }
+    
+    .big{
+        padding-left: 0;
+        padding-right: 0;
     }
 }
 
