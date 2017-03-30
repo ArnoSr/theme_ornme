@@ -21,9 +21,9 @@
                 ?>
                 
                 <ul class="links-rs">
-                    <li><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_facebook"></use></svg></a></li>
-                    <li><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_twitter"></use></svg></a></li>
-                    <li><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_youtube"></use></svg></a></li>
+                    <li><a href="https://www.facebook.com/magazine.ornorme.strasbourg/" target="_blank"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_facebook"></use></svg></a></li>
+                    <li><a href="https://twitter.com/OrNorme_Mag" target="_blank"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_twitter"></use></svg></a></li>
+                    <li><a href="https://www.youtube.com/channel/UCVYt-Vxg8qEqxNnfttsLrcQ" target="_blank"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_youtube"></use></svg></a></li>
                 </ul>
             </div>
         </div>
