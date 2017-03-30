@@ -134,22 +134,15 @@
             
             if($('.search-input').val() == ''){
                 e.preventDefault();
-                
-                $('.lire-revue').addClass('remove');
-                $('.logo').addClass('remove');
                 $(this).parent().addClass('open');
+                $('.bas').addClass('basopen');
+                $(this).parent().find('input').focus();
             }
         });
-        
-        function remove(){
-            $('.lire-revue').removeClass('remove');
-            $('.logo').removeClass('remove');
-        }
-        
+    
         $(window).click(function() {
             $('.search').removeClass('open');
-            console.log('kikoo');
-            setTimeout(remove, 500);
+            $('.bas').removeClass('basopen');
             
         });
 

@@ -66,6 +66,7 @@
                     <?php endwhile; ?>
                     <?php endif;?>
                     
+                    <div class="bas"></div>
                     <?php get_search_form(); ?>
                      
                 </div>
