@@ -169,10 +169,20 @@
     ); 
 
     $recentes = new WP_Query( $argvlog );
+            
+    if($recentes->have_posts() ){
+
+        $nbpost = 0;
+
+        while($recentes->have_posts() ){
+            $recentes->the_post();
+            $nbpost++;
+        }
+    }
         
     ?>
     
-    <?php if( $recentes->have_posts() ): ?>
+    <?php if( $recentes->have_posts() AND $nbpost >= 4 ): ?>
   
         <div class="vlog-latest">
         
@@ -204,9 +214,19 @@
     ); 
 
     $populaires = new WP_Query( $argvlog );
+            
+                if($populaires->have_posts() ){
+
+        $nbpost = 0;
+
+        while($populaires->have_posts() ){
+            $populaires->the_post();
+            $nbpost++;
+        }
+    }
         
         // Dernières vidéos
-        if($populaires->have_posts() ): ?>
+        if($populaires->have_posts() AND $nbpost >= 4): ?>
     
     <div class="vlog-latest">
         

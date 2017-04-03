@@ -86,11 +86,22 @@
     <?php endif;?>
     
     <?php wp_reset_query(); ?>
-
+    
+    <?php
+        if(have_posts() ){
+            
+            $nbpost = 0;
+            
+            while(have_posts() ){
+                the_post();
+                $nbpost++;
+            }
+        }
+    ?>
     
     <?php 
-        // Dernières vidéos
-        if(have_posts() ): ?>
+    // Dernières vidéos
+    if(have_posts() AND $nbpost >= 4 ): ?>
     
     <div class="vlog-latest">
         
@@ -109,7 +120,8 @@
         </div>
     
     </div>
-    <?php endif;?>   
+    <?php endif;?> 
+         
            
     <?php
        $argvlog = array(
@@ -118,10 +130,20 @@
         'orderby'			=> 'meta_value',
         'order'				=> 'ASC'
     ); 
-
+    
     $populaires = new WP_Query( $argvlog );
         
-        if($populaires->have_posts() ): ?>
+    if($populaires->have_posts() ){
+
+        $nbpost = 0;
+
+        while($populaires->have_posts() ){
+            $populaires->the_post();
+            $nbpost++;
+        }
+    }
+        
+    if($populaires->have_posts() AND $nbpost >= 4 ): ?>
     
     <div class="vlog-latest">
         
