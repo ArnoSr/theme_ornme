@@ -461,14 +461,8 @@
     
     .cat-menu{
         display: none;
-        padding: $large-value;
+        padding: $large-value 80px;    
     }
-    
-//    @each $cat, $couleur in $cats {
-//        .cat-#{$cat} {
-//            background: #{$gradient-#{$cat}}; 
-//        }
-//    }
     
     .cat-or-cadre{
         background: $gradient-or-cadre;
@@ -489,8 +483,6 @@
     .cat-or-bord{
         background: $gradient-or-bord;
     }
-
-
 }
 
 // Liste catégories

@@ -1,5 +1,5 @@
 <div class="<?php echo(get_the_category()[0]->slug);?> format format-<?php the_field('format_souhaite');?>">
-    <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large1000'); ?></a>
+    <a href="<?php the_permalink();?>" class="thumb"><?php the_post_thumbnail('large600'); ?></a>
         <div class="wrap-content-article">
         <h2><a href="<?php the_permalink();?>"><?php the_title();?></a></h2>
         <div class="excerpt">
