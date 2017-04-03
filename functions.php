@@ -240,7 +240,7 @@ function html5wp_excerpt($length_callback = '', $more_callback = '')
 }
 
 function ornorme_custom_excerpt_length( $length ) {
-    return 20;
+    return 17;
 }
 
 add_filter( 'excerpt_length', 'ornorme_custom_excerpt_length', 999 );
