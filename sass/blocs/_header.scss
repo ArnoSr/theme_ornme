@@ -342,10 +342,6 @@
         padding: 0;
     }
     
-    .menu-cat-content{
-        overflow: hidden;
-    }
-    
     .hgroup-cat{
         h1{
             width: 200%;
@@ -356,6 +352,8 @@
 .menu-cat-wrapper{
     background-color: $gris5;
     min-width: 20%;
+    position: relative;
+    z-index: 10;
     
     @include width-below($mobile-size){
         min-width: 100%;
@@ -461,27 +459,59 @@
     
     .cat-menu{
         display: none;
-        padding: $large-value 80px;    
+        padding: $large-value 80px;  
+        
+        position: relative;
+        
+        &::before{
+            content: '';
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            right: -100%;
+            z-index: 100;
+        }
     }
     
     .cat-or-cadre{
         background: $gradient-or-cadre;
+        
+        &::before{
+            background: $gradient-or-cadre;;
+        }
     }
     
     .cat-or-sujet{
         background: $gradient-or-sujet;
+        
+        &::before{
+            background: $gradient-or-sujet;
+        }
     }
     
     .cat-or-piste{
         background: $gradient-or-piste;
+        
+        &::before{
+            background: $gradient-or-piste;
+        }
     }
     
     .cat-or-doeuvre{
         background: $gradient-or-doeuvre;
+        
+        &::before{
+            background: $gradient-or-doeuvre;
+        }
     }
     
     .cat-or-bord{
         background: $gradient-or-bord;
+        
+        &::before{
+            background: $gradient-or-bord;
+        }
     }
 }
 
@@ -664,10 +694,23 @@
 .vlog-menu{
     display: none;
     padding: $large-value;
+    position: relative;
     
     .hgroup-cat p{
         color: $vlog;
     }
+
+    &::before{
+        content: '';
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        right: -100%;
+        z-index: 100;
+        background-color: #0d0e0f;
+    }
+
 }
 
 //Recherche
