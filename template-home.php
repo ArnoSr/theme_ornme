@@ -38,9 +38,6 @@
             $thumb_url_tiny = $thumb_url_tiny_array[0];
         ?>
 
-        
-
-		
 		<style type="text/css">
 
 		@media only screen and (min-width: 1500px){

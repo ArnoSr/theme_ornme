@@ -35,7 +35,8 @@
     .wrapper{
         margin-top: auto;
         position: relative;
-        z-index: 2;   
+        z-index: 2;
+        width: 100%;
         
         @include width-above(501px){
             margin-bottom: $medium-value;
