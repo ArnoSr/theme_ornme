@@ -3,6 +3,13 @@
     display: flex;
 }
 
+.single-post{
+    .featured-post{
+        min-height: calc(100vh - #{$menu-big-height});
+        padding-bottom: 3vh;
+    }
+}
+
 .wrapper-single-article{
     
     .wp-caption{

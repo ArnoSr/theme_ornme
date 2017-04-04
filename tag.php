@@ -33,10 +33,11 @@
         <?php get_template_part('pagination'); ?>
     
     </div>
-    <?php endif;?> 
+    <?php endif;?>
+    <?php wp_reset_query();?>
     
 </div>   
 
-    <?php include('snippets/vlog.php');?>
+    <?php //include('snippets/vlog.php');?>
 
 <?php get_footer(); ?>

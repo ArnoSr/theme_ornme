@@ -161,7 +161,7 @@
 
     $argLastPosts = array(
         'post_type'		=> 'post',
-        'posts_per_page' => 10,
+        'posts_per_page' => 8,
         'post__not_in' => $featured_posts,
     ); 
 

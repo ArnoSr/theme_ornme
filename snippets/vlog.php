@@ -3,18 +3,18 @@
     // Vlog
         
     $argvlog = array(
-        'post_type'		=> 'vlog',
+        'post_type'	=> 'vlog',
         'posts_per_page' => 3,
     ); 
 
-    $vlog = new WP_Query( $argvlog );
+    $vlogquery = new WP_Query($argvlog);
         
     ?>
     
     
     <div class="cat-background cat-vlog">        
 
-        <?php if($vlog->have_posts() ): ?>
+        <?php if($vlogquery->have_posts() ): ?>
 
         <div class="wrapper">
 
@@ -26,7 +26,7 @@
 
             <div class="wrapper-vlog">
 
-            <?php while($vlog->have_posts() ) : $vlog->the_post(); ?>
+            <?php while($vlogquery->have_posts() ) : $vlogquery->the_post(); ?>
 
                 <?php include('format-vlog.php'); ?>
 
@@ -35,7 +35,7 @@
             </div>
 
             <div class="wrap-bt">
-                <a href="vlog" class="bt">Voir toutes les vidéos</a>
+                <a href="<?php echo get_site_url();?>/vlog" class="bt">Voir toutes les vidéos</a>
             </div>
 
         </div>

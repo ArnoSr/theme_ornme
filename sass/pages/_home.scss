@@ -20,6 +20,17 @@
         z-index: 0;
     }
     
+    &::after{
+        content:'';
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        left: 0;
+        top: -100%;
+        background: #17191a;
+        z-index: 0;
+    }
+    
     
     .wrapper{
         margin-top: auto;
@@ -216,13 +227,17 @@
     
     .excerpt{
         font-size: 1.4rem;
-    }
-    
-    //En mobile, laisser que 4 articles
-    .format:nth-child(n+5){
+    }    
+}
+
+
+//En mobile, laisser que 4 articles
+@include width-below($mobile-size){
+    .home .format:nth-child(n+5){
         display: none;
     }
 }
+
 
 @include width-below(600px){
     .home .wrapper-cat .wrapper-articles{
