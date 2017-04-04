@@ -1,9 +1,10 @@
 <?php get_header(); ?>
+    <?php if(have_posts() ): ?>
 <div class="wrapper-cat wrapper-event">
     
     <div class="cat-background cat-event">        
 
-    <?php if(have_posts() ): ?>
+
     
     <div class="wrapper">
         
@@ -27,41 +28,9 @@
                     <div class="meta-event">
                         <p><?php the_field('date_de_debut');?>, <?php the_field('heure_de_debut');?></p>
                     </div>
-                    <p class="lien-event"><a href="#">En savoir plus</a></p>
-                </div>                  
-                                            
+                    <p class="lien-event" data-slug="data<?php echo($post->ID);?>"><a href="#">En savoir plus</a></p>
+                </div>                                       
             </div>  
-            
-                                          <div class="event-details">
-                    <div class="wrapper">
-                        <div>
-                            <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
-                        </div>
-                        <div class="content-event-details">
-                            <h2><?php the_title();?></h2>
-                            <p class="date"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php the_field('date_de_debut');?> <?php the_field('heure_de_debut');?> - <?php the_field('date_de_fin'); ?> <?php the_field('heure_de_fin');?></p>
-                            <p class="adresse"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-pin"></use></svg> <?php the_field('adresse');?>, <?php the_field('ville');?></p>
-                            
-                            <?php the_field('informations');?>
-                            
-                            <?php the_field('commentaire');?>
-                            
-                            <div class="social-event">
-                                <?php if(get_field('url_facebook')):?>
-                                <a href="<?php the_field('url_facebook');?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_facebook"></use></svg></a>
-                                <?php endif; ?>
-                                <?php if(get_field('url_twitter')):?>
-                                <a href="<?php the_field('url_twitter');?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_twitter"></use></svg></a>
-                                <?php endif; ?>
-                                <?php if(get_field('url_evenement')): ?>
-                                <a href="<?php the_field('url_evenement');?>"><?php the_field('url_evenement');?></a>
-                                <?php endif; ?>
-                            </div>
-                            
-                        </div>
-                    </div>
-                </div>              
-            
 
         <?php endwhile; ?>
 
@@ -70,10 +39,58 @@
         <?php get_template_part('pagination'); ?>
     
     </div> 
+          
+          
            
-    <?php endif;?> 
+
             
     </div>
 </div>
+
+        <div class="article-ouvert">
+
+        <?php while(have_posts() ) : the_post(); ?>
+
+       
+                <?php 
+                    $couverture = get_field('couverture');
+                ?>
+                
+                   
+                <div class="event-details" data-slug="data<?php echo($post->ID);?>">
+                   <button class="close"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-close"></use></svg></button>
+                    <div class="wrapper">
+                        <div>
+                            <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
+                        </div>
+                    <div class="content-event-details">
+                    <h2><?php the_title();?></h2>
+                    <p class="date"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php the_field('date_de_debut');?> <?php the_field('heure_de_debut');?> - <?php the_field('date_de_fin'); ?> <?php the_field('heure_de_fin');?></p>
+                    <p class="adresse"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-pin"></use></svg> <?php the_field('adresse');?>, <?php the_field('ville');?></p>
+
+                    <?php the_field('informations');?>
+
+                    <?php the_field('commentaire');?>
+
+                    <div class="social-event">
+                        <?php if(get_field('url_facebook')):?>
+                        <a href="<?php the_field('url_facebook');?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_facebook"></use></svg></a>
+                        <?php endif; ?>
+                        <?php if(get_field('url_twitter')):?>
+                        <a href="<?php the_field('url_twitter');?>"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-icon_twitter"></use></svg></a>
+                        <?php endif; ?>
+                        <?php if(get_field('url_evenement')): ?>
+                        <a href="<?php the_field('url_evenement');?>"><?php the_field('url_evenement');?></a>
+                        <?php endif; ?>
+                    </div>
+
+                </div>
+                    </div>
+                </div> 
+                
+        <?php endwhile; ?>
+
+        </div>
+            <?php endif;?> 
 
 <?php get_footer(); ?>

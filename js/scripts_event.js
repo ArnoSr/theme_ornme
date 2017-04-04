@@ -4,10 +4,16 @@
 		
 		'use strict';
         
-        $('.lien-event').click(function(){
-            var hauteur = $(this).position();
-           $(this).parent().parent().find('.event-details').slideDown();
-           $(this).parent().parent().find('.event-details').css('top', hauteur.top + 50);
+        $('.lien-event').click(function(event){
+            event.preventDefault();
+            var num_article = $(this).attr('data-slug');
+            var prout = $(this).position();
+            $('event-details').fadeOut();
+            $('body').find("[data-slug='" + num_article + "']").fadeIn().css('top', prout.top - 5);
+        });
+        
+        $('.close').click(function(){
+            $(this).parent().fadeOut();
         });
         
 	});
