@@ -184,23 +184,13 @@ $form_completed = false;
                                 <input type="text" id="titre-evt" name="titre_evt" required>
                                 <label for="informations-evt">Informations</label>
                                 <textarea name="informations_evt" id="informations-evt" rows="3"></textarea>
-                                
-                                <label for="photo-couv">Photo de couverture</label>
-                                <input type="file" id="photo-couv" name="couv_evt" accept="image/*" data-max-size="3145728" class="upload-file">
-                                <label for="photo-couv" class="label-input">
-                                    <span class="bt-upload">Parcourir...</span>
-                                    <span class="file-upload">Aucun fichier sélectionné</span>
-                                    <span class="message-upload"></span>
-                                </label>
-                                
-                                <label for="file-evt">Charger une photo ou une vidéo supplémentaire (max 3mo)</label>
+                                <label for="file-evt">Charger une photo ou une vidéo (max 3mo)</label>
                                 <input type="file" id="file-evt" name="file_evt" accept="video/*,image/*" data-max-size="3145728" class="upload-file">
                                 <label for="file-evt" class="label-input">
                                     <span class="bt-upload">Parcourir...</span>
                                     <span class="file-upload">Aucun fichier sélectionné</span>
                                     <span class="message-upload"></span>
                                 </label>
-                                
                                 <label for="ville-evt">Ville</label>
                                 <input type="text" id="ville-evt" name="ville_evt">
                                 <label for="adresse-evt">Adresse</label>
