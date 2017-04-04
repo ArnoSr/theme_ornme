@@ -1,0 +1,125 @@
+.wrapper-event{
+    overflow: visible;
+}
+
+.cat-event{
+    background-color: $gris5;
+    overflow: visible;
+    
+    .hgroup-cat{
+        h1{
+            opacity: .1;
+        }
+        p{
+            color: $menu-color;
+        }
+    }
+    
+    .meta-event{
+        font-size: 1.4rem;
+        color: #8b8b8b;
+    }
+    
+    .lien-event{
+        font-size: 1.4rem;
+        font-weight: $medium;
+        color: #8b8b8b;
+        
+        a{
+            transition: color ease .25s;
+            text-decoration: none;
+            
+            &:hover{
+                color: $menu-color;
+            }
+        }
+    }
+}
+
+.event-details{
+    background: $menu-color;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    z-index: 100;
+    display: none;
+    margin-bottom: $medium-value;
+    
+    .wrapper{
+        display: flex;
+        flex-wrap: wrap;
+        
+        @include width-below(800px){
+            > div{
+                margin-bottom: $medium-value;
+            }
+        }
+        
+        @include width-above(801px){
+            > div{
+                width: calc(50% - #{$medium-value}/2);
+
+                &:first-child{
+                    margin-right: $medium-value;
+                }
+            }
+        }
+        
+
+    }
+    
+    h2{
+        font-size: 4rem;
+        font-weight: $medium;
+        line-height: 1.2em;
+    }
+    
+    .date{
+        svg{
+            fill: #fff;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+        }
+    }
+    
+    .adresse{
+        svg{
+            fill: #fff;
+            width: 20px;
+            height: 20px;
+            position: relative;
+            top: 2px;
+            margin-right: 5px;
+        }
+    }
+}
+
+.social-event{
+    margin-top: $medium-value;
+    
+    svg{
+        width: 20px;
+        height: 20px;
+        fill: #fff;
+        position: relative;
+        top: 3px;
+        
+        .icofacebook, .icotwitter{
+            fill: #fff;
+        }
+    }
+    
+    a{
+        color: #fff;
+        text-decoration: none;
+        font-weight: $medium;
+        
+        &:not(:last-child){
+            margin-right: 20px;
+        }
+    }
+}

@@ -11,6 +11,7 @@ if (function_exists('add_theme_support'))
     
     add_image_size('large300', 300, '', true);
     add_image_size('large600', 600, 400, array('center', 'center'));
+    add_image_size('large600_nocrop', 600, '', true);
     add_image_size('large900', 900, 600, array('center', 'center'));
     add_image_size('large1000', 1200, 800, array('center', 'center'));
     add_image_size('large1400', 1400, '', true);
@@ -100,6 +101,11 @@ function html5blank_conditional_scripts()
     if (is_single()) {        
         wp_register_script('scripts_single', get_template_directory_uri() . '/js/scripts_single.js', array('jquery'), '1.0.0', true); // Custom scripts
         wp_enqueue_script('scripts_single'); // Enqueue it!
+    }
+    
+    if (is_post_type_archive('evenement')) {        
+        wp_register_script('scripts_event', get_template_directory_uri() . '/js/scripts_event.js', array('jquery'), '1.0.0', true); // Custom scripts
+        wp_enqueue_script('scripts_event'); // Enqueue it!
     }
     
     
