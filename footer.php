@@ -35,7 +35,7 @@
                 
                 <!-- copyright -->
                 <p class="copyright">
-                    Or Norme <?php echo date('Y'); ?> &copy; All Rights reserved <a href="#">Mentions légales</a>
+                    Or Norme <?php echo date('Y'); ?> &copy; All Rights reserved <a href="<?php echo(get_site_url());?>/mentions-legales">Mentions légales</a>
                 </p>
                 <!-- /copyright -->
             
