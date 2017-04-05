@@ -21,13 +21,19 @@
 
 .more-wrapper{
     display: flex;
-    flex-wrap: wrap;
+    //flex-wrap: wrap;
     
     @each $cat, $couleur in $cats {
         .#{$cat} {
             h2 a{
                 color: $couleur;
             }    
+        }
+    }
+    
+    @include width-below(900px){
+        .format-third:nth-child(3){
+            display: none;
         }
     }
     

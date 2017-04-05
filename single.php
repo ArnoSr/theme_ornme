@@ -121,7 +121,7 @@
 
     $argFeaturedPost = array(
         'post_type'		=> 'post',
-        'posts_per_page' => 2,
+        'posts_per_page' => 3,
         'category_name' => $cat[0]->slug,
         'post__not_in' => array($post->ID)
     ); 
