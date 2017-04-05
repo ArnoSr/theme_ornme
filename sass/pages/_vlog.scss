@@ -41,6 +41,8 @@
     }
     
     .hgroup-cat{
+        overflow: hidden;
+        
         h1{
             opacity: .075;
         }
@@ -270,10 +272,13 @@
     
     h2{
         color: #fff;
-        max-width: 50%;
         line-height: 1.2em;
         margin-top: $medium-value;
         margin-bottom: $medium-value;
+        
+        @include width-above(901px){
+            max-width: 50%;
+        }
         
     }
     

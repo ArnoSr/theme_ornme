@@ -203,8 +203,6 @@
     </div>
     <?php endif;?>   
            
-    <p class="txtcenter">PUB</p> 
-           
     <?php
        $argvlog = array(
         'post_type'		=> 'vlog',
