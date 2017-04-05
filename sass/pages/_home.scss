@@ -124,7 +124,7 @@
     }
 
     .format-third{
-        width: 33%;
+        width: 100%;
     }
 
     @include width-below($mobile-size){
@@ -250,4 +250,13 @@
 .wrap-bt{
     text-align: center;
     margin-top: $small-value;
+}
+
+// Pub
+
+.featured-pub{
+    width: 300px;
+    .bg-category-title{
+        margin-left: 0;
+    }
 }
