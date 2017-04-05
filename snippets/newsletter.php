@@ -1,7 +1,7 @@
 <div class="cross-newsletter">
    <div class="wrapper">
         <h2>Or Norme : <span>tous les jours.</span></h2>
-        <p>Inscrivez-vous à notre newsletter pour ne pas manquer les dernières actualités strasbourgeoises.</p>
+        <p>Inscrivez-vous à notre newsletter pour recevoir les dernières actualités strasbourgeoises.</p>
        
         <form id="form" action="https://app.mailjet.com/widget/iframe/1Ihf/2RI#" name="form" method="post">
 
