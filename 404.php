@@ -1,24 +1,21 @@
 <?php get_header(); ?>
 
-	<main role="main">
-		<!-- section -->
-		<section>
-
-			<!-- article -->
-			<article id="post-404">
-
-				<h1><?php _e( 'Page not found', 'html5blank' ); ?></h1>
-				<h2>
-					<a href="<?php echo home_url(); ?>"><?php _e( 'Return home?', 'html5blank' ); ?></a>
-				</h2>
-
-			</article>
-			<!-- /article -->
-
-		</section>
-		<!-- /section -->
-	</main>
-
-<?php get_sidebar(); ?>
+    <div class="fond-404">
+        <div class="wrapper">
+          
+          <div class="illu404">
+              <img src="<?php echo get_template_directory_uri();?>/img/image404.png" alt="">
+          </div>
+          
+          <div class="text404">
+            <h1>404</h1>
+				<p>Page introuvable !</p>
+				<p>Il semblerait que vous êtes perdu...</p>
+				
+				<a href="<?php echo home_url(); ?>" class="bt">Retour à l'accueil</a>
+          </div>
+            
+        </div>
+    </div>
 
 <?php get_footer(); ?>

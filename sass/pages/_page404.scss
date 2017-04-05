@@ -1,0 +1,50 @@
+.fond-404{
+    background: linear-gradient(to top, rgba(23,23,36,1) 43%,rgba(34,40,58,1) 100%);
+    min-height: calc(100vh - #{$menu-big-height});
+    display: flex;
+    
+    .wrapper{
+        margin-top: auto;
+        margin-bottom: auto;
+        color: #fff;
+        display: flex;
+        align-items: center;
+        
+        @include width-below(900px){
+            flex-direction: column;
+            
+            .illu404{
+                order: 2;
+                margin-top: $large-value;
+            }
+            
+            .text404{
+                order: 1;
+                text-align: center;
+            }
+        }
+    }
+    
+    .illu404{
+        margin-right: $large-value;
+    }
+    
+    h1{
+        margin-bottom: 0;
+    }
+    
+    p{
+        font-size: 2.5rem;
+        font-weight: $medium;
+        margin-top: 0;
+    }
+    
+    .bt{
+        margin-top: 1.5em;
+        
+        &:hover{
+            color:  $menu-color;
+            border-color: $menu-color;
+        }
+    }
+}
