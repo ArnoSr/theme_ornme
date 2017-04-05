@@ -71,6 +71,14 @@ blockquote::before {
     }
 }
 
+blockquote p::after {
+  content: "\201D";
+    font-size: 2em;
+    position: relative;
+    top: .25em;
+    line-height: .5em;
+}
+
 blockquote > footer {
   margin-top: .75em;
   font-size: 0.9em;
