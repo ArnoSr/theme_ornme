@@ -25,6 +25,10 @@
     display: inline-block;
     border-radius: 100%;
     overflow: hidden;
+    
+    img{
+        margin: 0 !important;
+    }
 }
 
 .list-tag{
