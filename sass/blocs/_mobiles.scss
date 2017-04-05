@@ -34,6 +34,7 @@
         padding-left: 0;
         list-style: none;
         margin-top: 30px;
+        display: flex;
         
         li{
             display: inline-block;
@@ -56,6 +57,14 @@
         .img-cross-mobile{
             margin-top: $large-value;
             text-align: center;
+        }
+    }
+    
+    @include width-below(500px){
+        .img-cross-mobile{
+            img{
+                min-width: 90%;
+            }
         }
     }
 }
