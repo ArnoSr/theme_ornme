@@ -85,7 +85,11 @@
             <?php the_content(); ?>
         </div>
         <aside class="sidebar-article">
-            pub
+                        <?php if(shortcode_exists('bsa_pro_ad_space')): ?>
+
+                <?php echo(do_shortcode('[bsa_pro_ad_space id=2]', true)); ?>
+            
+            <?php endif;?>
         </aside>
     </div>
     

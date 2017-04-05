@@ -116,9 +116,6 @@
 
 .wrapper-article{
     
-    margin-right: $large-value;
-    width: calc(66% - #{$large-value});
-    
     p, li, blockquote{
         font-family: $font-stack-article;
     }
@@ -307,4 +304,11 @@
         position: relative;
         top: 4px;
     }
+}
+
+.sidebar-article{
+    width: 300px;
+    height: 600px;
+    position: sticky;
+    top: 125px;
 }

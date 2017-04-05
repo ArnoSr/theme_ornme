@@ -134,7 +134,13 @@
 
                                     </div>
 
-                                    <div class="menu-pub">Pub</div>
+                                                                    <div class="menu-pub">
+                                    <?php if(shortcode_exists('bsa_pro_ad_space')): ?>
+
+                                        <?php echo(do_shortcode('[bsa_pro_ad_space id=3]', true)); ?>
+            
+                                    <?php endif;?>
+                                </div>
                                 
                                 </div>
 
@@ -179,12 +185,16 @@
                                         </div>
 
                                     <?php endwhile; ?>
-
                                     
-                                
                                 </div>
                                 
-                                <div class="menu-pub">Pub</div>
+                                <div class="menu-pub">
+                                    <?php if(shortcode_exists('bsa_pro_ad_space')): ?>
+
+                                        <?php echo(do_shortcode('[bsa_pro_ad_space id=3]', true)); ?>
+            
+                                    <?php endif;?>
+                                </div>
 
                                 </div>
 

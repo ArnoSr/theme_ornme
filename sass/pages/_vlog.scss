@@ -41,7 +41,6 @@
     }
     
     .hgroup-cat{
-        overflow: hidden;
         
         h1{
             opacity: .075;
@@ -531,5 +530,11 @@ div:not(.slick-slide){
                 }
             }
         }
+    }
+}
+
+.post-type-archive-vlog{
+    .hgroup-cat{
+        overflow: hidden;
     }
 }
