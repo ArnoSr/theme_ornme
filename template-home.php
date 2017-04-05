@@ -141,11 +141,15 @@
             </div>
             
         <?php endwhile; ?>
+            
+            <?php if(shortcode_exists('bsa_pro_ad_space')): ?>
 
             <div class="featured-pub">
                 <div class="bg-category-title">Annonce</div>
                 <?php echo(do_shortcode('[bsa_pro_ad_space id=2]', true)); ?>
             </div>
+            
+            <?php endif;?>
         </div>
     
     <?php endif;?>    
