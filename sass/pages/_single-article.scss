@@ -104,9 +104,12 @@
     }
     
     .entretien{
+        font-family: $font-stack-common;
+        font-weight: $medium;
+        font-style: normal;
+        margin-bottom: 20px;
+        
         em{
-            font-family: $font-stack-common;
-            font-weight: $medium;
             font-style: normal;
         }
     }
