@@ -730,6 +730,10 @@
     &.basopen{
         transition-delay: 0.01s;
         width: 60%;
+        
+        @include width-below(900px){
+            width: 100%;
+        }
     }
 }
 
@@ -752,6 +756,7 @@
         position: absolute;
         right: 80px;
         z-index: 2;
+        border-radius: 0;
 
         &:focus{
             border-bottom-color: $menu-color;
