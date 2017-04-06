@@ -596,7 +596,7 @@
         transition: left ease .3s;
         position: fixed;
         width: calc(100vw - 70px);
-        left: calc(-100% + 70px);
+        left: calc(-100vw + 70px);
         top: 0;
         bottom: 0;
         overflow-y: auto;
@@ -782,9 +782,11 @@
         background: none;
         right: 0;
         cursor: pointer;
+        flex-shrink: 0;
 
         svg{
             width: 20px;
+            height: 20px;
             fill: $gris1;
         }
 
