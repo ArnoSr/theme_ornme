@@ -493,7 +493,7 @@ div:not(.slick-slide){
         &.single-vlog{
             width: 100%;
             display: flex;
-            align-items: stretch;
+            align-items: flex-start;
             margin-right: 0;
             margin-bottom: $small-value;
 

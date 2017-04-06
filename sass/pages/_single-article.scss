@@ -141,6 +141,11 @@
     img{
         padding-left: 100px;
         padding-right: 100px;
+        
+        @include width-below(500px){
+            padding-left: 0;
+            padding-right: 0;
+        }
     }
     
     .big{

@@ -155,6 +155,7 @@
 .tag-background{
     padding-top: 75px;
     padding-bottom: 75px;
+    overflow-x: hidden;
     
     @include width-below(600px){
         padding-top: 30px;

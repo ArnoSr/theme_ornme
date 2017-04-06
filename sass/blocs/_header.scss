@@ -585,7 +585,7 @@
     }
     
     body.menu_open{
-        left: calc(100% - 70px);
+        left: calc(100vw - 70px);
     }
     
     .menu-desktop{
@@ -595,7 +595,7 @@
     .menu-mobile{
         transition: left ease .3s;
         position: fixed;
-        width: calc(100% - 70px);
+        width: calc(100vw - 70px);
         left: calc(-100% + 70px);
         top: 0;
         bottom: 0;
