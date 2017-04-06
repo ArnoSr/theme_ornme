@@ -63,6 +63,14 @@
 				background-image: url('<?php echo $thumb_url_tiny; ?>');
 			}
 		}
+            
+        <?php if(get_field('alignement_de_limage')): ?>
+            
+            .featured-post{
+                background-position: <?php the_field('alignement_de_limage');?> center;
+            }
+            
+        <?php endif;?>
 			
 	</style>
   
