@@ -140,13 +140,14 @@
             }
         });
     
-        $(window).click(function() {
+        $(document).on('touchstart click', window,function() {
             $('.search').removeClass('open');
             $('.bas').removeClass('basopen');
+            $('.search-input').trigger('blur');
             
         });
 
-        $('.search').click(function(event){
+        $(document).on('touchstart click', '.search',function(event) {
             event.stopPropagation();
         });
         
