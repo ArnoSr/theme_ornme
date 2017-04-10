@@ -96,11 +96,6 @@
     }  
     
     .list-tag{
-        @include width-above($mobile-size + 1){
-            max-width: 75%;
-            margin-left: auto;
-            margin-right: auto;
-        }
     }
     
     .entretien{
@@ -208,12 +203,6 @@
     display: flex;
     align-items: flex-start;
     
-    @include width-above($mobile-size + 1){
-        max-width: 75%;
-        margin-left: auto;
-        margin-right: auto;
-    }
-    
     @include width-below(500px){
         flex-direction: column;
         
@@ -320,4 +309,14 @@
     position: sticky;
     top: 125px;
     flex-shrink: 0;
+}
+
+.meta-footer-article{
+    padding-left: calc(100px + #{$medium-value});
+    padding-right: calc(100px + #{$medium-value});
+    
+    @include width-below($mobile-size){
+        padding-left: $medium-value;
+        padding-right: $medium-value;
+    }
 }

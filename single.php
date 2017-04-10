@@ -15,9 +15,6 @@
             $thumb_url_tiny_array = wp_get_attachment_image_src($thumb_id, 'large600', true);
             $thumb_url_tiny = $thumb_url_tiny_array[0];
         ?>
-
-        
-
 		
 		<style type="text/css">
 
@@ -101,7 +98,7 @@
         </aside>
     </div>
     
-    <div class="wrapper">
+    <div class="wrapper meta-footer-article">
         <div class="list-tag">
             <?php
                 $posttags = get_the_tags();
