@@ -23,6 +23,7 @@
     
     @include width-above($mobile-size+1){
         overflow-y: auto;
+        overflow-x: hidden;
     }
 
 }
@@ -116,7 +117,7 @@
 .menu{
     
     display: flex;
-    //flex: 2;
+    flex: 1;
     
     a{
         text-decoration: none;
@@ -300,7 +301,7 @@
     
     display: flex;
     align-items: center;
-    //flex: 2;
+    flex: 1;
     justify-content: flex-end;
     
     .lire-revue{

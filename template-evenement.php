@@ -54,6 +54,10 @@ $form_completed = false;
         $heure_fin_evt = $_POST['heure_fin_evt'];
     }
 
+    if(isset($_POST['video_evt']) && $_POST['video_evt'] != ''){
+        $video_evt = $_POST['video_evt'];
+    }
+
     
     
     if($validation_form == true){
@@ -74,9 +78,10 @@ $form_completed = false;
         if(isset($twitter_evt)) update_field('url_twitter', $twitter_evt, $id);
         if(isset($commentaire_evt)) update_field('commentaire', $commentaire_evt, $id);
         if(isset($date_debut_evt)) update_field('date_de_debut', $date_debut_evt, $id);
-        if(isset($heure_debut_evt)) update_field('date_de_fin', $date_debut_evt, $id);
-        if(isset($date_fin_evt)) update_field('heure_de_debut', $date_fin_evt, $id);
+        if(isset($heure_debut_evt)) update_field('heure_de_debut', $heure_debut_evt, $id);
+        if(isset($date_fin_evt)) update_field('date_de_fin', $date_fin_evt, $id);
         if(isset($heure_fin_evt)) update_field('heure_de_fin', $heure_fin_evt, $id);
+        if(isset($video_evt)) update_field('lien_video', $video_evt, $id);
         
     if($_FILES){
         
@@ -165,8 +170,54 @@ $form_completed = false;
 
 ?>
     <?php /* Template Name: Événement */ get_header(); ?>
-        <main role="main" class="contact-page background-fixed-page" style="background-image: url('<?php the_post_thumbnail_url();?>');">
+       
+        
             <?php if (have_posts()): while (have_posts()) : the_post(); ?>
+              
+                     
+       <?php
+            $thumb_id = get_post_thumbnail_id();
+            $thumb_url_large_array = wp_get_attachment_image_src($thumb_id, 'large1920', true);
+            $thumb_url_large = $thumb_url_large_array[0];
+            $thumb_url_medium_array = wp_get_attachment_image_src($thumb_id, 'large1400', true);
+            $thumb_url_medium = $thumb_url_medium_array[0];
+            $thumb_url_small_array = wp_get_attachment_image_src($thumb_id, 'large900', true);
+            $thumb_url_small = $thumb_url_small_array[0];
+            $thumb_url_tiny_array = wp_get_attachment_image_src($thumb_id, 'large600', true);
+            $thumb_url_tiny = $thumb_url_tiny_array[0];
+        ?>
+
+		<style type="text/css">
+
+		@media only screen and (min-width: 1500px){
+			.contact-page{
+				background-image: url('<?php echo $thumb_url_large; ?>');
+			}
+		}
+
+		@media only screen and (min-width: 800px) and (max-width: 1499px){
+			.contact-page{
+				background-image: url('<?php echo $thumb_url_medium; ?>');
+			}
+		}
+
+		@media only screen and (max-width: 799px) and (min-width: 500px){
+			.contact-page{
+				background-image: url('<?php echo $thumb_url_small; ?>');
+			}
+		}
+
+		@media only screen and (max-width: 499px){
+			.contact-page{
+				background-image: url('<?php echo $thumb_url_tiny; ?>');
+			}
+		}
+        
+			
+	</style>
+              
+              
+               <main role="main" class="contact-page background-fixed-page">
                 <!-- section -->
                 <section class="wrapper wrapper-half">
                     <div>
@@ -180,27 +231,30 @@ $form_completed = false;
                         
                         <form id="add_event" action="" method="post" enctype="multipart/form-data">
                             <div class="wrapper-form">
-                                <label for="titre-evt">Titre de l'événement</label>
+                                <label for="titre-evt">Titre de l'événement <span>*</span></label>
                                 <input type="text" id="titre-evt" name="titre_evt" required>
-                                <label for="informations-evt">Informations</label>
-                                <textarea name="informations_evt" id="informations-evt" rows="3"></textarea>
-                                <label for="file-evt">Charger une photo ou une vidéo (max 3mo)</label>
-                                <input type="file" id="file-evt" name="file_evt" accept="video/*,image/*" data-max-size="3145728" class="upload-file">
+                                <label for="informations-evt">Informations <span>*</span></label>
+                                <textarea name="informations_evt" id="informations-evt" rows="3" required></textarea>
+                                <label for="file-evt">Charger une photo (max 3mo) <span>*</span></label>
+                                <input type="file" id="file-evt" name="file_evt" accept="image/*" data-max-size="3145728" class="upload-file" required>
                                 <label for="file-evt" class="label-input">
                                     <span class="bt-upload">Parcourir...</span>
                                     <span class="file-upload">Aucun fichier sélectionné</span>
                                     <span class="message-upload"></span>
                                 </label>
-                                <label for="ville-evt">Ville</label>
-                                <input type="text" id="ville-evt" name="ville_evt">
-                                <label for="adresse-evt">Adresse</label>
-                                <input type="text" id="adresse-evt" name="adresse_evt">
+                                <label for="video-evt">Lien vers une vidéo (Youtube, Dailymotion ou Vimeo)</label>
+                                <input type="text" id="video-evt" name="video_evt">
+                                <label for="ville-evt">Ville <span>*</span></label>
+                                <input type="text" id="ville-evt" name="ville_evt" required>
+                                <label for="adresse-evt">Adresse <span>*</span></label>
+                                <input type="text" id="adresse-evt" name="adresse_evt" required>
                                 
-                                <label for="date-debut-evt">Date de début</label>
-                                <input class="input-date" type="date" name="date_debut_evt" placeholder="<?php echo date('d/m/o');?>"><input class="input-date" type="time" name="heure_debut_evt" placeholder="<?php echo date('H:i');?>">>
+                                <label for="date-debut-evt">Date de début <span>*</span></label>
+                                <input class="input-date" required type="date" data-value="" name="date_debut_evt" placeholder="<?php echo date('d/m/o');?>"><input class="input-date" required type="time" name="heure_debut_evt" placeholder="<?php echo date('H:i');?>">>
                                 
                                 <label for="date-fin-evt">Date de fin</label>
-                                <input class="input-date" type="date" name="date_fin_evt" placeholder="<?php echo date('d/m/o');?>"><input class="input-date" type="time" name="heure_fin_evt" placeholder="<?php echo date('H:i');?>">>
+                                <input class="input-date" type="date" data-value="" name="date_fin_evt" placeholder="<?php echo date('d/m/o');?>">
+                                <input class="input-date" type="time" name="heure_fin_evt" placeholder="<?php echo date('H:i');?>">>
                                 
                                 <label for="url-evt">Url événement</label>
                                 <input type="text" id="url-evt" name="url_evt">
@@ -211,8 +265,8 @@ $form_completed = false;
                                 <label for="commentaire-evt">Commentaire</label>
                                 <textarea name="commentaire_evt" id="commentaire_evt" rows="3"></textarea>
                                 
-                                                            <p class="wrapper-submit">
-                                <input type="submit" value="Envoyer">
+                                <p class="wrapper-submit">
+                                <input type="submit" value="Envoyer"><span class="loader"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-loader"></use></svg></span>
                             </p>
                             
                             </div>
@@ -264,13 +318,18 @@ $form_completed = false;
                 });
                 
                 jQuery('input[type="date"]').pickadate({
-                    format: 'd mmmm yyyy',
+                    format: 'd/mm/yyyy',
                       monthsFull: ['Janvier', 'Février', 'Mars', 'Avril', 'Mai', 'Juin', 'Juillet', 'Août', 'Septembre', 'Octobre', 'Novembre', 'Décembre'],
                       weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
                       today: 'aujourd\'hui',
                       clear: 'effacer',
-                      formatSubmit: 'yyyy/mm/dd'
-                });                           
+                      formatSubmit: 'dd-mm-yyyy',
+                      hiddenName: true
+                }); 
+                
+                jQuery('#add_event').submit(function(){
+                   jQuery('.loader').show(); 
+                });
                 
             });
     </script>

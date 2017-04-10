@@ -1,5 +1,10 @@
 <?php get_header(); ?>
+   
+   
+   
     <?php if(have_posts() ): ?>
+    
+    
 <div class="wrapper-cat wrapper-event">
     
     <div class="cat-background cat-event">        
@@ -18,19 +23,31 @@
 
         <?php while(have_posts() ) : the_post(); ?>
 
+            <?php
+                if(get_field('date_de_fin')){
+                    $dateFin = get_field('date_de_fin');
+                }else{
+                    $dateFin = get_field('date_de_debut');
+                }
+                // si la date de fin de l'event + 1jour est supérieur à la date du jour
+                if((strtotime($dateFin) + 86400) > strtotime('today UTC')):            
+            ?>
+
             <div class="format format-normal">
                 <?php 
-                    $couverture = get_field('couverture');
+                    $couverture = get_field('photo_ou_video');
                 ?>
                 <div class="thumb"><img src="<?php echo $couverture['sizes']['large600']; ?>"/></div>
                 <div class="wrap-content-article">
                     <h2><?php the_title();?></h2>
                     <div class="meta-event">
-                        <p><?php the_field('date_de_debut');?>, <?php the_field('heure_de_debut');?></p>
+                        <p><?php echo date("d/m/Y", strtotime(get_field('date_de_debut')));?>, <?php the_field('heure_de_debut');?></p>
                     </div>
                     <p class="lien-event" data-slug="data<?php echo($post->ID);?>"><a href="#">En savoir plus</a></p>
                 </div>                                       
             </div>  
+            
+            <?php endif;?>
 
         <?php endwhile; ?>
 
@@ -40,10 +57,6 @@
     
     </div> 
           
-          
-           
-
-            
     </div>
 </div>
 
@@ -53,19 +66,18 @@
 
        
                 <?php 
-                    $couverture = get_field('couverture');
+                    $couverture = get_field('photo_ou_video');
+                    
                 ?>
                 
                    
                 <div class="event-details" data-slug="data<?php echo($post->ID);?>">
                    <button class="close"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-close"></use></svg></button>
                     <div class="wrapper">
-                        <div>
-                            <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
-                        </div>
+
                     <div class="content-event-details">
                     <h2><?php the_title();?></h2>
-                    <p class="date"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php the_field('date_de_debut');?> <?php the_field('heure_de_debut');?> - <?php the_field('date_de_fin'); ?> <?php the_field('heure_de_fin');?></p>
+                    <p class="date"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-clock"></use></svg> <?php echo date("d/m/Y", strtotime(get_field('date_de_debut')));?> <?php the_field('heure_de_debut');?> - <?php echo date("d/m/Y", strtotime(get_field('date_de_fin')));?> <?php the_field('heure_de_fin');?></p>
                     <p class="adresse"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-pin"></use></svg> <?php the_field('adresse');?>, <?php the_field('ville');?></p>
 
                     <?php the_field('informations');?>
@@ -85,6 +97,16 @@
                     </div>
 
                 </div>
+                   
+                        <div class="video-embed">                        <div class="embed-container">
+                           <?php if(get_field('lien_video')): 
+                            global $wp_embed;
+                            ?>
+                           <?php echo($wp_embed->run_shortcode('[embed]'.get_field("lien_video").'[/embed]')); ?>
+                           <?php else: ?>
+                           <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
+                           <?php endif;?>
+                        </div></div>
                     </div>
                 </div> 
                 
