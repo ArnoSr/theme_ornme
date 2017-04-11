@@ -2,7 +2,20 @@
    
    
    
-    <?php if(have_posts() ): ?>
+    <?php 
+
+        $argEvent = array(
+            'post_type' => 'evenement',
+            'meta_key' => 'timestamp_debut',
+	        'orderby' => 'meta_value_num',
+            'order' => 'ASC'
+        ); 
+
+        $events = new WP_Query( $argEvent );
+
+        if($events->have_posts() ):
+
+    ?>
     
     
 <div class="wrapper-cat wrapper-event">
@@ -21,7 +34,7 @@
 
         <div class="wrapper-articles">
 
-        <?php while(have_posts() ) : the_post(); ?>
+        <?php while($events->have_posts() ) : $events->the_post(); ?>
 
             <?php
                 if(get_field('date_de_fin')){
@@ -62,7 +75,7 @@
 
         <div class="article-ouvert">
 
-        <?php while(have_posts() ) : the_post(); ?>
+        <?php while($events->have_posts() ) : $events->the_post(); ?>
 
        
                 <?php 

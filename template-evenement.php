@@ -40,6 +40,7 @@ $form_completed = false;
 
     if(isset($_POST['date_debut_evt']) && $_POST['date_debut_evt'] != ''){
         $date_debut_evt = $_POST['date_debut_evt'];
+        $timestamp_debut = strtotime($_POST['date_debut_evt']);
     }
 
     if(isset($_POST['heure_debut_evt']) && $_POST['heure_debut_evt'] != ''){
@@ -48,6 +49,7 @@ $form_completed = false;
 
     if(isset($_POST['date_fin_evt']) && $_POST['date_fin_evt'] != ''){
         $date_fin_evt = $_POST['date_fin_evt'];
+        $timestamp_fin = strtotime($_POST['date_fin_evt']);
     }
 
     if(isset($_POST['heure_fin_evt']) && $_POST['heure_fin_evt'] != ''){
@@ -82,6 +84,8 @@ $form_completed = false;
         if(isset($date_fin_evt)) update_field('date_de_fin', $date_fin_evt, $id);
         if(isset($heure_fin_evt)) update_field('heure_de_fin', $heure_fin_evt, $id);
         if(isset($video_evt)) update_field('lien_video', $video_evt, $id);
+        if(isset($timestamp_debut)) update_field('timestamp_debut', $timestamp_debut, $id);
+        if(isset($timestamp_fin)) update_field('timestamp_fin', $timestamp_fin, $id);
         
     if($_FILES){
         
@@ -220,8 +224,8 @@ $form_completed = false;
                <main role="main" class="contact-page background-fixed-page">
                 <!-- section -->
                 <section class="wrapper wrapper-half">
-                    <div>
-                        <?php the_content(); ?>
+                    <div class="content-event-form">
+                    <?php the_content(); ?>
                     </div>
                     <div>
                         <h1 class="h3-like title-form"><?php the_title();?></h1>
