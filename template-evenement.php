@@ -327,6 +327,7 @@ $form_completed = false;
                       weekdaysShort: ['Dim', 'Lun', 'Mar', 'Mer', 'Jeu', 'Ven', 'Sam'],
                       today: 'aujourd\'hui',
                       clear: 'effacer',
+                      close: 'fermer',
                       formatSubmit: 'dd-mm-yyyy',
                       hiddenName: true
                 }); 

@@ -4,12 +4,13 @@
 		
 		'use strict';
         
-        $('.lien-event').click(function(event){
+        $('.article-event').click(function(event){
             event.preventDefault();
             var num_article = $(this).attr('data-slug');
-            var prout = $(this).position();
+            var la_position = $(this).position();
+            var hauteur = $(this).height();
             $('event-details').fadeOut();
-            $('body').find("[data-slug='" + num_article + "']").fadeIn().css('top', prout.top - 5);
+            $('body').find("[data-slug='" + num_article + "']").fadeIn().css('top', la_position.top + hauteur);
         });
         
         $('.close').click(function(){

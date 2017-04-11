@@ -444,6 +444,9 @@ function create_post_type_html5()
         'public' => true,
         'hierarchical' => true, // Allows your posts to behave like Hierarchy Pages
         'has_archive' => true,
+        'exclude_from_search' => true,
+        'publicly_queryable' => true,
+        'show_in_admin_bar' => false,
         'supports' => array(
             'title',
         ), // Go to Dashboard Custom HTML5 Blank post for supports

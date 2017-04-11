@@ -46,7 +46,7 @@
                 if((strtotime($dateFin) + 86400) > strtotime('today UTC')):            
             ?>
 
-            <div class="format format-normal">
+            <div class="format format-normal article-event" data-slug="data<?php echo($post->ID);?>">
                 <?php 
                     $couverture = get_field('photo_ou_video');
                 ?>
@@ -54,7 +54,7 @@
                 <div class="wrap-content-article">
                     <h2><?php the_title();?></h2>
                     <div class="meta-event">
-                        <p><?php echo date("d/m/Y", strtotime(get_field('date_de_debut')));?>, <?php the_field('heure_de_debut');?></p>
+                        <p><?php echo date("l j F o", strtotime(get_field('date_de_debut')));?> à <?php the_field('heure_de_debut');?><br><?php the_field('adresse');?></p>
                     </div>
                     <p class="lien-event" data-slug="data<?php echo($post->ID);?>"><a href="#">En savoir plus</a></p>
                 </div>                                       
@@ -111,15 +111,21 @@
 
                 </div>
                    
-                        <div class="video-embed">                        <div class="embed-container">
-                           <?php if(get_field('lien_video')): 
-                            global $wp_embed;
+                        
+                         <?php if(get_field('lien_video')): ?>
+                         <div class="video-embed">
+                          <div class="embed-container">
+                           
+                            <?php global $wp_embed;
                             ?>
                            <?php echo($wp_embed->run_shortcode('[embed]'.get_field("lien_video").'[/embed]')); ?>
+                           </div>
                            <?php else: ?>
-                           <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
+
+                        
+                                                   <img src="<?php echo $couverture['sizes']['large600_nocrop']; ?>"/>
                            <?php endif;?>
-                        </div></div>
+                        </div>
                     </div>
                 </div> 
                 

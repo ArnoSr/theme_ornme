@@ -23,11 +23,12 @@
     .lien-event{
         font-size: 1.4rem;
         font-weight: $medium;
-        color: #8b8b8b;
+        
         
         a{
             transition: color ease .25s;
             text-decoration: none;
+            color: #8b8b8b;
             
             &:hover{
                 color: $menu-color;
@@ -171,4 +172,8 @@
     .wrapper-half{
         align-items: flex-start;
     }
+}
+
+.event-details img{
+    margin-right: $large-value;
 }
