@@ -46,8 +46,10 @@
         });
         
         //Tags
-        $('#link_tags').click(function(){
+        $('.link-tags').click(function(){
            $('.wrapper-tags').toggleClass('tagOpen');
+            $('body').removeClass('menu_open');
+            
         });
         
         //Menu
