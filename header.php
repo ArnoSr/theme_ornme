@@ -226,7 +226,6 @@
                                         
                             
                             <li class="vlog"><a href="<?php echo get_site_url();?>/vlog"><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-play"></use></svg>Vlog</a></li>
-                            <li class="tags"><a href=""><svg viewBox="0 0 100 100" width="25" height="25"><use xlink:href="#icon-hashtag"></use></svg>Tags</a></li>
                        </ul>
                        
                     </div>

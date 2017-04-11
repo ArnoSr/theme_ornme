@@ -19,8 +19,7 @@
 .contact-page{
     background-color: $gris5;
     color: #fff;
-    overflow: hidden;
-    
+
     h2{
         font-size: 4rem;
     }
@@ -227,4 +226,9 @@
 .title-form{
     font-weight: $regular;
     font-size: 3rem;
+}
+
+.page-template-template-evenement,
+.page-template-template-contact{
+    overflow-x: hidden;
 }
