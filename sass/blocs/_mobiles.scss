@@ -2,6 +2,8 @@
     background-color: $gris2;
     padding-top: 75px;
     padding-bottom: 75px;
+    position: relative;
+    z-index: 1;
     
     @include width-above(701px){
     
