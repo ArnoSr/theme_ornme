@@ -2,7 +2,7 @@
     
     <div class="tag-background">  
 
-    <?php if(have_posts() ): ?>
+    <?php if (have_posts()): the_post(); ?>
     
         <div class="wrapper">
 
@@ -13,7 +13,7 @@
 
             <div class="wrapper-articles">
 
-            <?php while(have_posts() ) : the_post(); ?>
+            <?php rewind_posts(); while (have_posts()) : the_post(); ?>
 
                 <?php include('snippets/format-article.php'); ?>
 
